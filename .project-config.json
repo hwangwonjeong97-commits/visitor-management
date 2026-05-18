@@ -1,0 +1,35 @@
+{
+  "build_command": "pnpm run build",
+  "capabilities": [],
+  "dev_command": "pnpm run dev",
+  "env_vars": {},
+  "experiments": null,
+  "git_remote": {
+    "repo_url": "s3://vida-prod-gitrepo/webdev-git/310519663562499516/hPZMvimKXPxzyxYjqWKtYn",
+    "access_key_id": "ASIAZV3A2ECZEFEUB3ER",
+    "secret_access_key": "gsBTbT583owK+Z2MNc6CuR79rXOJdjXpOSKxf9gD",
+    "session_token": "IQoJb3JpZ2luX2VjEHUaCXVzLWVhc3QtMSJIMEYCIQC9vl3UeRwwmgU2BR/bQMkhDZt0+gjz9yJSysYlh8BnBgIhAMfI2OXveSqB6+PGd5PlZ5OAOkDyRfSFIY/2NR6dcgyfKvYDCD4QBBoMNjY1Mzg2MDk4ODY2IgwHzMkMSOaCpmyApJUq0wPkDvp6zBlR+6bkIGQm/kMu+LIuLgigtsRNIRwCdUWvvk4+ynkvTDTnvpIGUZLXDM8uts+fyszjmsPGbzcWM1jYJfHJgtIilgeUxX75ATWzfWxEB+44IXU+lis5qTZYOstaq9r/WGdnAFXMSIukVw4dQUiWsix8e7SaA4ahENCoTrF+vigj3omqII+vfj7fWzrN4ZkzQzseN9eAkCLB3M44/kN2AbElUJpWa/pvRihBQ7nvmpJa5kRteItxvadVvn5ZkZX9KXkVMId40Uuw8bv3U1q1RwHFvqNLkfS+betvdGnu8lzriPhuTcs2FfYQNk1Z+mjzk5qSdn9QmkOMWbuAlh73yFhngumnVaqx94p8d8/zuzL58NPEIuFsWo0SgmXSRf0W8jH4ekCBuKsDrDHJT31qY5Got4rJCbc3fwFCOgw7Hn4skYu82AYPS1xhBPKVlmc+LiD8Ot4zWOMjPsCWjsqmQuRb1yYCPS9RzROMqN+HPtpGVVWA/ELacD4oup+wXZLCjg6rEoCjzx+kNUWU20icC8WxdBQHekiMbhyfAdLpuEdflURwgfo3Lfcja3Z4ltmJYDtwF3c2gy7ZvNM9cILKDaoMFmpN9dnElebnCr96MjCO/Y/QBjqcAVTsCUgM10IBQu5JiEJdv1dHmAqmrbrzaUmhf2tg6L9NKmmchbZ/BLLEjjIpDU4DLiFQrSDftEHfX6pEh836E6NwgVIPsl0GjnlMs1J/pyiqevHIG+oGTpDAGGbtosYDvd2E3lJbJylTK1vGdOTdX0PUUMVhh+f0WI5CSSg4vi8oakGOKBTHMlt7x+Rz6cNplN2dgf2sHVY9gG7Cpw==",
+    "expiration": "2026-05-13T16:31:10.000Z"
+  },
+  "name": "visitor-management-benchmark",
+  "path": "/home/ubuntu/visitor-management-benchmark",
+  "port": 3000,
+  "secrets": {
+    "BUILT_IN_FORGE_API_KEY": "cfozVmkDDwcdqZqesCrmcX",
+    "BUILT_IN_FORGE_API_URL": "https://forge.manus.ai",
+    "JWT_SECRET": "VSv5Q9vAsskYohhmdDKSXY",
+    "OAUTH_SERVER_URL": "https://api.manus.im",
+    "OWNER_NAME": "원정 황",
+    "OWNER_OPEN_ID": "TYoseeB7G52HLmTNhTnV67",
+    "VITE_ANALYTICS_ENDPOINT": "https://manus-analytics.com",
+    "VITE_ANALYTICS_WEBSITE_ID": "b87aad35-35d3-4302-a26c-f99924e5f761",
+    "VITE_APP_ID": "hPZMvimKXPxzyxYjqWKtYn",
+    "VITE_APP_LOGO": "",
+    "VITE_APP_TITLE": "더존비즈온 내방고객 관리 시스템 디지털화 벤치마크 리서치",
+    "VITE_FRONTEND_FORGE_API_KEY": "TYTJNoaE9tpd3pwhr5x5PC",
+    "VITE_FRONTEND_FORGE_API_URL": "https://forge.manus.ai",
+    "VITE_OAUTH_PORTAL_URL": "https://manus.im"
+  },
+  "template_id": "web-static",
+  "test_command": "pnpm test"
+}
