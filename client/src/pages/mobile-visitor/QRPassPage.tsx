@@ -1,6 +1,6 @@
 import { useLocation } from "wouter";
 import { ScreenHeader } from "@/components/visitor/ScreenHeader";
-import { StatusBadge } from "@/components/visitor/StatusBadge";
+import { Badge } from "@/components/visitor/Badge";
 import { QRDisplayCard } from "@/components/visitor/QRDisplayCard";
 import { InfoCard } from "@/components/visitor/InfoCard";
 import { SectionTitle } from "@/components/visitor/SectionTitle";
@@ -15,7 +15,7 @@ export default function MVQRPassPage() {
 
       {/* QR 메인 */}
       <div className="bg-white px-5 py-8 flex flex-col items-center">
-        <StatusBadge status="approved" className="mb-4" />
+        <Badge className="bg-[#F2FFFA] text-[#27C36F] mb-4">승인 완료</Badge>
 
         <h2 className="text-[18px] font-bold text-[#222222] leading-[27px] mb-6 text-center">
           방문 QR 패스가 발급되었습니다.
@@ -29,20 +29,23 @@ export default function MVQRPassPage() {
         />
 
         {/* 사용 안내 */}
-        <div className="mt-5 w-full flex items-center gap-3 px-4 py-3.5 bg-[#EFF4FF] rounded-xl">
-          <span className="text-[20px]">📱</span>
-          <p className="text-[13px] text-[#105AFF] leading-[19px] font-medium">
+        <div className="mt-5 w-full h-[46px] bg-[#EFF4FF] rounded-[8px] px-3 flex items-center gap-1">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" className="flex-shrink-0">
+            <path fillRule="evenodd" clipRule="evenodd" d="M9 1.5C13.1421 1.5 16.5 4.85786 16.5 9C16.5 13.1421 13.1421 16.5 9 16.5C4.85786 16.5 1.5 13.1421 1.5 9C1.5 4.85786 4.85786 1.5 9 1.5ZM9 7.5C8.46167 7.50008 8.02527 7.94763 8.02515 8.49976V12.5002C8.02528 13.0524 8.46167 13.4999 9 13.5C9.5384 13.5 9.97472 13.0524 9.97485 12.5002V8.49976C9.97472 7.94758 9.5384 7.5 9 7.5ZM9 4.5C8.46159 4.50008 8.02515 4.93642 8.02515 5.47485C8.02523 6.01322 8.46164 6.44963 9 6.44971C9.53843 6.44971 9.97477 6.01326 9.97485 5.47485C9.97485 4.93638 9.53848 4.5 9 4.5Z" fill="#105AFF"/>
+          </svg>
+          <span className="text-[14px] text-[#105AFF] leading-[1.4] tracking-[-0.3px] flex-1">
             현장 패드에서 이 QR 코드를 인식해 주세요.
-          </p>
+          </span>
         </div>
       </div>
 
+
       {/* 구분선 */}
-      <div className="h-2 bg-[#F5F6FA]" />
+      <div className="h-2 bg-[#F7F8FA]" />
 
       {/* 방문 정보 */}
       <div className="bg-white px-5 py-6">
-        <SectionTitle className="mb-4">방문 정보</SectionTitle>
+        <p className="text-[15px] font-normal text-[#333333] mb-1">방문 정보</p>
         <InfoCard
           rows={[
             { label: "방문자명", value: "홍길동" },
@@ -55,8 +58,7 @@ export default function MVQRPassPage() {
         />
       </div>
 
-      {/* 하단 여백 */}
-      <div className="h-20" />
+      <div className="flex-1" />
 
       {/* 하단 버튼 */}
       <div className="sticky bottom-0 z-10 bg-white border-t border-[#EDEDED] px-5 py-4">

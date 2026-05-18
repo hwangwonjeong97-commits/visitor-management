@@ -23,7 +23,7 @@ export function TextArea({
 }: TextAreaProps) {
   return (
     <div className={`flex flex-col gap-1.5 ${className}`}>
-      <label className="text-[13px] font-semibold text-[#333333] leading-[19px]">
+      <label className="text-[13px] font-normal text-[#333333] leading-[1.4] tracking-[-0.26px]">
         {label}
         {required && <span className="ml-0.5 text-[#FA4553]">*</span>}
       </label>

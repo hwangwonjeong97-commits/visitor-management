@@ -7,7 +7,7 @@ interface SectionTitleProps {
 
 export function SectionTitle({ children, className = "" }: SectionTitleProps) {
   return (
-    <h2 className={`text-[14px] font-bold text-[#333333] leading-[21px] ${className}`}>
+    <h2 className={`text-[16px] font-bold text-[#333333] leading-[21px] ${className}`}>
       {children}
     </h2>
   );

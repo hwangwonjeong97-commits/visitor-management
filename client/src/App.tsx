@@ -3,6 +3,8 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/NotFound";
 import { Route, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
+import { MobilePageLayout } from "./components/visitor/MobilePageLayout";
+import { PadPageLayout } from "./components/visitor/PadPageLayout";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import { VisitorFormProvider } from "./contexts/VisitorFormContext";
 import Report from "./pages/Report";
@@ -38,24 +40,24 @@ function Router() {
       <Route path="/report" component={Report} />
 
       {/* 모바일 — 방문객 */}
-      <Route path="/visitor" component={MVMainPage} />
-      <Route path="/visitor/apply" component={MVApplyPage} />
-      <Route path="/visitor/waiting" component={MVWaitingPage} />
-      <Route path="/visitor/qr-pass" component={MVQRPassPage} />
-      <Route path="/visitor/arrival" component={MVArrivalPage} />
-      <Route path="/visitor/inquiry" component={MVInquiryPage} />
-      <Route path="/visitor/search" component={MVSearchPage} />
+      <Route path="/visitor">{() => <MobilePageLayout transparentStatusBar><MVMainPage /></MobilePageLayout>}</Route>
+      <Route path="/visitor/apply">{() => <MobilePageLayout><MVApplyPage /></MobilePageLayout>}</Route>
+      <Route path="/visitor/waiting">{() => <MobilePageLayout><MVWaitingPage /></MobilePageLayout>}</Route>
+      <Route path="/visitor/qr-pass">{() => <MobilePageLayout><MVQRPassPage /></MobilePageLayout>}</Route>
+      <Route path="/visitor/arrival">{() => <MobilePageLayout><MVArrivalPage /></MobilePageLayout>}</Route>
+      <Route path="/visitor/inquiry">{() => <MobilePageLayout><MVInquiryPage /></MobilePageLayout>}</Route>
+      <Route path="/visitor/search">{() => <MobilePageLayout><MVSearchPage /></MobilePageLayout>}</Route>
 
       {/* 모바일 — 직원 */}
-      <Route path="/employee/invite" component={MEInvitePage} />
-      <Route path="/employee/approve" component={MEApprovePage} />
-      <Route path="/employee/arrival-notice" component={MEArrivalNoticePage} />
+      <Route path="/employee/invite">{() => <MobilePageLayout><MEInvitePage /></MobilePageLayout>}</Route>
+      <Route path="/employee/approve">{() => <MobilePageLayout><MEApprovePage /></MobilePageLayout>}</Route>
+      <Route path="/employee/arrival-notice">{() => <MobilePageLayout><MEArrivalNoticePage /></MobilePageLayout>}</Route>
 
       {/* 패드 — 방문객 */}
-      <Route path="/pad" component={PVMainPage} />
-      <Route path="/pad/scan" component={PVScanPage} />
-      <Route path="/pad/confirmed" component={PVConfirmedPage} />
-      <Route path="/pad/register-qr" component={PVRegisterQRPage} />
+      <Route path="/pad">{() => <PadPageLayout><PVMainPage /></PadPageLayout>}</Route>
+      <Route path="/pad/scan">{() => <PadPageLayout><PVScanPage /></PadPageLayout>}</Route>
+      <Route path="/pad/confirmed">{() => <PadPageLayout><PVConfirmedPage /></PadPageLayout>}</Route>
+      <Route path="/pad/register-qr">{() => <PadPageLayout><PVRegisterQRPage /></PadPageLayout>}</Route>
 
       {/* 기본 진입점 → 쇼케이스 */}
       <Route path="/" component={Showcase} />

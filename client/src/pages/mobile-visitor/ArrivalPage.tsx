@@ -74,8 +74,7 @@ export default function MVArrivalPage() {
         </div>
       </div>
 
-      {/* 하단 여백 */}
-      <div className="h-20" />
+      <div className="flex-1" />
 
       {/* 하단 버튼 */}
       <div className="sticky bottom-0 z-10 bg-white border-t border-[#EDEDED] px-5 py-4">

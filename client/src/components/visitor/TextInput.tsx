@@ -25,7 +25,7 @@ export function TextInput({
 }: TextInputProps) {
   return (
     <div className={`flex flex-col gap-1.5 ${className}`}>
-      <label className="text-[13px] font-semibold text-[#333333] leading-[19px]">
+      <label className="text-[13px] font-normal text-[#333333] leading-[1.4] tracking-[-0.26px]">
         {label}
         {required && <span className="ml-0.5 text-[#FA4553]">*</span>}
       </label>
@@ -41,7 +41,7 @@ export function TextInput({
           "focus:border-[#4A4A4A]",
           error ? "border-[#FA4553] bg-[#FDF5F5] text-[#333333]"
             : disabled ? "border-[#D3D3D3] bg-[#FAFAFA] text-[#B4B4B4] cursor-not-allowed"
-            : readOnly ? "border-[#D3D3D3] bg-[#FAFAFA] text-[#333333] pointer-events-none"
+            : readOnly ? "border-[#D3D3D3] bg-[#FAFAFA] text-[#777777] pointer-events-none"
             : "border-[#D3D3D3] bg-white text-[#333333]",
         ].join(" ")}
       />

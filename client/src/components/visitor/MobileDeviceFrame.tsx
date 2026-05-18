@@ -1,13 +1,16 @@
 import { ReactNode } from "react";
+import { StatusBar } from "./StatusBar";
+import { HomeIndicator } from "./HomeIndicator";
 
 interface MobileDeviceFrameProps {
   children: ReactNode;
   label?: string;
   screenId?: string;
   routePath?: string;
+  transparentStatusBar?: boolean;
 }
 
-export function MobileDeviceFrame({ children, label, screenId, routePath }: MobileDeviceFrameProps) {
+export function MobileDeviceFrame({ children, label, screenId, routePath, transparentStatusBar = false }: MobileDeviceFrameProps) {
   return (
     <div className="flex flex-col items-center gap-3 flex-shrink-0">
       {(screenId || label) && (
@@ -40,12 +43,16 @@ export function MobileDeviceFrame({ children, label, screenId, routePath }: Mobi
         <div className="absolute top-[18px] left-1/2 -translate-x-1/2 w-[100px] h-[28px] bg-[#1A1A1A] rounded-full z-10" />
         {/* 스크린 영역 */}
         <div
-          className="relative overflow-hidden rounded-[32px] bg-[#F5F6FA]"
+          className="relative overflow-hidden rounded-[32px] bg-[#F5F6FA] flex flex-col"
           style={{ width: 390, height: 844 }}
         >
-          <div className="w-full overflow-y-auto overflow-x-hidden" style={{ height: 844 }}>
+          <div className="absolute top-0 left-0 right-0 z-20">
+            <StatusBar transparent={transparentStatusBar} />
+          </div>
+          <div className={`flex-1 overflow-y-auto overflow-x-hidden ${transparentStatusBar ? "" : "pt-[44px]"}`}>
             {children}
           </div>
+          <HomeIndicator />
         </div>
       </div>
     </div>

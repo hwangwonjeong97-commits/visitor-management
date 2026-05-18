@@ -149,6 +149,7 @@ function ShowcaseSection({ title, description, screens, frameType }: ShowcaseSec
               screenId={screen.id}
               label={screen.name}
               routePath={screen.route}
+              transparentStatusBar={screen.id === "MV-01"}
             >
               {screen.component}
             </MobileDeviceFrame>

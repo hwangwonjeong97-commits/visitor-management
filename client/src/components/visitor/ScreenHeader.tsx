@@ -12,7 +12,7 @@ export function ScreenHeader({ title, onBack, leftIcon = "back", rightElement }:
   const LeftIcon = leftIcon === "close" ? X : ChevronLeft;
 
   return (
-    <div className="sticky top-0 z-10 flex items-center h-14 px-4 bg-white border-b border-[#EDEDED]">
+    <div className="sticky top-0 z-10 flex items-center h-12 px-4 bg-white">
       {onBack && (
         <button
           onClick={onBack}
