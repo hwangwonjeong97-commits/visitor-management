@@ -91,7 +91,7 @@ export default function MVArrivalPage() {
       {/* 하단 버튼 */}
       <div className="sticky bottom-0 z-10 bg-white border-t border-[#EDEDED] px-5 py-4">
         <SecondaryButton fullWidth size="md" variant="tertiary" onClick={() => navigate("/visitor")}>
-          방문신청 취소
+          신청취소
         </SecondaryButton>
       </div>
     </div>

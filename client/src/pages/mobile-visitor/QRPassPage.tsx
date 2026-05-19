@@ -3,7 +3,6 @@ import { ScreenHeader } from "@/components/visitor/ScreenHeader";
 import { QRDisplayCard } from "@/components/visitor/QRDisplayCard";
 import { InfoCard } from "@/components/visitor/InfoCard";
 import { SectionTitle } from "@/components/visitor/SectionTitle";
-import { SecondaryButton } from "@/components/visitor/SecondaryButton";
 
 export default function MVQRPassPage() {
   const [, navigate] = useLocation();
@@ -65,13 +64,6 @@ export default function MVQRPassPage() {
       </div>
 
       <div className="flex-1" />
-
-      {/* 하단 버튼 */}
-      <div className="sticky bottom-0 z-10 bg-white border-t border-[#EDEDED] px-5 py-4">
-        <SecondaryButton fullWidth variant="tertiary" onClick={() => navigate("/visitor")}>
-          방문신청 취소
-        </SecondaryButton>
-      </div>
     </div>
   );
 }
