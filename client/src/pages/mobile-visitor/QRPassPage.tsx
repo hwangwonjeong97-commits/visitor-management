@@ -14,7 +14,7 @@ export default function MVQRPassPage() {
       <div className="flex-1 px-5 pt-8 pb-5">
         <div
           className="bg-white rounded-2xl flex flex-col items-center px-6 pt-6 pb-6"
-          style={{ boxShadow: "0 2px 8px rgba(0,0,0,0.08)", minHeight: 460 }}
+          style={{ boxShadow: "0 2px 8px rgba(0,0,0,0.08)", minHeight: 520 }}
         >
           {/* 제목 / 서브문구 */}
           <div className="flex flex-col items-center gap-2 text-center">
