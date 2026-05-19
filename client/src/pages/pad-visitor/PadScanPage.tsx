@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useLocation } from "wouter";
+import { motion } from "framer-motion";
 
 function PadHeader({ onHome }: { onHome: () => void }) {
   const [now, setNow] = useState(new Date());
@@ -36,11 +37,33 @@ export default function PVScanPage() {
 
       {/* 카메라 영역 */}
       <div className="relative mx-auto rounded-2xl overflow-hidden bg-[#14171F]" style={{ width: 680, height: 460 }}>
+
+        {/* 코너 브라켓 */}
         <div className="absolute top-8 left-8 w-14 h-14 border-t-[3px] border-l-[3px] border-[#4B6BFF] rounded-tl-md" />
         <div className="absolute top-8 right-8 w-14 h-14 border-t-[3px] border-r-[3px] border-[#4B6BFF] rounded-tr-md" />
         <div className="absolute bottom-16 left-8 w-14 h-14 border-b-[3px] border-l-[3px] border-[#4B6BFF] rounded-bl-md" />
         <div className="absolute bottom-16 right-8 w-14 h-14 border-b-[3px] border-r-[3px] border-[#4B6BFF] rounded-br-md" />
-        <div className="absolute left-8 right-8 h-[2px] bg-[#4B6BFF]" style={{ top: "42%" }} />
+
+        {/* 스캔 애니메이션 라인 */}
+        <motion.div
+          className="absolute left-8 right-8"
+          style={{ height: 2 }}
+          animate={{ top: ["12%", "72%", "12%"] }}
+          transition={{ duration: 2.4, repeat: Infinity, ease: "easeInOut" }}
+        >
+          {/* 라인 본체 */}
+          <div className="w-full h-full bg-[#4B6BFF]" />
+          {/* 아래 글로우 */}
+          <div
+            className="w-full absolute top-0"
+            style={{
+              height: 24,
+              background: "linear-gradient(to bottom, rgba(75,107,255,0.35), transparent)",
+            }}
+          />
+        </motion.div>
+
+        {/* 하단 카메라 인식 버튼 */}
         <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex items-center gap-2 bg-[#1E2130] rounded-full px-5 py-2">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M4 6H2V20C2 21.1 2.9 22 4 22H18V20H4V6ZM20 2H8C6.9 2 6 2.9 6 4V16C6 17.1 6.9 18 8 18H20C21.1 18 22 17.1 22 16V4C22 2.9 21.1 2 20 2ZM20 16H8V4H20V16Z" fill="#9BA3BF"/>
