@@ -1,5 +1,4 @@
 import { ReactNode } from "react";
-import { motion } from "framer-motion";
 import { HomeIndicator } from "./HomeIndicator";
 import { StatusBar } from "./StatusBar";
 
@@ -14,14 +13,9 @@ export function MobilePageLayout({ children, transparentStatusBar = false }: { c
           <StatusBar transparent={transparentStatusBar} />
         </div>
         <div className={`flex-1 overflow-y-auto overflow-x-hidden ${transparentStatusBar ? "" : "pt-[44px]"}`}>
-          <motion.div
-            className="min-h-full"
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.45, ease: [0.23, 1, 0.32, 1] }}
-          >
+          <div className="page-stagger min-h-full">
             {children}
-          </motion.div>
+          </div>
         </div>
         <HomeIndicator />
       </div>
