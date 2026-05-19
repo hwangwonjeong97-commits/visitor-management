@@ -45,7 +45,7 @@ export default function MVArrivalPage() {
         <SectionTitle className="mb-3">처리 현황</SectionTitle>
 
         <div className="flex items-center gap-3 py-3.5">
-          <div className="w-9 h-9 rounded-full bg-[#F2FFFA] flex items-center justify-center flex-shrink-0">
+          <div className="w-8 h-8 rounded-[12px] bg-[#F0F2F7] flex items-center justify-center flex-shrink-0">
             <Bell className="w-4 h-4 text-[#27C36F]" />
           </div>
           <div className="flex-1 min-w-0 flex flex-col gap-0">
@@ -56,7 +56,7 @@ export default function MVArrivalPage() {
         </div>
 
         <div className="flex items-center gap-3 py-3.5">
-          <div className="w-9 h-9 rounded-full bg-[#F2FFFA] flex items-center justify-center flex-shrink-0">
+          <div className="w-8 h-8 rounded-[12px] bg-[#F0F2F7] flex items-center justify-center flex-shrink-0">
             <CheckCircle2 className="w-4 h-4 text-[#27C36F]" />
           </div>
           <div className="flex-1 min-w-0">
