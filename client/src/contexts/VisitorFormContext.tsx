@@ -38,12 +38,15 @@ interface VisitorFormContextType {
   form: VisitorFormData;
   setField: <K extends keyof VisitorFormData>(key: K, value: VisitorFormData[K]) => void;
   resetForm: () => void;
+  isInvited: boolean;
+  setIsInvited: (v: boolean) => void;
 }
 
 const VisitorFormContext = createContext<VisitorFormContextType | null>(null);
 
 export function VisitorFormProvider({ children }: { children: ReactNode }) {
   const [form, setForm] = useState<VisitorFormData>(INITIAL);
+  const [isInvited, setIsInvited] = useState(true);
 
   const setField = <K extends keyof VisitorFormData>(key: K, value: VisitorFormData[K]) => {
     setForm((prev) => ({ ...prev, [key]: value }));
@@ -52,7 +55,7 @@ export function VisitorFormProvider({ children }: { children: ReactNode }) {
   const resetForm = () => setForm(INITIAL);
 
   return (
-    <VisitorFormContext.Provider value={{ form, setField, resetForm }}>
+    <VisitorFormContext.Provider value={{ form, setField, resetForm, isInvited, setIsInvited }}>
       {children}
     </VisitorFormContext.Provider>
   );

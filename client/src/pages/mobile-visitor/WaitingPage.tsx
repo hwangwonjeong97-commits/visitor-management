@@ -6,9 +6,16 @@ import { InfoCard } from "@/components/visitor/InfoCard";
 import { PrimaryButton } from "@/components/visitor/PrimaryButton";
 import { SecondaryButton } from "@/components/visitor/SecondaryButton";
 import waitingAnimation from "@/assets/waiting-animation.json";
+import { useVisitorForm } from "@/contexts/VisitorFormContext";
 
 export default function MVWaitingPage() {
   const [, navigate] = useLocation();
+  const { isInvited } = useVisitorForm();
+
+  // 사전등록 여부에 따라 다음 화면 분기
+  const handleInquiry = () => {
+    navigate(isInvited ? "/visitor/inquiry" : "/visitor/arrival");
+  };
 
   return (
     <div className="min-h-full flex flex-col bg-white">
@@ -59,7 +66,7 @@ export default function MVWaitingPage() {
       <div className="sticky bottom-0 z-10 bg-white border-t border-[#EDEDED] px-5 py-4">
         <div className="flex gap-2.5">
           <SecondaryButton size="md" fullWidth variant="tertiary" onClick={() => navigate("/visitor")}>신청취소</SecondaryButton>
-          <PrimaryButton size="md" fullWidth onClick={() => navigate("/visitor/inquiry")}>신청조회</PrimaryButton>
+          <PrimaryButton size="md" fullWidth onClick={handleInquiry}>신청조회</PrimaryButton>
         </div>
       </div>
     </div>

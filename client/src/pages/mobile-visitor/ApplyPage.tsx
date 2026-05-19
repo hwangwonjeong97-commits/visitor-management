@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useLocation, useSearch } from "wouter";
 import { InfoCard } from "@/components/visitor/InfoCard";
 import { ScreenHeader } from "@/components/visitor/ScreenHeader";
@@ -292,11 +292,18 @@ function NonInvitedVisitInfoSection({ form, setField }: FormProps) {
 
 // ─── 메인 컴포넌트 ───────────────────────────────────────
 
-export default function MVApplyPage({ isInvited = true }: { isInvited?: boolean }) {
+export default function MVApplyPage({ isInvited: isInvitedProp = true }: { isInvited?: boolean }) {
   const [, navigate] = useLocation();
   const search = useSearch();
   const isEditMode = new URLSearchParams(search).get("mode") === "edit";
-  const { form, setField } = useVisitorForm();
+  const { form, setField, setIsInvited } = useVisitorForm();
+
+  // prop → context 동기화 (Showcase 탭 전환 시 flow 정보 유지)
+  useEffect(() => {
+    setIsInvited(isInvitedProp);
+  }, [isInvitedProp]);
+
+  const isInvited = isInvitedProp;
 
   const canSubmit =
     form.consentSecurity && form.consentPrivacy &&
