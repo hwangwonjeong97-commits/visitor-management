@@ -76,7 +76,7 @@ export default function MVInquiryPage() {
               }}
               className="flex flex-col"
             >
-              <div className="px-5 pt-6 pb-2">
+              <div className="px-5 pt-8 pb-2">
                 <p className="text-[16px] font-bold text-[#222222]">방문 신청 정보</p>
               </div>
 
