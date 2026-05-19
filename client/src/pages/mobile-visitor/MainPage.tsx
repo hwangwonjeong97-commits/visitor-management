@@ -17,7 +17,7 @@ export default function MVMainPage() {
     <div className="min-h-full flex flex-col bg-white">
 
       {/* ── 히어로 헤더 (가운데 정렬) ── */}
-      <div className="px-5 pt-[200px] pb-10 flex flex-col items-center gap-5" style={{ background: "linear-gradient(160deg, #D3E7FE 0%, #EFF4FF 50%, #FFFFFF 100%)" }}>
+      <div className="px-5 pt-[200px] pb-10 flex flex-col items-center gap-5">
         {/* 더존비즈온 로고 */}
         <img src="/douzone-logo.svg" alt="더존비즈온" className="h-[20px] w-auto" />
 
@@ -80,13 +80,10 @@ export default function MVMainPage() {
       {/* ── 하단 주소 정보 ── */}
       <div className="mt-auto bg-white px-5 pt-3 pb-8 flex flex-col items-center gap-0.5">
         <p className="text-[11px] text-[#B4B4B4] text-center leading-[1.3]">
-          주소 : 강원특별자치도 춘천시 동내면 동내로 130
+          주소 : 서울특별시 중구 을지로 29 더존을지타워
         </p>
         <p className="text-[11px] text-[#B4B4B4] text-center leading-[1.3]">
-          연락처 : 033-123-4567&nbsp;&nbsp;관리 책임자 : 홍길동
-        </p>
-        <p className="text-[11px] text-[#B4B4B4] text-center leading-[1.3]">
-          대표번호 : 1566-0000
+          대표번호 : 1688-6000
         </p>
       </div>
 
