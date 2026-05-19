@@ -2,7 +2,6 @@ import { useLocation } from "wouter";
 import { CheckCircle2 } from "lucide-react";
 import { ScreenHeader } from "@/components/visitor/ScreenHeader";
 import { SectionTitle } from "@/components/visitor/SectionTitle";
-import { SecondaryButton } from "@/components/visitor/SecondaryButton";
 
 export default function MVArrivalPage() {
   const [, navigate] = useLocation();
@@ -103,13 +102,6 @@ export default function MVArrivalPage() {
       </div>
 
       <div className="flex-1" />
-
-      {/* 하단 버튼 */}
-      <div className="sticky bottom-0 z-10 bg-white border-t border-[#EDEDED] px-5 py-4">
-        <SecondaryButton fullWidth size="md" variant="tertiary" onClick={() => navigate("/visitor")}>
-          신청취소
-        </SecondaryButton>
-      </div>
     </div>
   );
 }
