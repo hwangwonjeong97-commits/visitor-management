@@ -44,13 +44,13 @@ export default function MVArrivalPage() {
       <div className="bg-white px-5 py-6">
         <SectionTitle className="mb-3">처리 현황</SectionTitle>
 
-        <div className="flex items-center gap-3 py-3.5 border-b border-[#EDEDED]">
+        <div className="flex items-center gap-3 py-3.5">
           <div className="w-9 h-9 rounded-full bg-[#F2FFFA] flex items-center justify-center flex-shrink-0">
             <Bell className="w-4 h-4 text-[#27C36F]" />
           </div>
-          <div className="flex-1 min-w-0">
-            <p className="text-[14px] font-semibold text-[#333333]">담당자에게 알림 전송됨</p>
-            <p className="text-[12px] text-[#989898]">박지훈 · 방금 전</p>
+          <div className="flex-1 min-w-0 flex flex-col gap-0">
+            <p className="text-[15px] font-semibold text-[#333333] leading-[1.4]">담당자에게 알림 전송됨</p>
+            <p className="text-[13px] text-[#989898] leading-[1.4]">박지훈 · 방금 전</p>
           </div>
           <CheckCircle2 className="w-5 h-5 text-[#27C36F] flex-shrink-0" />
         </div>
@@ -60,8 +60,8 @@ export default function MVArrivalPage() {
             <CheckCircle2 className="w-4 h-4 text-[#27C36F]" />
           </div>
           <div className="flex-1 min-w-0">
-            <p className="text-[14px] font-semibold text-[#333333]">방문 신청 승인 완료</p>
-            <p className="text-[12px] text-[#989898]">오늘 09:45</p>
+            <p className="text-[15px] font-semibold text-[#333333] leading-[1.4]">방문 신청 승인 완료</p>
+            <p className="text-[13px] text-[#989898] leading-[1.4]">오늘 09:45</p>
           </div>
           <CheckCircle2 className="w-5 h-5 text-[#27C36F] flex-shrink-0" />
         </div>
