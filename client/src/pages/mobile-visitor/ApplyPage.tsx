@@ -376,7 +376,6 @@ export default function MVApplyPage({ isInvited = true }: { isInvited?: boolean 
 
           {/* 기본정보 카드 */}
           <div className="bg-white px-5 pt-6 pb-6">
-            <p className="text-[15px] font-normal text-[#333333] mb-2">기본정보</p>
             <InfoCard rows={basicInfoRows} />
           </div>
 
