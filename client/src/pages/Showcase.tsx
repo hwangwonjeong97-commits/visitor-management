@@ -62,8 +62,8 @@ export default function Showcase() {
               <img src="/douzone-icon.png" alt="더존을지타워" className="w-6 h-6 object-contain" />
             </div>
             <div>
-              <p className="text-[15px] font-bold text-[#222222] leading-tight">더존을지타워 방문자 출입관리 시스템</p>
-              <p className="text-[11px] text-[#989898]">UI 화면 시안</p>
+              <p className="text-[18px] font-bold text-[#222222] leading-tight">더존을지타워 방문자 출입관리 시스템</p>
+              <p className="text-[13px] text-[#989898]">UI 화면 시안</p>
             </div>
           </div>
         </div>
@@ -73,7 +73,7 @@ export default function Showcase() {
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
               className={[
-                "px-5 py-3 text-[14px] font-medium border-b-2 transition-colors",
+                "px-5 py-3 text-[16px] font-medium border-b-2 transition-colors",
                 activeTab === tab.id
                   ? "border-[#105AFF] text-[#105AFF]"
                   : "border-transparent text-[#777777] hover:text-[#333333]",
