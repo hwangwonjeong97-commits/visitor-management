@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
+import { useLocation } from "wouter";
 
-function PadHeader() {
+function PadHeader({ onHome }: { onHome: () => void }) {
   const [now, setNow] = useState(new Date());
   useEffect(() => {
     const t = setInterval(() => setNow(new Date()), 1000);
@@ -11,7 +12,7 @@ function PadHeader() {
   const timeStr = `${String(now.getHours()).padStart(2, "0")}:${String(now.getMinutes()).padStart(2, "0")}:${String(now.getSeconds()).padStart(2, "0")}`;
   return (
     <header className="bg-white border-b border-[#E8E8E8] px-6 h-[64px] flex items-center justify-between flex-shrink-0">
-      <button className="flex items-center gap-2 border border-[#E0E0E0] bg-white rounded-xl px-4 py-2">
+      <button onClick={onHome} className="flex items-center gap-2 border border-[#E0E0E0] bg-white rounded-xl px-4 py-2 active:bg-[#F5F5F5] transition-colors">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M3 9.5L12 3L21 9.5V20C21 20.5523 20.5523 21 20 21H15V15H9V21H4C3.44772 21 3 20.5523 3 20V9.5Z" stroke="#333" strokeWidth="1.8" strokeLinejoin="round"/>
         </svg>
@@ -41,20 +42,19 @@ function buildQR(): boolean[][] {
 const QR_MATRIX = buildQR();
 
 export default function PVRegisterQRPage() {
+  const [, navigate] = useLocation();
+
   return (
     <div className="w-full h-full bg-[#F1F3F6] flex flex-col">
-      <PadHeader />
+      <PadHeader onHome={() => navigate("/pad")} />
 
       <div className="flex-1 flex flex-col items-center justify-center gap-8">
-        {/* 안내 텍스트 */}
         <div className="text-center">
           <p className="text-[22px] text-[#444444] leading-[1.5]">스마트폰 카메라로 QR 코드를 스캔하시면</p>
           <p className="text-[22px] text-[#444444] leading-[1.5]">
             <span className="text-[#3B5BFF] font-bold">모바일 방문 신청 페이지</span>로 연결됩니다.
           </p>
         </div>
-
-        {/* QR 카드 */}
         <div className="bg-white rounded-2xl p-6" style={{ boxShadow: "0 4px 24px rgba(0,0,0,0.10)" }}>
           <svg width="220" height="220" viewBox={`0 0 ${N} ${N}`} xmlns="http://www.w3.org/2000/svg" shapeRendering="crispEdges">
             {QR_MATRIX.flatMap((row, r) =>
