@@ -44,7 +44,7 @@ export default function MVArrivalPage() {
       <div className="bg-white px-5 py-6">
         <SectionTitle className="mb-3">처리 현황</SectionTitle>
 
-        <div className="flex flex-col gap-1">
+        <div className="flex flex-col gap-2">
           <div className="flex items-center gap-3 h-12">
             <div className="w-8 h-8 rounded-[12px] bg-[#F0F2F7] flex items-center justify-center flex-shrink-0">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
