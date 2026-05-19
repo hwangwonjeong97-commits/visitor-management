@@ -58,11 +58,11 @@ export default function Showcase() {
       <header className="sticky top-0 z-20 bg-white border-b border-[#EDEDED]" style={{ boxShadow: "0 2px 4px rgba(0,0,0,0.06)" }}>
         <div className="max-w-[1600px] mx-auto px-8 pt-6 pb-4 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <div className="w-9 h-9 rounded-lg bg-[#F0F2F7] flex items-center justify-center">
+            <div className="w-10 h-10 rounded-lg bg-[#F0F2F7] flex items-center justify-center">
               <img src="/douzone-icon.png" alt="더존을지타워" className="w-6 h-6 object-contain" />
             </div>
             <div className="flex flex-col gap-[2px]">
-              <p className="text-[18px] font-bold text-[#222222] leading-tight">더존을지타워 방문자 출입관리 시스템</p>
+              <p className="text-[20px] font-bold text-[#222222] leading-tight">더존을지타워 방문자 출입관리 시스템</p>
               <p className="text-[13px] text-[#989898]">UI 화면 시안</p>
             </div>
           </div>
