@@ -16,12 +16,12 @@ export function MobileDeviceFrame({ children, label, screenId, routePath, transp
       {(screenId || label) && (
         <div className="flex items-center gap-2">
           {screenId && (
-            <span className="text-[11px] font-medium text-[#105AFF] bg-[#EFF4FF] px-2 py-0.5 rounded-full">
+            <span className="text-[15px] font-medium text-[#105AFF] bg-[#EFF4FF] px-2 py-0.5 rounded-full">
               {screenId}
             </span>
           )}
           {label && (
-            <span className="text-[13px] font-medium text-[#333333]">{label}</span>
+            <span className="text-[16px] font-medium text-[#333333]">{label}</span>
           )}
           {routePath && (
             <a
