@@ -383,8 +383,6 @@ export default function MVApplyPage({ isInvited = true }: { isInvited?: boolean 
           {divider}
           <VisitorInfoSection form={form} setField={setField} />
           {divider}
-          <AdditionalInfoSection form={form} setField={setField} />
-          {divider}
           <ConsentSection form={form} setField={setField} />
         </>
       ) : (
@@ -408,10 +406,6 @@ export default function MVApplyPage({ isInvited = true }: { isInvited?: boolean 
           {/* 섹션 2: 방문 정보 (방문 목적 기반 조건부 UI) */}
           <NonInvitedVisitInfoSection form={form} setField={setField} />
 
-          {divider}
-
-          {/* 섹션 3: 부가정보 */}
-          <AdditionalInfoSection form={form} setField={setField} />
           {divider}
           <ConsentSection form={form} setField={setField} />
         </>
