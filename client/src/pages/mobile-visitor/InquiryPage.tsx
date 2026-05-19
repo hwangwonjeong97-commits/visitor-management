@@ -25,7 +25,7 @@ export default function MVInquiryPage() {
   const [, navigate] = useLocation();
   const { form } = useVisitorForm();
 
-  const currentStatus = "pending" as keyof typeof STATUS_MAP;
+  const currentStatus = "approved" as keyof typeof STATUS_MAP;
   const { label: statusLabel, color: statusColor } = STATUS_MAP[currentStatus];
 
   const rows = [
