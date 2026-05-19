@@ -108,7 +108,7 @@ function AdditionalInfoSection({ form, setField }: FormProps) {
 function ConsentSection({ form, setField }: FormProps) {
   return (
     <div className="bg-white px-5 py-6 flex flex-col gap-5">
-      <div className="flex flex-col gap-2">
+      <div className="flex flex-col gap-1">
         <SectionTitle>안내 및 동의</SectionTitle>
         <p className="text-[13px] font-normal text-[#777777] leading-[1.4]">필수 항목을 확인하고 동의해 주세요.</p>
       </div>
