@@ -22,7 +22,7 @@ const STATUS_MAP = {
   rejected: { label: "거절",     color: "#FA4553" },
 } as const;
 
-const CARD_HEIGHT = 460;
+const CARD_HEIGHT = 520;
 
 export default function MVInquiryPage() {
   const [, navigate] = useLocation();
