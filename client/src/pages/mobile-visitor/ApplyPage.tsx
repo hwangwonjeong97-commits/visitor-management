@@ -113,8 +113,8 @@ function ConsentSection({ form, setField }: FormProps) {
         <p className="text-[13px] font-normal text-[#777777] leading-[1.4]">필수 항목을 확인하고 동의해 주세요.</p>
       </div>
       <div className="divide-y divide-[#EDEDED]">
-        <ConsentCheckItem label="출입 및 보안 안내에 동의합니다" required checked={form.consentSecurity} onChange={(v) => setField("consentSecurity", v)} onViewDetail={() => {}} />
-        <ConsentCheckItem label="개인정보 수집 및 보관에 동의합니다" required checked={form.consentPrivacy} onChange={(v) => setField("consentPrivacy", v)} onViewDetail={() => {}} />
+        <ConsentCheckItem label="출입 및 보안 안내 동의" required checked={form.consentSecurity} onChange={(v) => setField("consentSecurity", v)} onViewDetail={() => {}} />
+        <ConsentCheckItem label="개인정보 수집 및 보관 안내 동의" required checked={form.consentPrivacy} onChange={(v) => setField("consentPrivacy", v)} onViewDetail={() => {}} />
       </div>
     </div>
   );
