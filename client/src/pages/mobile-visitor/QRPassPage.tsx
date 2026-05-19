@@ -1,52 +1,46 @@
 import { useLocation } from "wouter";
-import { X } from "lucide-react";
+import { ScreenHeader } from "@/components/visitor/ScreenHeader";
 import { QRDisplayCard } from "@/components/visitor/QRDisplayCard";
+import { useVisitorForm } from "@/contexts/VisitorFormContext";
 
 export default function MVQRPassPage() {
   const [, navigate] = useLocation();
+  const { form } = useVisitorForm();
 
   return (
-    <div className="min-h-full flex flex-col relative bg-[#14171F]">
+    <div className="min-h-full flex flex-col bg-[#F5F6FA]">
+      <ScreenHeader title="QR 패스" onBack={() => navigate("/visitor/inquiry")} />
 
-      {/* 닫기 버튼 */}
-      <button
-        onClick={() => navigate("/visitor")}
-        className="absolute top-4 right-4 z-20 w-9 h-9 rounded-full bg-white/10 flex items-center justify-center active:bg-white/20 transition-colors"
-      >
-        <X className="w-5 h-5 text-white" />
-      </button>
+      <div className="flex-1 px-5 pt-8 pb-5">
+        <div
+          className="bg-white rounded-2xl flex flex-col items-center px-6 pt-6 pb-6"
+          style={{ boxShadow: "0 2px 8px rgba(0,0,0,0.08)", minHeight: 460 }}
+        >
+          {/* 제목 / 서브문구 */}
+          <div className="flex flex-col items-center gap-2 text-center">
+            <p className="text-[22px] font-bold text-[#222222] leading-[1.4]">방문 QR 패스</p>
+            <p className="text-[14px] text-[#999999] leading-[1.4]">현장 패드에서 아래 QR 코드를 인식해 주세요.</p>
+          </div>
 
-      {/* 상단 dim 여백 */}
-      <div className="flex-1" style={{ minHeight: 80 }} />
+          {/* QR 카드 */}
+          <QRDisplayCard
+            name={form.visitorName || "홍길동"}
+            company={form.company || "(주)방문회사"}
+            validUntil="2026년 5월 20일 18:00까지"
+            size="sm"
+            className="mt-6"
+          />
 
-      {/* 흰 카드 (하단 팝업 스타일) */}
-      <div className="bg-white rounded-t-[32px] px-6 pt-8 pb-10 flex flex-col items-center gap-5">
-
-        {/* 핸들 바 */}
-        <div className="w-10 h-1 rounded-full bg-[#E0E0E0] -mt-1 mb-1" />
-
-        {/* 타이틀 */}
-        <div className="text-center">
-          <h2 className="text-[22px] font-normal text-[#222222] leading-[1.4]">
-            <span className="font-bold">방문 QR 패스</span>가 발급되었습니다.
-          </h2>
-          <p className="text-[13px] text-[#999999] mt-1 leading-[1.4]">
-            현장 패드에서 아래 QR 코드를 인식해 주세요.
-          </p>
+          {/* 신청 정보 보기 */}
+          <div className="mt-auto w-full">
+            <button
+              onClick={() => navigate("/visitor/inquiry")}
+              className="w-full h-12 rounded-[8px] bg-white border border-[#e1e1e1] flex items-center justify-center gap-[4px] active:opacity-70 transition-opacity"
+            >
+              <span className="text-[15px] font-normal text-[#333333] tracking-[-0.3px] leading-[1.4]">신청 정보 보기</span>
+            </button>
+          </div>
         </div>
-
-        {/* 승인 완료 뱃지 */}
-        <span className="border border-[#27C36F] flex items-center justify-center h-6 px-3 rounded-full text-[12px] font-medium text-[#27C36F] tracking-[-0.24px]">
-          승인 완료
-        </span>
-
-        {/* QR 코드 */}
-        <QRDisplayCard
-          name="홍길동"
-          company="(주)방문회사"
-          validUntil="2026년 5월 20일 18:00까지"
-          size="md"
-        />
       </div>
     </div>
   );
