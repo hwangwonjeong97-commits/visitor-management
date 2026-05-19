@@ -157,7 +157,7 @@ export default function MVInquiryPage() {
       </div>
 
       {/* 하단 텍스트 버튼 */}
-      <div className="sticky bottom-0 z-10 bg-white border-t border-[#EDEDED] px-5 py-4 flex items-center justify-center">
+      <div className="sticky bottom-0 z-10 px-5 py-4 flex items-center justify-center">
         <button
           onClick={() => navigate("/visitor")}
           className="text-[13px] font-normal text-[#777777] underline leading-[1.4] tracking-[-0.26px] active:opacity-60 transition-opacity"
