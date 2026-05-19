@@ -46,7 +46,7 @@ export default function MVApplyPage() {
       )}
 
       {/* 안내 텍스트 */}
-      <div className="bg-white px-5 pt-4 pb-0">
+      <div className="bg-white px-5 pt-6 pb-0">
         <p className="text-[22px] font-normal text-[#333333] leading-[1.4] tracking-[-0.44px]">
           <span className="font-bold">방문 정보</span>를 확인하고,<br />
           <span className="font-bold">필요한 항목</span>을 입력해주세요.
