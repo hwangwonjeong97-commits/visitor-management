@@ -31,8 +31,8 @@ const MOBILE_VISITOR_SCREENS = [
   { id: "MV-02", name: "방문신청 입력",       route: "/visitor/apply",  component: <MVApplyPage /> },
   { id: "MV-03", name: "신청완료 / 승인 대기", route: "/visitor/waiting", component: <MVWaitingPage /> },
   { id: "MV-04", name: "QR 패스",            route: "/visitor/qr-pass", component: <MVQRPassPage /> },
-  { id: "MV-05", name: "방문증 수령 안내",     route: "/visitor/arrival",  component: <MVArrivalPage /> },
-  { id: "MV-06", name: "신청 조회",            route: "/visitor/inquiry",  component: <MVInquiryPage /> },
+  { id: "MV-05", name: "신청 조회_등록",        route: "/visitor/inquiry",  component: <MVInquiryPage /> },
+  { id: "MV-06", name: "신청 조회_미등록",      route: "/visitor/arrival",  component: <MVArrivalPage /> },
 ];
 
 const MOBILE_EMPLOYEE_SCREENS = [
