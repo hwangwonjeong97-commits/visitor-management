@@ -1,9 +1,11 @@
+import Lottie from "lottie-react";
 import { useLocation } from "wouter";
 import { Pencil } from "lucide-react";
 import { ScreenHeader } from "@/components/visitor/ScreenHeader";
 import { InfoCard } from "@/components/visitor/InfoCard";
 import { PrimaryButton } from "@/components/visitor/PrimaryButton";
 import { SecondaryButton } from "@/components/visitor/SecondaryButton";
+import waitingAnimation from "@/assets/waiting-animation.json";
 
 export default function MVWaitingPage() {
   const [, navigate] = useLocation();
@@ -23,7 +25,7 @@ export default function MVWaitingPage() {
 
       {/* 상태 영역 */}
       <div className="bg-white px-5 pt-10 pb-0 flex flex-col items-center text-center">
-        <img src="/idcard_time.png" alt="신청 대기" className="w-[72px] h-[72px] object-contain mb-4" />
+        <Lottie animationData={waitingAnimation} loop className="w-[120px] h-[120px] mb-0" />
         <h2 className="text-[22px] font-normal text-[#222222] leading-[1.4] mb-2">
           <span className="font-bold">방문 신청이 접수</span>되었습니다.
         </h2>
