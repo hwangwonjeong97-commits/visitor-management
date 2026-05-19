@@ -1,12 +1,11 @@
 import { useLocation } from "wouter";
-import { PenLine, CheckCircle2, ClipboardCheck, MapPin } from "lucide-react";
 import { useVisitorForm } from "@/contexts/VisitorFormContext";
 
 const STEPS = [
-  { icon: <PenLine className="w-5 h-5" />,      label: "방문신청" },
-  { icon: <CheckCircle2 className="w-5 h-5" />, label: "내부승인" },
-  { icon: <ClipboardCheck className="w-5 h-5" />, label: "방문수속" },
-  { icon: <MapPin className="w-5 h-5" />,       label: "방문완료" },
+  { icon: <img src="/ic_edit.svg"          alt="방문신청" className="w-5 h-5" />, label: "방문신청" },
+  { icon: <img src="/ic_check_circle.svg"  alt="내부승인" className="w-5 h-5" />, label: "내부승인" },
+  { icon: <img src="/ic_document_check.svg" alt="방문수속" className="w-5 h-5" />, label: "방문수속" },
+  { icon: <img src="/ic_location.svg"      alt="방문완료" className="w-5 h-5" />, label: "방문완료" },
 ];
 
 export default function MVMainPage() {
