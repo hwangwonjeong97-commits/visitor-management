@@ -22,7 +22,7 @@ export default function MVMainPage({ isInvited = true }: { isInvited?: boolean }
 
         {/* 타이틀 */}
         <div className="flex flex-col items-center gap-1">
-          <h1 className="text-[24px] font-bold text-[#222222] text-center">더존을지타워 방문자 예약 시스템</h1>
+          <h1 className="text-[28px] font-bold text-[#222222] text-center leading-[1.3]">더존을지타워 방문자 예약 시스템</h1>
         </div>
       </div>
 

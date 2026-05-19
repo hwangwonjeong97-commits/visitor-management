@@ -22,32 +22,32 @@ const TABS: { id: TabId; label: string }[] = [
 ];
 
 const MOBILE_VISITOR_PRE_SCREENS = [
-  { id: "MV-01", name: "메인화면",              component: <MVMainPage isInvited={true} /> },
-  { id: "MV-02", name: "방문신청 입력",          component: <MVApplyPage isInvited={true} /> },
-  { id: "MV-03", name: "신청완료 / 승인 대기",   component: <MVWaitingPage isInvited={true} /> },
-  { id: "MV-04", name: "신청 조회_등록",         component: <MVInquiryPage /> },
-  { id: "MV-05", name: "QR 패스",               component: <MVQRPassPage /> },
+  { id: "01", name: "메인화면",              component: <MVMainPage isInvited={true} /> },
+  { id: "02", name: "방문신청 입력",          component: <MVApplyPage isInvited={true} /> },
+  { id: "03", name: "신청완료 / 승인 대기",   component: <MVWaitingPage isInvited={true} /> },
+  { id: "04", name: "신청 조회_등록",         component: <MVInquiryPage /> },
+  { id: "05", name: "QR 패스",               component: <MVQRPassPage /> },
 ];
 
 const MOBILE_VISITOR_NEW_SCREENS = [
-  { id: "MV-01", name: "메인화면",              component: <MVMainPage isInvited={false} /> },
-  { id: "MV-02", name: "방문신청 입력",          component: <MVApplyPage isInvited={false} /> },
-  { id: "MV-03", name: "신청완료 / 승인 대기",   component: <MVWaitingPage isInvited={false} /> },
-  { id: "MV-06", name: "신청 조회_미등록",       component: <MVArrivalPage /> },
+  { id: "01", name: "메인화면",              component: <MVMainPage isInvited={false} /> },
+  { id: "02", name: "방문신청 입력",          component: <MVApplyPage isInvited={false} /> },
+  { id: "03", name: "신청완료 / 승인 대기",   component: <MVWaitingPage isInvited={false} /> },
+  { id: "04", name: "신청 조회_미등록",       component: <MVArrivalPage /> },
 ];
 
 const MOBILE_EMPLOYEE_SCREENS = [
-  { id: "ME-01", name: "방문초대 알림톡 발송", component: <MEInvitePage /> },
-  { id: "ME-02", name: "방문신청 승인 처리",   component: <MEApprovePage /> },
-  { id: "ME-03", name: "방문객 도착 알림",     component: <MEArrivalNoticePage /> },
+  { id: "01", name: "방문초대 알림톡 발송", component: <MEInvitePage /> },
+  { id: "02", name: "방문신청 승인 처리",   component: <MEApprovePage /> },
+  { id: "03", name: "방문객 도착 알림",     component: <MEArrivalNoticePage /> },
 ];
 
 const PAD_BASE_URL = "https://visitor-access-system-pad.vercel.app";
 const PAD_VISITOR_SCREENS = [
-  { id: "PV-01", name: "메인화면",             component: <iframe src={PAD_BASE_URL} className="w-full h-full border-none" title="PV-01" /> },
-  { id: "PV-02", name: "QR 인식 화면",         component: <iframe src={PAD_BASE_URL} className="w-full h-full border-none" title="PV-02" /> },
-  { id: "PV-03", name: "입장 확인 화면",        component: <iframe src={PAD_BASE_URL} className="w-full h-full border-none" title="PV-03" /> },
-  { id: "PV-04", name: "미등록 방문객 QR 안내", component: <iframe src={PAD_BASE_URL} className="w-full h-full border-none" title="PV-04" /> },
+  { id: "01", name: "메인화면",             component: <iframe src={PAD_BASE_URL} className="w-full h-full border-none" title="PV-01" /> },
+  { id: "02", name: "QR 인식 화면",         component: <iframe src={PAD_BASE_URL} className="w-full h-full border-none" title="PV-02" /> },
+  { id: "03", name: "입장 확인 화면",        component: <iframe src={PAD_BASE_URL} className="w-full h-full border-none" title="PV-03" /> },
+  { id: "04", name: "미등록 방문객 QR 안내", component: <iframe src={PAD_BASE_URL} className="w-full h-full border-none" title="PV-04" /> },
 ];
 
 export default function Showcase() {
@@ -166,7 +166,7 @@ function ShowcaseSection({ title, description, screens, openUrl, isTablet = fals
               key={screen.id}
               screenId={screen.id}
               label={screen.name}
-              transparentStatusBar={screen.id === "MV-01"}
+              transparentStatusBar={screen.id === "01"}
             >
               {screen.component}
             </MobileDeviceFrame>
