@@ -14,21 +14,26 @@ import MEApprovePage from "./mobile-employee/ApprovePage";
 import MEArrivalNoticePage from "./mobile-employee/ArrivalNoticePage";
 
 
-type TabId = "mobile-visitor" | "mobile-employee" | "pad-visitor";
+type TabId = "mobile-visitor-pre" | "mobile-visitor-new" | "mobile-employee" | "pad-visitor";
 
 const TABS: { id: TabId; label: string }[] = [
-  { id: "mobile-visitor", label: "모바일 — 방문객" },
-  { id: "mobile-employee", label: "모바일 — 직원" },
-  { id: "pad-visitor", label: "패드 — 방문객" },
+  { id: "mobile-visitor-pre", label: "모바일-방문객(사전등록 O)" },
+  { id: "mobile-visitor-new", label: "모바일-방문객(사전등록 X)" },
+  { id: "mobile-employee",    label: "모바일 — 직원" },
+  { id: "pad-visitor",        label: "패드 — 방문객" },
 ];
 
-const MOBILE_VISITOR_SCREENS = [
-  { id: "MV-01", name: "메인화면",           route: "/visitor",        component: <MVMainPage /> },
-  { id: "MV-02", name: "방문신청 입력",       route: "/visitor/apply",  component: <MVApplyPage /> },
-  { id: "MV-03", name: "신청완료 / 승인 대기", route: "/visitor/waiting", component: <MVWaitingPage /> },
-  { id: "MV-04", name: "신청 조회_등록",        route: "/visitor/inquiry",  component: <MVInquiryPage /> },
-  { id: "MV-05", name: "QR 패스",            route: "/visitor/qr-pass", component: <MVQRPassPage /> },
-  { id: "MV-06", name: "신청 조회_미등록",      route: "/visitor/arrival",  component: <MVArrivalPage /> },
+const MOBILE_VISITOR_PRE_SCREENS = [
+  { id: "MV-01", name: "메인화면",       route: "/visitor",         component: <MVMainPage /> },
+  { id: "MV-04", name: "신청 조회_등록", route: "/visitor/inquiry",  component: <MVInquiryPage /> },
+  { id: "MV-05", name: "QR 패스",       route: "/visitor/qr-pass", component: <MVQRPassPage /> },
+];
+
+const MOBILE_VISITOR_NEW_SCREENS = [
+  { id: "MV-01", name: "메인화면",              route: "/visitor",         component: <MVMainPage /> },
+  { id: "MV-02", name: "방문신청 입력",          route: "/visitor/apply",   component: <MVApplyPage /> },
+  { id: "MV-03", name: "신청완료 / 승인 대기",   route: "/visitor/waiting", component: <MVWaitingPage /> },
+  { id: "MV-06", name: "신청 조회_미등록",       route: "/visitor/arrival", component: <MVArrivalPage /> },
 ];
 
 const MOBILE_EMPLOYEE_SCREENS = [
@@ -47,7 +52,7 @@ const PAD_VISITOR_SCREENS = [
 ];
 
 export default function Showcase() {
-  const [activeTab, setActiveTab] = useState<TabId>("mobile-visitor");
+  const [activeTab, setActiveTab] = useState<TabId>("mobile-visitor-pre");
 
   return (
     <div className="min-h-screen bg-[#F0F2F7]">
@@ -87,11 +92,19 @@ export default function Showcase() {
 
       {/* 컨텐츠 */}
       <main className="max-w-[1600px] mx-auto px-8 py-10">
-        {activeTab === "mobile-visitor" && (
+        {activeTab === "mobile-visitor-pre" && (
           <ShowcaseSection
-            title="모바일 — 방문객"
-            description="방문객이 모바일에서 방문을 신청하고 QR 패스를 확인하는 화면"
-            screens={MOBILE_VISITOR_SCREENS}
+            title="모바일-방문객(사전등록 O)"
+            description="사전에 방문 신청을 완료한 방문객이 QR 패스를 확인하는 화면"
+            screens={MOBILE_VISITOR_PRE_SCREENS}
+            frameType="mobile"
+          />
+        )}
+        {activeTab === "mobile-visitor-new" && (
+          <ShowcaseSection
+            title="모바일-방문객(사전등록 X)"
+            description="현장에서 방문 신청을 처음 하는 방문객의 신청 및 안내 화면"
+            screens={MOBILE_VISITOR_NEW_SCREENS}
             frameType="mobile"
           />
         )}
