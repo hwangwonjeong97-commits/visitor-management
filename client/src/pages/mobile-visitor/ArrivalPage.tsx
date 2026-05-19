@@ -1,6 +1,7 @@
 import { useLocation } from "wouter";
 import { Check, CheckCircle2, Bell, MapPin } from "lucide-react";
-import { PrimaryButton } from "@/components/visitor/PrimaryButton";
+import { ScreenHeader } from "@/components/visitor/ScreenHeader";
+import { SecondaryButton } from "@/components/visitor/SecondaryButton";
 import { AlertBanner } from "@/components/visitor/AlertBanner";
 
 export default function MVArrivalPage() {
@@ -8,8 +9,18 @@ export default function MVArrivalPage() {
 
   return (
     <div className="min-h-full flex flex-col bg-[#F5F6FA]">
+      <ScreenHeader
+        title="신청 조회"
+        onBack={() => window.history.back()}
+        rightElement={
+          <span className="border border-[#27C36F] flex items-center justify-center h-6 px-2 rounded-full text-[12px] font-medium text-[#27C36F] tracking-[-0.24px] whitespace-nowrap leading-[1.4]">
+            승인
+          </span>
+        }
+      />
+
       {/* 메인 상태 영역 */}
-      <div className="bg-white px-5 pt-16 pb-10 flex flex-col items-center text-center">
+      <div className="bg-white px-5 pt-8 pb-10 flex flex-col items-center text-center">
         <div className="flex flex-col items-center gap-[4px]">
           <div className="w-12 h-12 rounded-full bg-[#27C36F] flex items-center justify-center">
             <Check className="w-6 h-6 text-white" strokeWidth={2.5} />
@@ -75,9 +86,9 @@ export default function MVArrivalPage() {
 
       {/* 하단 버튼 */}
       <div className="sticky bottom-0 z-10 bg-white border-t border-[#EDEDED] px-5 py-4">
-        <PrimaryButton fullWidth onClick={() => navigate("/visitor")}>
-          홈으로
-        </PrimaryButton>
+        <SecondaryButton fullWidth size="md" variant="tertiary" onClick={() => navigate("/visitor")}>
+          방문신청 취소
+        </SecondaryButton>
       </div>
     </div>
   );
