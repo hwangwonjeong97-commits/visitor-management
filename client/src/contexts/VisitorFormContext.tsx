@@ -22,7 +22,7 @@ const INITIAL: VisitorFormData = {
   visitEnd: "2026-05-20T18:00",
   hostName: "박지훈",
   hostPhone: "010-1234-5678",
-  location: "더존비즈온 본사 15층 회의실 A",
+  location: "더존을지타워 본사 15층 회의실 A",
   purpose: "업무 미팅",
   visitorName: "",
   visitorPhone: "",

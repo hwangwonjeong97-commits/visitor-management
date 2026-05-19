@@ -47,7 +47,7 @@ export default function MVWaitingPage() {
           rows={[
             { label: "방문 일시", value: "2026년 5월 20일 10:00 ~ 18:00" },
             { label: "담당자",   value: "박지훈 (010-1234-5678)" },
-            { label: "방문 장소", value: "더존비즈온 본사 15층 회의실 A" },
+            { label: "방문 장소", value: "더존을지타워 본사 15층 회의실 A" },
             { label: "방문 목적", value: "업무 미팅" },
           ]}
         />

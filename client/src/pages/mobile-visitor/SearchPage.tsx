@@ -19,7 +19,7 @@ export default function MVSearchPage() {
           <h1 className="text-[24px] font-bold text-[#222222] leading-[34px]">
             방문 신청 조회
           </h1>
-          <p className="text-[14px] text-[#777777] mt-1">더존비즈온</p>
+          <p className="text-[14px] text-[#777777] mt-1">더존을지타워</p>
         </div>
         {/* 장식 원형 */}
         <div className="absolute -right-6 -top-6 w-36 h-36 rounded-full bg-[#105AFF]/10" />

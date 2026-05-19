@@ -28,7 +28,7 @@ import {
 } from "lucide-react";
 
 /**
- * 더존비즈온 내방고객 관리 시스템 디지털화 벤치마크 리서치 보고서
+ * 더존을지타워 내방고객 관리 시스템 디지털화 벤치마크 리서치 보고서
  * 
  * 디자인 철학: Professional Minimalism with Data-Driven Elegance
  * - 신뢰감 있는 블루/네이비 계열 (Primary #105AFF)
@@ -79,7 +79,7 @@ export default function Report() {
         <div className="container py-4">
           <div className="flex items-center justify-between">
             <div>
-              <h1 className="text-2xl font-bold text-blue-700">더존비즈온</h1>
+              <h1 className="text-2xl font-bold text-blue-700">더존을지타워</h1>
               <p className="text-sm text-gray-600">내방고객 관리 시스템 벤치마크 리서치</p>
             </div>
             <Button variant="outline" size="sm">
@@ -642,7 +642,7 @@ export default function Report() {
             <div>
               <h4 className="font-bold text-gray-900 mb-3">리서치 개요</h4>
               <p className="text-sm text-gray-600">
-                더존비즈온의 내방고객 관리 시스템 디지털화를 위한 종합 벤치마크 리서치
+                더존을지타워의 내방고객 관리 시스템 디지털화를 위한 종합 벤치마크 리서치
               </p>
             </div>
             <div>
@@ -661,7 +661,7 @@ export default function Report() {
             </div>
           </div>
           <div className="border-t border-gray-200 pt-6 text-center text-sm text-gray-600">
-            <p>더존비즈온 내방고객 관리 시스템 벤치마크 리서치 | 2026</p>
+            <p>더존을지타워 내방고객 관리 시스템 벤치마크 리서치 | 2026</p>
           </div>
         </div>
       </footer>

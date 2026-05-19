@@ -17,12 +17,12 @@ export default function MVMainPage() {
 
       {/* ── 히어로 헤더 (가운데 정렬) ── */}
       <div className="px-5 pt-[200px] pb-10 flex flex-col items-center gap-5">
-        {/* 더존비즈온 로고 */}
-        <img src="/douzone-logo.svg" alt="더존비즈온" className="h-[20px] w-auto" />
+        {/* 더존을지타워 로고 */}
+        <img src="/douzone-logo.svg" alt="더존을지타워" className="h-[20px] w-auto" />
 
         {/* 타이틀 */}
         <div className="flex flex-col items-center gap-1">
-          <h1 className="text-[24px] font-bold text-[#222222] text-center">더존 을지타워 방문자 예약 시스템</h1>
+          <h1 className="text-[24px] font-bold text-[#222222] text-center">더존을지타워 방문자 예약 시스템</h1>
         </div>
       </div>
 

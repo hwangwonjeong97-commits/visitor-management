@@ -37,29 +37,29 @@ const EVENT_OPTIONS = [
 const EVENT_INFO: Record<string, { label: string; value: string }[]> = {
   "one-ai": [
     { label: "방문 일시", value: "2026.05.20 10:00 ~ 18:00" },
-    { label: "방문 장소", value: "더존비즈온 본사 15층 컨퍼런스홀" },
+    { label: "방문 장소", value: "더존을지타워 본사 15층 컨퍼런스홀" },
     { label: "담당자", value: "행사 운영팀" },
     { label: "연락처", value: "02-0000-0000" },
   ],
   "solution": [
     { label: "방문 일시", value: "2026.06.10 14:00 ~ 17:00" },
-    { label: "방문 장소", value: "더존비즈온 본사 12층 세미나실" },
+    { label: "방문 장소", value: "더존을지타워 본사 12층 세미나실" },
     { label: "담당자", value: "솔루션 사업팀" },
     { label: "연락처", value: "02-0000-0001" },
   ],
   "partner": [
     { label: "방문 일시", value: "2026.06.25 09:00 ~ 13:00" },
-    { label: "방문 장소", value: "더존비즈온 본사 5층 교육실" },
+    { label: "방문 장소", value: "더존을지타워 본사 5층 교육실" },
     { label: "담당자", value: "파트너 관리팀" },
     { label: "연락처", value: "02-0000-0002" },
   ],
 };
 
 const MOCK_HOSTS = [
-  { id: "1", name: "박지훈", dept: "영업팀",    phone: "010-1234-5678", location: "더존비즈온 본사 15층 회의실 A" },
-  { id: "2", name: "박지훈", dept: "제품기획팀", phone: "010-9876-5432", location: "더존비즈온 본사 8층 회의실 B" },
-  { id: "3", name: "김민준", dept: "인사팀",    phone: "010-1111-2222", location: "더존비즈온 본사 3층 면접실" },
-  { id: "4", name: "이수연", dept: "마케팅팀",  phone: "010-3333-4444", location: "더존비즈온 본사 9층 마케팅룸" },
+  { id: "1", name: "박지훈", dept: "영업팀",    phone: "010-1234-5678", location: "더존을지타워 본사 15층 회의실 A" },
+  { id: "2", name: "박지훈", dept: "제품기획팀", phone: "010-9876-5432", location: "더존을지타워 본사 8층 회의실 B" },
+  { id: "3", name: "김민준", dept: "인사팀",    phone: "010-1111-2222", location: "더존을지타워 본사 3층 면접실" },
+  { id: "4", name: "이수연", dept: "마케팅팀",  phone: "010-3333-4444", location: "더존을지타워 본사 9층 마케팅룸" },
 ];
 
 type Host = (typeof MOCK_HOSTS)[0];
@@ -311,7 +311,7 @@ export default function MVApplyPage({ isInvited = true }: { isInvited?: boolean 
           : "6월 3일  09:00 ~ 18:00",
     },
     { label: "담당자", value: `${form.hostName || "박지훈"} (${form.hostPhone || "010-1234-5678"})` },
-    { label: "방문 장소", value: form.location || "더존비즈온 본사 15층 회의실 A" },
+    { label: "방문 장소", value: form.location || "더존을지타워 본사 15층 회의실 A" },
     { label: "방문 목적", value: form.purpose || "업무 미팅" },
   ];
 
