@@ -8,7 +8,7 @@ const STEPS = [
   { icon: <img src="/ic_location.svg"      alt="방문완료" className="w-5 h-5" />, label: "방문완료" },
 ];
 
-export default function MVMainPage() {
+export default function MVMainPage({ isInvited = true }: { isInvited?: boolean }) {
   const [, navigate] = useLocation();
   const { resetForm } = useVisitorForm();
 
@@ -31,7 +31,7 @@ export default function MVMainPage() {
 
         {/* 방문 신청하기 */}
         <button
-          onClick={() => { resetForm(); navigate("/visitor/apply"); }}
+          onClick={() => { resetForm(); navigate(`/visitor/apply?invited=${isInvited}`); }}
           className="flex-1 h-[84px] bg-[#105AFF] rounded-2xl px-4 flex flex-col items-center justify-center gap-2 active:bg-[#0943C6] transition-colors"
         >
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -43,7 +43,7 @@ export default function MVMainPage() {
 
         {/* 신청 조회 */}
         <button
-          onClick={() => navigate("/visitor/inquiry")}
+          onClick={() => navigate(isInvited ? "/visitor/inquiry" : "/visitor/arrival")}
           className="flex-1 h-[84px] bg-[#F5F6FA] rounded-2xl px-4 flex flex-col items-center justify-center gap-2 active:bg-[#EDEDED] transition-colors"
         >
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">

@@ -32,7 +32,7 @@ const MOBILE_VISITOR_PRE_SCREENS = [
 ];
 
 const MOBILE_VISITOR_NEW_SCREENS = [
-  { id: "MV-01", name: "메인화면",              route: "/visitor",                        component: <MVMainPage /> },
+  { id: "MV-01", name: "메인화면",              route: "/visitor-new",                    component: <MVMainPage isInvited={false} /> },
   { id: "MV-02", name: "방문신청 입력",          route: "/visitor/apply?invited=false",    component: <MVApplyPage isInvited={false} /> },
   { id: "MV-03", name: "신청완료 / 승인 대기",   route: "/visitor/waiting?invited=false",  component: <MVWaitingPage isInvited={false} /> },
   { id: "MV-06", name: "신청 조회_미등록",       route: "/visitor/arrival",                component: <MVArrivalPage /> },

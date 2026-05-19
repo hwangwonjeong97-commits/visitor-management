@@ -40,7 +40,8 @@ function Router() {
       <Route path="/report" component={Report} />
 
       {/* 모바일 — 방문객 */}
-      <Route path="/visitor">{() => <MobilePageLayout transparentStatusBar><MVMainPage /></MobilePageLayout>}</Route>
+      <Route path="/visitor">{() => <MobilePageLayout transparentStatusBar><MVMainPage isInvited={true} /></MobilePageLayout>}</Route>
+      <Route path="/visitor-new">{() => <MobilePageLayout transparentStatusBar><MVMainPage isInvited={false} /></MobilePageLayout>}</Route>
       <Route path="/visitor/apply">{() => <MobilePageLayout><MVApplyPage /></MobilePageLayout>}</Route>
       <Route path="/visitor/waiting">{() => <MobilePageLayout><MVWaitingPage /></MobilePageLayout>}</Route>
       <Route path="/visitor/qr-pass">{() => <MobilePageLayout><MVQRPassPage /></MobilePageLayout>}</Route>
