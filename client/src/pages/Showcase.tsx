@@ -157,24 +157,15 @@ function ShowcaseSection({ title, description, screens, frameType, landscape = f
               {screen.component}
             </MobileDeviceFrame>
           ) : (
-            <a
+            <TabletDeviceFrame
               key={screen.id}
-              href={screen.route}
-              target="_blank"
-              rel="noreferrer"
-              className="block relative group"
-              style={{ textDecoration: "none" }}
+              screenId={screen.id}
+              label={screen.name}
+              routePath={screen.route}
+              landscape={landscape}
             >
-              <TabletDeviceFrame
-                screenId={screen.id}
-                label={screen.name}
-                landscape={landscape}
-              >
-                {screen.component}
-              </TabletDeviceFrame>
-              {/* 클릭 캡처 오버레이 */}
-              <div className="absolute inset-0 z-50 cursor-pointer" />
-            </a>
+              {screen.component}
+            </TabletDeviceFrame>
           )
         )}
       </div>
