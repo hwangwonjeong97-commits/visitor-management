@@ -23,11 +23,7 @@ export default function MVWaitingPage() {
 
       {/* 상태 영역 */}
       <div className="bg-white px-5 pt-10 pb-0 flex flex-col items-center text-center">
-        <div className="w-14 h-14 rounded-[20px] bg-[#E4EEFA] flex items-center justify-center mb-5">
-          <svg width="32" height="32" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M20.0007 3.33337C29.2054 3.33337 36.6673 10.7953 36.6673 20C36.6673 29.2048 29.2054 36.6667 20.0007 36.6667C10.7959 36.6667 3.33398 29.2048 3.33398 20C3.33398 10.7953 10.7959 3.33337 20.0007 3.33337ZM20.0007 12.1159C19.3103 12.1159 18.7507 12.6756 18.7507 13.3659V20.0017C18.7509 20.3329 18.8826 20.6512 19.1169 20.8855L24.9502 26.7188C25.4383 27.2064 26.2297 27.2064 26.7178 26.7188C27.2059 26.2306 27.2059 25.4377 26.7178 24.9496L21.2507 19.4825V13.3659C21.2507 12.6756 20.691 12.1159 20.0007 12.1159Z" fill="#105AFF"/>
-          </svg>
-        </div>
+        <img src="/idcard_time.png" alt="신청 대기" className="w-12 h-12 object-contain mb-5" />
         <h2 className="text-[22px] font-normal text-[#222222] leading-[1.4] mb-2">
           <span className="font-bold">방문 신청이 접수</span>되었습니다.
         </h2>
