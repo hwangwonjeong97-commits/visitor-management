@@ -45,7 +45,7 @@ export default function MVInquiryPage() {
     <div className="min-h-full flex flex-col bg-[#F5F6FA]">
       <ScreenHeader title="신청 조회" onBack={() => window.history.back()} />
 
-      <div className="flex-1 px-5 py-5 flex flex-col gap-4">
+      <div className="flex-1 px-5 pt-8 pb-5 flex flex-col gap-4">
 
         {/* ── Flip Card ── */}
         <div style={{ perspective: "1200px" }}>
