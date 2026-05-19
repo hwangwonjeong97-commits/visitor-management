@@ -61,7 +61,7 @@ export default function MVInquiryPage() {
 
           {/* 정보 rows */}
           {rows.map((row, i) => (
-            <div key={i} className="px-5 py-[10px] flex gap-4">
+            <div key={i} className="px-5 py-[10px] flex gap-4 items-center">
               <span className="text-[14px] text-[#777777] w-[60px] flex-shrink-0 leading-[1.4]">
                 {row.label}
               </span>
@@ -72,7 +72,7 @@ export default function MVInquiryPage() {
           ))}
 
           {/* 신청 상태 */}
-          <div className="px-5 py-[10px] flex gap-4">
+          <div className="px-5 py-[10px] flex gap-4 items-center">
             <span className="text-[14px] text-[#777777] w-[60px] flex-shrink-0 leading-[1.4]">
               신청상태
             </span>
