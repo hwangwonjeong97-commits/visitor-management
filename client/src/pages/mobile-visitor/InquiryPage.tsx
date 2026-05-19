@@ -2,7 +2,6 @@ import { useState } from "react";
 import { useLocation } from "wouter";
 import { QrCode } from "lucide-react";
 import { ScreenHeader } from "@/components/visitor/ScreenHeader";
-import { SecondaryButton } from "@/components/visitor/SecondaryButton";
 import { QRDisplayCard } from "@/components/visitor/QRDisplayCard";
 import { useVisitorForm } from "@/contexts/VisitorFormContext";
 
@@ -157,11 +156,14 @@ export default function MVInquiryPage() {
 
       </div>
 
-      {/* 하단 버튼 바 */}
-      <div className="sticky bottom-0 z-10 bg-white border-t border-[#EDEDED] px-5 py-4">
-        <SecondaryButton fullWidth size="md" variant="tertiary" onClick={() => navigate("/visitor")}>
+      {/* 하단 텍스트 버튼 */}
+      <div className="sticky bottom-0 z-10 bg-white border-t border-[#EDEDED] px-5 py-4 flex items-center justify-center">
+        <button
+          onClick={() => navigate("/visitor")}
+          className="text-[13px] font-normal text-[#777777] underline leading-[1.4] tracking-[-0.26px] active:opacity-60 transition-opacity"
+        >
           신청취소
-        </SecondaryButton>
+        </button>
       </div>
     </div>
   );
