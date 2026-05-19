@@ -23,7 +23,7 @@ export default function MVArrivalPage() {
       {/* 메인 상태 영역 */}
       <div className="bg-white px-5 pt-8 pb-10 flex flex-col items-center text-center">
         <div className="flex flex-col items-center gap-[4px]">
-          <Lottie animationData={successAnimation} loop={false} className="w-[80px] h-[80px]" />
+          <Lottie animationData={successAnimation} loop className="w-[64px] h-[64px]" />
           <div className="flex flex-col gap-[8px] items-center">
             <p className="text-[22px] text-[#333333] leading-[1.4] tracking-[-0.44px]">
               <span className="font-bold">안내데스크</span>에서<br />
