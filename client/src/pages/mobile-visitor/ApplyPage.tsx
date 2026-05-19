@@ -295,15 +295,17 @@ function NonInvitedVisitInfoSection({ form, setField }: FormProps) {
 export default function MVApplyPage({ isInvited: isInvitedProp = true }: { isInvited?: boolean }) {
   const [, navigate] = useLocation();
   const search = useSearch();
-  const isEditMode = new URLSearchParams(search).get("mode") === "edit";
+  const searchParams = new URLSearchParams(search);
+  const isEditMode = searchParams.get("mode") === "edit";
   const { form, setField, setIsInvited } = useVisitorForm();
 
-  // prop → context 동기화 (Showcase 탭 전환 시 flow 정보 유지)
-  useEffect(() => {
-    setIsInvited(isInvitedProp);
-  }, [isInvitedProp]);
+  // URL 파라미터 우선, 없으면 prop 사용
+  const urlInvited = searchParams.has("invited") ? searchParams.get("invited") !== "false" : null;
+  const isInvited = urlInvited ?? isInvitedProp;
 
-  const isInvited = isInvitedProp;
+  useEffect(() => {
+    setIsInvited(isInvited);
+  }, [isInvited]);
 
   const canSubmit =
     form.consentSecurity && form.consentPrivacy &&
