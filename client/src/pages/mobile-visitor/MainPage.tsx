@@ -33,7 +33,7 @@ export default function MVMainPage() {
         {/* 방문 신청하기 */}
         <button
           onClick={() => { resetForm(); navigate("/visitor/apply"); }}
-          className="flex-1 h-[64px] bg-[#105AFF] rounded-2xl px-4 flex flex-col items-center justify-center gap-1 active:bg-[#0943C6] transition-colors"
+          className="flex-1 h-[84px] bg-[#105AFF] rounded-2xl px-4 flex flex-col items-center justify-center gap-2 active:bg-[#0943C6] transition-colors"
         >
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M18.3682 11.8596L9.35938 20.8527C9.24791 20.9642 9.09646 21.0098 8.95117 20.9933L3.49707 21.0002C3.2227 21.0001 3.00027 20.7771 3 20.5021V15.0226C3.00005 15.0147 3.00156 15.0068 3.00488 15.0002C2.99449 14.8606 3.04118 14.7173 3.14746 14.6105L12.1006 5.63592L18.3682 11.8596Z" fill="white"/>
@@ -45,7 +45,7 @@ export default function MVMainPage() {
         {/* 신청 조회 */}
         <button
           onClick={() => navigate("/visitor/inquiry")}
-          className="flex-1 h-[64px] bg-[#F5F6FA] rounded-2xl px-4 flex flex-col items-center justify-center gap-1 active:bg-[#EDEDED] transition-colors"
+          className="flex-1 h-[84px] bg-[#F5F6FA] rounded-2xl px-4 flex flex-col items-center justify-center gap-2 active:bg-[#EDEDED] transition-colors"
         >
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M12 2C14.4853 2 16.5 4.01472 16.5 6.5C16.5 8.98528 14.4853 11 12 11C9.51472 11 7.5 8.98528 7.5 6.5C7.5 4.01472 9.51472 2 12 2Z" fill="#949DAF"/>
