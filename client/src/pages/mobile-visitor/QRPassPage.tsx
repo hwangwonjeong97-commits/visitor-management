@@ -9,7 +9,7 @@ export default function MVQRPassPage() {
 
   return (
     <div className="min-h-full flex flex-col bg-[#F5F6FA]">
-      <ScreenHeader title="QR 패스" onBack={() => navigate("/visitor/inquiry")} />
+      <ScreenHeader title="신청 조회" onBack={() => navigate("/visitor/inquiry")} />
 
       <div className="flex-1 px-5 pt-8 pb-5">
         <div
@@ -41,6 +41,15 @@ export default function MVQRPassPage() {
             </button>
           </div>
         </div>
+      </div>
+      {/* 하단 텍스트 버튼 */}
+      <div className="sticky bottom-0 z-10 px-5 py-4 flex items-center justify-center">
+        <button
+          onClick={() => navigate("/visitor")}
+          className="text-[13px] font-normal text-[#777777] underline leading-[1.4] tracking-[-0.26px] active:opacity-60 transition-opacity"
+        >
+          신청취소
+        </button>
       </div>
     </div>
   );
