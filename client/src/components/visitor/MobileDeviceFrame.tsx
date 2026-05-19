@@ -44,7 +44,7 @@ export function MobileDeviceFrame({ children, label, screenId, routePath, transp
         {/* 스크린 영역 */}
         <div
           className="relative overflow-hidden rounded-[32px] bg-[#F5F6FA] flex flex-col"
-          style={{ width: 390, height: 844 }}
+          style={{ width: 375, height: 812 }}
         >
           <div className="absolute top-0 left-0 right-0 z-20">
             <StatusBar transparent={transparentStatusBar} />
