@@ -22,8 +22,8 @@ export default function MVQRPassPage() {
 
       {/* QR 메인 */}
       <div className="bg-white px-5 py-8 flex flex-col items-center">
-        <h2 className="text-[22px] font-bold text-[#222222] leading-[1.4] mb-6 text-center">
-          방문 QR 패스가 발급되었습니다.
+        <h2 className="text-[22px] text-[#222222] leading-[1.4] mb-6 text-center">
+          <span className="font-bold">방문 QR 패스</span>가 발급되었습니다.
         </h2>
 
         <QRDisplayCard

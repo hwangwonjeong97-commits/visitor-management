@@ -26,8 +26,9 @@ export default function MVArrivalPage() {
             <Check className="w-6 h-6 text-white" strokeWidth={2.5} />
           </div>
           <div className="flex flex-col gap-[8px] items-center">
-            <p className="text-[22px] font-bold text-[#333333] leading-[1.4] tracking-[-0.44px]">
-              안내데스크에서<br />방문증을 수령해 주세요.
+            <p className="text-[22px] text-[#333333] leading-[1.4] tracking-[-0.44px]">
+              <span className="font-bold">안내데스크</span>에서<br />
+              <span className="font-bold">방문증을 수령</span>해 주세요.
             </p>
             <p className="text-[14px] text-[#777777] leading-[1.4] tracking-[-0.28px]">
               곧 담당자가 도착할 예정입니다.
