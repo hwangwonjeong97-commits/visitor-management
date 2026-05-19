@@ -74,6 +74,7 @@ export default function MVInquiryPage() {
                 overflow: "hidden",
                 backgroundColor: "white",
               }}
+              className="flex flex-col"
             >
               <div className="px-5 pt-4 pb-2">
                 <p className="text-[16px] font-bold text-[#222222]">방문 신청 정보</p>
@@ -102,7 +103,7 @@ export default function MVInquiryPage() {
                 </span>
               </div>
 
-              <div className="px-5 py-4">
+              <div className="mt-auto px-5 pb-6">
                 <button
                   onClick={() => setIsFlipped(true)}
                   className="w-full h-12 rounded-[8px] bg-[#105AFF] flex items-center justify-center gap-[4px] active:bg-[#0943C6] transition-colors"
