@@ -50,7 +50,7 @@ export default function MVQRPassPage() {
 
       {/* 방문 정보 */}
       <div className="bg-white px-5 py-6">
-        <p className="text-[15px] font-normal text-[#333333] mb-1">방문 정보</p>
+        <p className="text-[13px] font-normal text-[#333333] mb-1">방문 정보</p>
         <InfoCard
           rows={[
             { label: "방문자명", value: "홍길동" },
