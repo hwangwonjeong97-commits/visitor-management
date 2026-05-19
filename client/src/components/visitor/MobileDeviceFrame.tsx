@@ -39,8 +39,6 @@ export function MobileDeviceFrame({ children, label, screenId, routePath, transp
         className="relative bg-[#1A1A1A] rounded-[40px] p-[10px]"
         style={{ boxShadow: "0 20px 60px rgba(0,0,0,0.25), 0 0 0 1px rgba(255,255,255,0.08)" }}
       >
-        {/* 상단 노치 */}
-        <div className="absolute top-[18px] left-1/2 -translate-x-1/2 w-[100px] h-[28px] bg-[#1A1A1A] rounded-full z-10" />
         {/* 스크린 영역 */}
         <div
           className="relative overflow-hidden rounded-[32px] bg-[#F5F6FA] flex flex-col"
