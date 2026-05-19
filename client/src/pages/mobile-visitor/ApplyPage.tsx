@@ -402,7 +402,7 @@ export default function MVApplyPage({ isInvited: isInvitedProp = true }: { isInv
               fullWidth
               size="md"
               disabled={!canSubmit}
-              onClick={() => { if (canSubmit) navigate("/visitor/waiting"); }}
+              onClick={() => { if (canSubmit) navigate(`/visitor/waiting?invited=${isInvited}`); }}
             >
               완료
             </PrimaryButton>

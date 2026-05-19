@@ -7,13 +7,17 @@ import { PrimaryButton } from "@/components/visitor/PrimaryButton";
 import { SecondaryButton } from "@/components/visitor/SecondaryButton";
 import waitingAnimation from "@/assets/waiting-animation.json";
 import { useVisitorForm } from "@/contexts/VisitorFormContext";
+import { useSearch } from "wouter";
 
 export default function MVWaitingPage({ isInvited: isInvitedProp }: { isInvited?: boolean }) {
   const [, navigate] = useLocation();
+  const search = useSearch();
   const { isInvited: isInvitedCtx } = useVisitorForm();
 
-  // prop 우선, 없으면 context fallback
-  const isInvited = isInvitedProp ?? isInvitedCtx;
+  // URL 파라미터 → prop → context 순으로 우선순위
+  const searchParams = new URLSearchParams(search);
+  const urlInvited = searchParams.has("invited") ? searchParams.get("invited") !== "false" : null;
+  const isInvited = urlInvited ?? isInvitedProp ?? isInvitedCtx;
 
   const handleInquiry = () => {
     navigate(isInvited ? "/visitor/inquiry" : "/visitor/arrival");
