@@ -1,8 +1,8 @@
 import { useLocation } from "wouter";
 import { Check, CheckCircle2, Bell, MapPin } from "lucide-react";
 import { ScreenHeader } from "@/components/visitor/ScreenHeader";
+import { SectionTitle } from "@/components/visitor/SectionTitle";
 import { SecondaryButton } from "@/components/visitor/SecondaryButton";
-import { AlertBanner } from "@/components/visitor/AlertBanner";
 
 export default function MVArrivalPage() {
   const [, navigate] = useLocation();
@@ -41,7 +41,7 @@ export default function MVArrivalPage() {
 
       {/* 처리 현황 */}
       <div className="bg-white px-5 py-6">
-        <p className="text-[14px] font-bold text-[#333333] mb-3">처리 현황</p>
+        <SectionTitle className="mb-3">처리 현황</SectionTitle>
 
         <div className="flex items-center gap-3 py-3.5 border-b border-[#EDEDED]">
           <div className="w-9 h-9 rounded-full bg-[#F2FFFA] flex items-center justify-center flex-shrink-0">
@@ -71,11 +71,15 @@ export default function MVArrivalPage() {
 
       {/* 대기 안내 */}
       <div className="bg-white px-5 py-6 flex flex-col gap-3">
-        <p className="text-[14px] font-bold text-[#333333]">대기 안내</p>
-        <AlertBanner
-          type="info"
-          message="로비 1층 안내 데스크에서 방문증을 수령해 주세요."
-        />
+        <SectionTitle>대기 안내</SectionTitle>
+        <div className="w-full h-[46px] bg-[#EFF4FF] rounded-[8px] px-3 flex items-center gap-1">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" className="flex-shrink-0">
+            <path fillRule="evenodd" clipRule="evenodd" d="M9 1.5C13.1421 1.5 16.5 4.85786 16.5 9C16.5 13.1421 13.1421 16.5 9 16.5C4.85786 16.5 1.5 13.1421 1.5 9C1.5 4.85786 4.85786 1.5 9 1.5ZM9 7.5C8.46167 7.50008 8.02527 7.94763 8.02515 8.49976V12.5002C8.02528 13.0524 8.46167 13.4999 9 13.5C9.5384 13.5 9.97472 13.0524 9.97485 12.5002V8.49976C9.97472 7.94758 9.5384 7.5 9 7.5ZM9 4.5C8.46159 4.50008 8.02515 4.93642 8.02515 5.47485C8.02523 6.01322 8.46164 6.44963 9 6.44971C9.53843 6.44971 9.97477 6.01326 9.97485 5.47485C9.97485 4.93638 9.53848 4.5 9 4.5Z" fill="#105AFF"/>
+          </svg>
+          <span className="text-[14px] text-[#105AFF] leading-[1.4] tracking-[-0.3px] flex-1">
+            로비 1층 안내 데스크에서 방문증을 수령해 주세요.
+          </span>
+        </div>
         <div className="flex items-center gap-2.5 px-4 py-3 bg-[#F5F6FA] rounded-xl">
           <MapPin className="w-4 h-4 text-[#777777] flex-shrink-0" />
           <p className="text-[13px] text-[#777777]">더존비즈온 본사 · 1층 안내 데스크</p>
