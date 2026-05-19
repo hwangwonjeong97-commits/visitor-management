@@ -63,7 +63,7 @@ export default function Showcase() {
             </div>
             <div className="flex flex-col gap-[2px]">
               <p className="text-[20px] font-bold text-[#222222] leading-tight">더존을지타워 방문자 출입관리 시스템</p>
-              <p className="text-[13px] text-[#989898]">UI 화면 시안</p>
+              <p className="text-[14px] text-[#989898]">UI 화면 시안</p>
             </div>
           </div>
         </div>
@@ -143,7 +143,6 @@ function ShowcaseSection({ title, description, screens, openUrl, isTablet = fals
         <div>
           <h2 className="text-[20px] font-bold text-[#222222]">{title}</h2>
           <p className="text-[14px] text-[#777777] mt-1">{description}</p>
-          <p className="text-[12px] text-[#B4B4B4] mt-0.5">{screens.length}개 화면</p>
         </div>
         <a
           href={openUrl}
