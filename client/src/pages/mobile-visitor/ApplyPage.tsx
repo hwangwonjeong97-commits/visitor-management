@@ -108,39 +108,9 @@ function AdditionalInfoSection({ form, setField }: FormProps) {
 function ConsentSection({ form, setField }: FormProps) {
   return (
     <div className="bg-white px-5 py-6 flex flex-col gap-5">
-      <SectionTitle>안내 및 동의</SectionTitle>
-      <div className="flex flex-col gap-3">
-        <div className="bg-[#F5F6FA] rounded-xl px-4 py-4">
-          <p className="text-[13px] font-bold text-[#333333] mb-2">출입 및 보안 안내</p>
-          <ul className="flex flex-col gap-2">
-            {[
-              "방문증은 입장 시 수령 후 반드시 패용해 주세요.",
-              "지정된 구역 외 출입은 제한됩니다.",
-              "사진 촬영은 사전에 담당자의 허가를 받아 주세요.",
-              "퇴장 시 방문증을 반납해 주세요.",
-            ].map((text, i) => (
-              <li key={i} className="flex items-start gap-[2px]">
-                <span className="text-[#777777] text-[12px] flex-shrink-0">•</span>
-                <span className="text-[12px] text-[#777777] leading-[1.4] tracking-[-0.24px]">{text}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
-        <div className="bg-[#F5F6FA] rounded-xl px-4 py-4">
-          <p className="text-[13px] font-bold text-[#333333] mb-2">개인정보 수집 및 보관 안내</p>
-          <div className="flex flex-col gap-2">
-            {[
-              ["수집 항목", "이름, 연락처, 소속, 차량번호"],
-              ["수집 목적", "방문자 식별 및 출입 관리"],
-              ["보관 기간", "방문일로부터 1년"],
-            ].map(([label, value]) => (
-              <div key={label} className="flex gap-2">
-                <span className="text-[12px] text-[#777777] w-[56px] flex-shrink-0 leading-[1.4] tracking-[-0.24px]">{label}</span>
-                <span className="text-[12px] text-[#777777] leading-[1.4] tracking-[-0.24px]">{value}</span>
-              </div>
-            ))}
-          </div>
-        </div>
+      <div className="flex flex-col gap-2">
+        <SectionTitle>안내 및 동의</SectionTitle>
+        <p className="text-[13px] font-normal text-[#777777] leading-[1.4]">필수 항목을 확인하고 동의해 주세요.</p>
       </div>
       <div className="divide-y divide-[#EDEDED]">
         <ConsentCheckItem label="출입 및 보안 안내에 동의합니다" required checked={form.consentSecurity} onChange={(v) => setField("consentSecurity", v)} onViewDetail={() => {}} />
