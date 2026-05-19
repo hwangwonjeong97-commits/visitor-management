@@ -1,5 +1,5 @@
 import { useLocation } from "wouter";
-import { CheckCircle2, MapPin } from "lucide-react";
+import { CheckCircle2 } from "lucide-react";
 import { ScreenHeader } from "@/components/visitor/ScreenHeader";
 import { SectionTitle } from "@/components/visitor/SectionTitle";
 import { SecondaryButton } from "@/components/visitor/SecondaryButton";
@@ -91,9 +91,14 @@ export default function MVArrivalPage() {
             로비 1층 안내 데스크에서 방문증을 수령해 주세요.
           </span>
         </div>
-        <div className="flex items-center gap-2.5 px-4 py-3 bg-[#F5F6FA] rounded-[8px]">
-          <MapPin className="w-4 h-4 text-[#777777] flex-shrink-0" />
-          <p className="text-[13px] text-[#777777]">더존비즈온 본사 · 1층 안내 데스크</p>
+        <div className="flex flex-col gap-4">
+          <div className="flex gap-2 items-center">
+            <p className="text-[14px] text-[#777777] tracking-[-0.28px] leading-[1.4] w-16 flex-shrink-0">주소</p>
+            <p className="text-[15px] text-[#333333] tracking-[-0.3px] leading-[1.4]">더존비즈온 본사 · 1층 안내 데스크</p>
+          </div>
+          <div className="w-full h-[159px] rounded-[8px] border border-black/[0.06] overflow-hidden">
+            <img src="/map.png" alt="지도" className="w-full h-full object-cover" />
+          </div>
         </div>
       </div>
 
