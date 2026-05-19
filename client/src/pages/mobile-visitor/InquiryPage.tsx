@@ -128,7 +128,7 @@ export default function MVInquiryPage() {
                 overflow: "hidden",
                 backgroundColor: "white",
               }}
-              className="flex flex-col items-center justify-between px-6 py-6"
+              className="flex flex-col items-center px-6 pt-6 pb-6"
             >
               {/* 제목 / 서브문구 */}
               <div className="flex flex-col items-center gap-2 text-center">
@@ -144,13 +144,15 @@ export default function MVInquiryPage() {
                 size="sm"
               />
 
-              {/* 신청 정보 보기 */}
-              <button
-                onClick={() => setIsFlipped(false)}
-                className="text-[14px] font-medium text-[#105AFF] active:opacity-60 transition-opacity"
-              >
-                신청 정보 보기
-              </button>
+              {/* 신청 정보 보기 - tertiary 버튼, 하단 고정 */}
+              <div className="mt-auto w-full">
+                <button
+                  onClick={() => setIsFlipped(false)}
+                  className="w-full h-12 rounded-[8px] bg-white border border-[#e1e1e1] flex items-center justify-center gap-[4px] active:opacity-70 transition-opacity"
+                >
+                  <span className="text-[15px] font-normal text-[#333333] tracking-[-0.3px] leading-[1.4]">신청 정보 보기</span>
+                </button>
+              </div>
             </div>
 
           </div>
