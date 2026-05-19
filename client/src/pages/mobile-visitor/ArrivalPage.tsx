@@ -46,7 +46,7 @@ export default function MVArrivalPage() {
 
         <div className="flex items-center gap-3 py-3.5">
           <div className="w-8 h-8 rounded-[12px] bg-[#F0F2F7] flex items-center justify-center flex-shrink-0">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M15 19.5C15 20.8807 13.6569 22 12 22C10.3431 22 9 20.8807 9 19.5C9 18.1193 10.3431 17 12 17C13.6569 17 15 18.1193 15 19.5Z" fill="#EC811C"/>
               <path d="M12.0029 2C12.5552 2 13.0059 2.44772 13.0059 3V3.32031C16.4988 3.80814 19.1765 6.81707 19.1875 10.4307V14.2783L20.3945 16.0898L20.3955 16.0918C21.0313 17.0542 20.7962 18.3748 19.8018 19.0273L19.8027 19.0283C19.4634 19.2546 19.0528 19.3896 18.6289 19.3896L5.37402 19.3682C4.21079 19.3674 3.25024 18.4311 3.25 17.2529C3.25 16.8134 3.3871 16.4193 3.60156 16.082L3.61035 16.0684L4.82812 14.2402V10.4336C4.82812 6.80713 7.51413 3.82131 11 3.32422V3C11 2.44772 11.4506 2 12.0029 2Z" fill="#FFBC4F"/>
             </svg>
@@ -60,7 +60,7 @@ export default function MVArrivalPage() {
 
         <div className="flex items-center gap-3 py-3.5">
           <div className="w-8 h-8 rounded-[12px] bg-[#F0F2F7] flex items-center justify-center flex-shrink-0">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M13.8887 13C17.1304 13 19.8635 15.1697 20.7197 18.1357C20.4962 18.0494 20.254 18 20 18C18.8954 18 18 18.8954 18 20C18 20.3646 18.0991 20.7056 18.2695 21H3.88867C3.39792 20.9999 3.00012 20.6021 3 20.1113C3 16.184 6.18397 13 10.1113 13H13.8887Z" fill="#8891FF"/>
               <path d="M12 2C14.4853 2 16.5 4.01472 16.5 6.5C16.5 8.98528 14.4853 11 12 11C9.51472 11 7.5 8.98528 7.5 6.5C7.5 4.01472 9.51472 2 12 2Z" fill="#8891FF"/>
               <path d="M17.25 22C19.8734 22 22 19.8734 22 17.25C22 14.6266 19.8734 12.5 17.25 12.5C14.6266 12.5 12.5 14.6266 12.5 17.25C12.5 19.8734 14.6266 22 17.25 22Z" fill="#4450DF"/>
