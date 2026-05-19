@@ -1,11 +1,11 @@
 import { useLocation } from "wouter";
-import { PenLine, CheckCircle2, QrCode, MapPin } from "lucide-react";
+import { PenLine, CheckCircle2, ClipboardCheck, MapPin } from "lucide-react";
 import { useVisitorForm } from "@/contexts/VisitorFormContext";
 
 const STEPS = [
   { icon: <PenLine className="w-5 h-5" />,      label: "방문신청" },
   { icon: <CheckCircle2 className="w-5 h-5" />, label: "내부승인" },
-  { icon: <QrCode className="w-5 h-5" />,       label: "방문수속" },
+  { icon: <ClipboardCheck className="w-5 h-5" />, label: "방문수속" },
   { icon: <MapPin className="w-5 h-5" />,       label: "방문완료" },
 ];
 
