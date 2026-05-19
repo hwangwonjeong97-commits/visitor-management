@@ -13,7 +13,7 @@ export function MobilePageLayout({ children, transparentStatusBar = false }: { c
           <StatusBar transparent={transparentStatusBar} />
         </div>
         <div className={`flex-1 overflow-y-auto overflow-x-hidden ${transparentStatusBar ? "" : "pt-[44px]"}`} style={{ height: 0 }}>
-          <div className="page-stagger" style={{ minHeight: transparentStatusBar ? '810px' : '766px' }}>
+          <div className="page-stagger" style={{ height: transparentStatusBar ? '810px' : '766px' }}>
             {children}
           </div>
         </div>
