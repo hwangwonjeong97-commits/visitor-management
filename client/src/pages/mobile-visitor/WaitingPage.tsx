@@ -29,10 +29,10 @@ export default function MVWaitingPage() {
           </svg>
         </div>
         <h2 className="text-[22px] font-bold text-[#222222] leading-[1.4] mb-2">
-          잠시만 기다려 주세요.
+          방문 신청이 접수되었습니다.
         </h2>
         <p className="text-[14px] text-[#777777] leading-[1.4]">
-          승인이 완료되면 알림톡으로 알려드립니다.
+          승인이 완료되면 카카오 알림톡으로 QR 패스가 발송됩니다.
         </p>
         <div className="mt-5 flex items-center gap-2 px-4 py-2.5 bg-[#F5F6FA] rounded-full">
           <img src="/kakaotalk-icon.png" alt="카카오톡" className="w-4 h-4 flex-shrink-0" />
