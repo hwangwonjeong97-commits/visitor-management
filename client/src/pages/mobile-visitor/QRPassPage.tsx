@@ -11,7 +11,16 @@ export default function MVQRPassPage() {
 
   return (
     <div className="min-h-full flex flex-col bg-[#F5F6FA]">
-      <ScreenHeader title="QR 패스" leftIcon="close" onBack={() => navigate("/visitor")} />
+      <ScreenHeader
+        title="QR 패스"
+        leftIcon="close"
+        onBack={() => navigate("/visitor")}
+        rightElement={
+          <span className="border border-[#27C36F] flex items-center justify-center h-6 px-2 rounded-full text-[12px] font-medium text-[#27C36F] tracking-[-0.24px] whitespace-nowrap leading-[1.4]">
+            승인 완료
+          </span>
+        }
+      />
 
       {/* QR 메인 */}
       <div className="bg-white px-5 py-8 flex flex-col items-center">

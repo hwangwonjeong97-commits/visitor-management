@@ -15,6 +15,11 @@ export default function MVWaitingPage() {
         title="신청 완료"
         leftIcon="close"
         onBack={() => navigate("/visitor")}
+        rightElement={
+          <span className="border border-[#105AFF] flex items-center justify-center h-6 px-2 rounded-full text-[12px] font-medium text-[#105AFF] tracking-[-0.24px] whitespace-nowrap leading-[1.4]">
+            승인 대기
+          </span>
+        }
       />
 
       {/* 상태 영역 */}

@@ -14,7 +14,7 @@ export default function MVArrivalPage() {
         onBack={() => window.history.back()}
         rightElement={
           <span className="border border-[#27C36F] flex items-center justify-center h-6 px-2 rounded-full text-[12px] font-medium text-[#27C36F] tracking-[-0.24px] whitespace-nowrap leading-[1.4]">
-            승인
+            승인 완료
           </span>
         }
       />
