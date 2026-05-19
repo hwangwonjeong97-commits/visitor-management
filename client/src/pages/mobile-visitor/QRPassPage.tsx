@@ -8,7 +8,7 @@ export default function MVQRPassPage() {
   const [, navigate] = useLocation();
 
   return (
-    <div className="min-h-full flex flex-col bg-[#F5F6FA]">
+    <div className="min-h-full flex flex-col bg-white">
       <ScreenHeader
         title="QR 패스"
         leftIcon="close"
