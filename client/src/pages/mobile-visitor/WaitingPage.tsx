@@ -24,7 +24,7 @@ export default function MVWaitingPage() {
       />
 
       {/* 상태 영역 */}
-      <div className="bg-white px-5 pt-10 pb-0 flex flex-col items-center text-center">
+      <div className="bg-white px-5 pt-5 pb-0 flex flex-col items-center text-center">
         <Lottie animationData={waitingAnimation} loop className="w-[120px] h-[120px] mb-0" />
         <h2 className="text-[22px] font-normal text-[#222222] leading-[1.4] mb-2">
           <span className="font-bold">방문 신청이 접수</span>되었습니다.
