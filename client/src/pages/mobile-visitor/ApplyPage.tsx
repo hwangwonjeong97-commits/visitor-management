@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { useLocation, useSearch } from "wouter";
 import { ScreenHeader } from "@/components/visitor/ScreenHeader";
 import { SectionTitle } from "@/components/visitor/SectionTitle";
@@ -10,7 +11,6 @@ import { PrimaryButton } from "@/components/visitor/PrimaryButton";
 import { SecondaryButton } from "@/components/visitor/SecondaryButton";
 import { useVisitorForm } from "@/contexts/VisitorFormContext";
 
-const IS_INVITED = false;
 
 const PURPOSE_OPTIONS = [
   { value: "업무 미팅", label: "업무 미팅" },
@@ -161,6 +161,7 @@ export default function MVApplyPage() {
   const isEditMode = new URLSearchParams(search).get("mode") === "edit";
   const { form, setField } = useVisitorForm();
 
+  const [isInvited, setIsInvited] = useState(true);
   const canSubmit = form.consentSecurity && form.consentPrivacy && form.visitorName && form.visitorPhone && form.company;
 
   const basicInfoRows = [
@@ -183,11 +184,28 @@ export default function MVApplyPage() {
     <div className="min-h-full flex flex-col bg-white">
       <ScreenHeader title={isEditMode ? "신청정보 수정" : "방문신청"} onBack={() => window.history.back()} />
 
-      {IS_INVITED ? (
+      {/* 사전등록 탭 */}
+      <div className="bg-white px-5 pt-4 pb-0 flex gap-1">
+        {[{ label: "사전등록 O", value: true }, { label: "사전등록 X", value: false }].map((tab) => (
+          <button
+            key={String(tab.value)}
+            onClick={() => setIsInvited(tab.value)}
+            className={`px-4 h-9 rounded-full text-[13px] font-semibold transition-colors ${
+              isInvited === tab.value
+                ? "bg-[#105AFF] text-white"
+                : "bg-[#F5F6FA] text-[#777777]"
+            }`}
+          >
+            {tab.label}
+          </button>
+        ))}
+      </div>
+
+      {isInvited ? (
         /* ── 사전등록 O ── */
         <>
           {/* 초대 안내 배너 */}
-          <div className="bg-white px-5 pt-4 pb-0">
+          <div className="bg-white px-5 pt-3 pb-0">
             <div className="h-[46px] bg-[#EFF4FF] rounded-[8px] px-3 flex items-center gap-1">
               <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" className="flex-shrink-0">
                 <path fillRule="evenodd" clipRule="evenodd" d="M9 1.5C13.1421 1.5 16.5 4.85786 16.5 9C16.5 13.1421 13.1421 16.5 9 16.5C4.85786 16.5 1.5 13.1421 1.5 9C1.5 4.85786 4.85786 1.5 9 1.5ZM9 7.5C8.46167 7.50008 8.02527 7.94763 8.02515 8.49976V12.5002C8.02528 13.0524 8.46167 13.4999 9 13.5C9.5384 13.5 9.97472 13.0524 9.97485 12.5002V8.49976C9.97472 7.94758 9.5384 7.5 9 7.5ZM9 4.5C8.46159 4.50008 8.02515 4.93642 8.02515 5.47485C8.02523 6.01322 8.46164 6.44963 9 6.44971C9.53843 6.44971 9.97477 6.01326 9.97485 5.47485C9.97485 4.93638 9.53848 4.5 9 4.5Z" fill="#105AFF"/>
