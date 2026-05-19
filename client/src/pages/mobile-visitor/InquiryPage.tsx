@@ -38,7 +38,7 @@ export default function MVInquiryPage() {
   ];
 
   return (
-    <div className="min-h-full flex flex-col bg-[#F5F6FA]">
+    <div className="min-h-full flex flex-col bg-white">
       <ScreenHeader title="신청 조회" onBack={() => window.history.back()} />
 
       <div className="flex-1 px-5 py-5 flex flex-col gap-4">
