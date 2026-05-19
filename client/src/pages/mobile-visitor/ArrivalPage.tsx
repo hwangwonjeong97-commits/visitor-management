@@ -38,7 +38,7 @@ export default function MVArrivalPage() {
       </div>
 
       {/* 구분선 */}
-      <div className="h-px bg-[#EDEDED]" />
+      <div className="h-2 bg-[#F5F6FA]" />
 
       {/* 처리 현황 */}
       <div className="bg-white px-5 py-6">
@@ -68,7 +68,7 @@ export default function MVArrivalPage() {
       </div>
 
       {/* 구분선 */}
-      <div className="h-px bg-[#EDEDED]" />
+      <div className="h-2 bg-[#F5F6FA]" />
 
       {/* 대기 안내 */}
       <div className="bg-white px-5 py-6 flex flex-col gap-3">
