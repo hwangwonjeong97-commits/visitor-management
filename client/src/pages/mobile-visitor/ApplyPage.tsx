@@ -233,7 +233,7 @@ export default function MVApplyPage({ isInvited = true }: { isInvited?: boolean 
           </div>
 
           {/* 섹션 B: 방문자 정보 (먼저) */}
-          <div className="pt-10">
+          <div className="pt-4">
             <VisitorInfoSection form={form} setField={setField} />
           </div>
 
