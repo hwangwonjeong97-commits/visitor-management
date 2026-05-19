@@ -142,6 +142,7 @@ export default function MVInquiryPage() {
                 company={form.company || "(주)방문회사"}
                 validUntil="2026년 5월 20일 18:00까지"
                 size="sm"
+                className="mt-6"
               />
 
               {/* 신청 정보 보기 - tertiary 버튼, 하단 고정 */}
