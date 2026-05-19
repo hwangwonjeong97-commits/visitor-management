@@ -48,7 +48,7 @@ export default function MVInquiryPage() {
 
           {/* 카드 타이틀 */}
           <div className="px-5 pt-4 pb-2">
-            <p className="text-[15px] font-bold text-[#222222]">방문 신청 정보</p>
+            <p className="text-[16px] font-bold text-[#222222]">방문 신청 정보</p>
           </div>
 
           {/* 정보 rows */}
@@ -89,10 +89,10 @@ export default function MVInquiryPage() {
           <div className="px-5 py-4">
             <button
               onClick={() => navigate("/visitor/qr-pass")}
-              className="w-full h-12 rounded-xl bg-[#105AFF] flex items-center justify-center gap-2 active:bg-[#0943C6] transition-colors"
+              className="w-full h-12 rounded-[8px] bg-white border border-[#105AFF] flex items-center justify-center gap-[4px] active:bg-[#EFF4FF] transition-colors"
             >
-              <QrCode className="w-[18px] h-[18px] text-white" />
-              <span className="text-[14px] font-semibold text-white">QR 패스 확인</span>
+              <QrCode className="w-[18px] h-[18px] text-[#105AFF]" />
+              <span className="text-[15px] font-bold text-[#105AFF] tracking-[-0.3px]">QR 패스 확인</span>
             </button>
           </div>
         </div>
