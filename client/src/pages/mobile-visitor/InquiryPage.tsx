@@ -29,12 +29,13 @@ export default function MVInquiryPage() {
   const { label: statusLabel, color: statusColor } = STATUS_MAP[currentStatus];
 
   const rows = [
-    { label: "신청자",   value: form.visitorName || "홍길동" },
-    { label: "소속",     value: form.company     || "(주)방문회사" },
+    { label: "이름",      value: form.visitorName || "홍길동" },
+    { label: "소속(회사명)", value: form.company  || "(주)방문회사" },
     { label: "방문 일시", value: `${formatDateTime(form.visitStart)} ~ ${formatDateTime(form.visitEnd)}` },
-    { label: "담당자",   value: form.hostName && form.hostPhone ? `${form.hostName} (${form.hostPhone})` : form.hostName || "박지훈" },
-    { label: "방문 장소", value: form.location  || "더존비즈온 본사 15층 회의실 A" },
-    { label: "방문 목적", value: form.purpose   || "업무 미팅" },
+    { label: "담당자 이름", value: form.hostName  || "박지훈" },
+    { label: "담당자 연락처", value: form.hostPhone || "010-1234-5678" },
+    { label: "방문 장소", value: form.location   || "더존비즈온 본사 15층 회의실 A" },
+    { label: "방문 목적", value: form.purpose    || "업무 미팅" },
   ];
 
   return (
@@ -45,10 +46,15 @@ export default function MVInquiryPage() {
         {/* 메인 카드 */}
         <div className="bg-white rounded-2xl overflow-hidden" style={{ boxShadow: "0 2px 8px rgba(0,0,0,0.08)" }}>
 
+          {/* 카드 타이틀 */}
+          <div className="px-5 pt-4 pb-2">
+            <p className="text-[15px] font-bold text-[#222222]">방문 신청 정보</p>
+          </div>
+
           {/* 정보 rows */}
           {rows.map((row, i) => (
             <div key={i} className="px-5 py-[10px] flex gap-4 items-center">
-              <span className="text-[14px] text-[#777777] w-[60px] flex-shrink-0 leading-[1.4]">
+              <span className="text-[14px] text-[#777777] w-[80px] flex-shrink-0 leading-[1.4]">
                 {row.label}
               </span>
               <span className="text-[15px] text-[#333333] flex-1 leading-[1.4]">
@@ -59,7 +65,7 @@ export default function MVInquiryPage() {
 
           {/* 신청 상태 */}
           <div className="px-5 py-[10px] flex gap-4 items-center">
-            <span className="text-[14px] text-[#777777] w-[60px] flex-shrink-0 leading-[1.4]">
+            <span className="text-[14px] text-[#777777] w-[80px] flex-shrink-0 leading-[1.4]">
               신청상태
             </span>
             <span className="inline-flex items-center px-1 h-6 rounded-[4px] text-[13px] font-semibold" style={{ backgroundColor: '#F2FFFA', color: '#27C36F' }}>
@@ -83,10 +89,10 @@ export default function MVInquiryPage() {
           <div className="px-5 py-4">
             <button
               onClick={() => navigate("/visitor/qr-pass")}
-              className="w-full h-12 rounded-xl border border-[#EDEDED] flex items-center justify-center gap-2 bg-white active:bg-[#F5F6FA] transition-colors"
+              className="w-full h-12 rounded-xl bg-[#105AFF] flex items-center justify-center gap-2 active:bg-[#0943C6] transition-colors"
             >
-              <QrCode className="w-[18px] h-[18px] text-[#333333]" />
-              <span className="text-[14px] font-semibold text-[#333333]">QR 패스 확인</span>
+              <QrCode className="w-[18px] h-[18px] text-white" />
+              <span className="text-[14px] font-semibold text-white">QR 패스 확인</span>
             </button>
           </div>
         </div>
