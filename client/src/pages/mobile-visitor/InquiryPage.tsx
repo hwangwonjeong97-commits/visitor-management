@@ -130,9 +130,9 @@ export default function MVInquiryPage() {
               className="flex flex-col items-center justify-between px-6 py-6"
             >
               {/* 제목 / 서브문구 */}
-              <div className="flex flex-col items-center gap-1 text-center">
-                <p className="text-[20px] font-bold text-[#222222] leading-[1.4]">방문 QR 패스</p>
-                <p className="text-[13px] text-[#999999] leading-[1.4]">현장 패드에서 아래 QR 코드를 인식해 주세요.</p>
+              <div className="flex flex-col items-center gap-2 text-center">
+                <p className="text-[22px] font-bold text-[#222222] leading-[1.4]">방문 QR 패스</p>
+                <p className="text-[14px] text-[#999999] leading-[1.4]">현장 패드에서 아래 QR 코드를 인식해 주세요.</p>
               </div>
 
               {/* QR 카드 */}
