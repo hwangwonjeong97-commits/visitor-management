@@ -1,6 +1,5 @@
 import { useLocation } from "wouter";
 import { ScreenHeader } from "@/components/visitor/ScreenHeader";
-import { Badge } from "@/components/visitor/Badge";
 import { QRDisplayCard } from "@/components/visitor/QRDisplayCard";
 import { InfoCard } from "@/components/visitor/InfoCard";
 import { SectionTitle } from "@/components/visitor/SectionTitle";
@@ -24,8 +23,6 @@ export default function MVQRPassPage() {
 
       {/* QR 메인 */}
       <div className="bg-white px-5 py-8 flex flex-col items-center">
-        <Badge className="bg-[#F2FFFA] text-[#27C36F] mb-4">승인 완료</Badge>
-
         <h2 className="text-[18px] font-bold text-[#222222] leading-[27px] mb-6 text-center">
           방문 QR 패스가 발급되었습니다.
         </h2>
