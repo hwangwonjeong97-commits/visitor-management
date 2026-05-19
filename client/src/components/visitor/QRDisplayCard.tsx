@@ -102,9 +102,10 @@ export function QRDisplayCard({ name, company, validUntil, size = "md", classNam
       </div>
 
       {validUntil && (
-        <p className="text-[12px] text-[#989898]">
-          유효기간 <span className="font-semibold text-[#333333]">{validUntil}</span>
-        </p>
+        <div className="flex items-center gap-3 text-[12px]">
+          <span className="text-[#989898]">유효기간</span>
+          <span className="font-semibold text-[#333333]">{validUntil}</span>
+        </div>
       )}
     </div>
   );
