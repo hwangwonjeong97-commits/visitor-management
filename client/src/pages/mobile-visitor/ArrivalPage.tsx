@@ -1,6 +1,5 @@
 import { useLocation } from "wouter";
-import { CheckCircle2, Bell, MapPin } from "lucide-react";
-import { StatusBadge } from "@/components/visitor/StatusBadge";
+import { Check, CheckCircle2, Bell, MapPin } from "lucide-react";
 import { PrimaryButton } from "@/components/visitor/PrimaryButton";
 import { AlertBanner } from "@/components/visitor/AlertBanner";
 
@@ -11,21 +10,19 @@ export default function MVArrivalPage() {
     <div className="min-h-full flex flex-col bg-[#F5F6FA]">
       {/* 메인 상태 영역 */}
       <div className="bg-white px-5 pt-16 pb-10 flex flex-col items-center text-center">
-        <StatusBadge status="approved" className="mb-6" />
-
-        <div className="w-20 h-20 rounded-full bg-[#F2FFFA] flex items-center justify-center mb-6">
-          <CheckCircle2 className="w-10 h-10 text-[#27C36F]" />
+        <div className="flex flex-col items-center gap-[4px]">
+          <div className="w-12 h-12 rounded-full bg-[#27C36F] flex items-center justify-center">
+            <Check className="w-6 h-6 text-white" strokeWidth={2.5} />
+          </div>
+          <div className="flex flex-col gap-[8px] items-center">
+            <p className="text-[22px] font-bold text-[#333333] leading-[1.4] tracking-[-0.44px]">
+              안내데스크에서<br />방문증을 수령해 주세요.
+            </p>
+            <p className="text-[14px] text-[#777777] leading-[1.4] tracking-[-0.28px]">
+              곧 담당자가 도착할 예정입니다.
+            </p>
+          </div>
         </div>
-
-        <h1 className="text-[22px] font-bold text-[#222222] leading-[32px] mb-2">
-          안녕하세요, 김OO님.
-        </h1>
-        <h2 className="text-[18px] font-bold text-[#222222] leading-[27px] mb-3">
-          안내데스크에서<br />방문증을 수령해 주세요.
-        </h2>
-        <p className="text-[14px] text-[#777777] leading-[22px]">
-          곧 담당자가 도착할 예정입니다.<br />로비에서 대기해 주세요.
-        </p>
       </div>
 
       {/* 구분선 */}
