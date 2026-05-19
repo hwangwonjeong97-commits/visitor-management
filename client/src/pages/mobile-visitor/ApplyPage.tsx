@@ -1,4 +1,5 @@
 import { useLocation, useSearch } from "wouter";
+import { InfoCard } from "@/components/visitor/InfoCard";
 import { ScreenHeader } from "@/components/visitor/ScreenHeader";
 import { SectionTitle } from "@/components/visitor/SectionTitle";
 import { TextInput } from "@/components/visitor/TextInput";
@@ -170,8 +171,10 @@ export default function MVApplyPage({ isInvited = true }: { isInvited?: boolean 
           ? `${formatDateTime(form.visitStart)} ~ ${formatDateTime(form.visitEnd)}`
           : "6월 3일  09:00 ~ 18:00",
     },
-    { label: "담당자 이름", value: form.hostName || "박지훈" },
-    { label: "담당자 연락처", value: form.hostPhone || "010-1234-5678" },
+    {
+      label: "담당자",
+      value: `${form.hostName || "박지훈"} (${form.hostPhone || "010-1234-5678"})`,
+    },
     { label: "방문 장소", value: form.location || "더존비즈온 본사 15층 회의실 A" },
     { label: "방문 목적", value: form.purpose || "업무 미팅" },
   ];
@@ -206,18 +209,9 @@ export default function MVApplyPage({ isInvited = true }: { isInvited?: boolean 
           </div>
 
           {/* 기본정보 카드 (read-only) */}
-          <div className="bg-[#F5F6FA] px-5 py-5">
-            <div className="bg-white rounded-2xl overflow-hidden" style={{ boxShadow: "0 2px 8px rgba(0,0,0,0.08)" }}>
-              <div className="px-5 pt-4 pb-2">
-                <p className="text-[16px] font-bold text-[#222222]">기본정보</p>
-              </div>
-              {basicInfoRows.map((row, i) => (
-                <div key={i} className="px-5 py-[10px] flex gap-4 items-center">
-                  <span className="text-[14px] text-[#777777] w-[80px] flex-shrink-0 leading-[1.4]">{row.label}</span>
-                  <span className="text-[15px] text-[#333333] flex-1 leading-[1.4]">{row.value}</span>
-                </div>
-              ))}
-            </div>
+          <div className="bg-white px-5 pt-6 pb-6">
+            <p className="text-[15px] font-normal text-[#333333] mb-2">기본정보</p>
+            <InfoCard rows={basicInfoRows} />
           </div>
 
           {divider}
