@@ -43,10 +43,10 @@ const MOBILE_EMPLOYEE_SCREENS = [
 const PAD_BASE_URL = "https://visitor-access-system-pad.vercel.app";
 
 const PAD_VISITOR_SCREENS = [
-  { id: "PV-01", name: "메인화면",               route: PAD_BASE_URL, component: <iframe src={PAD_BASE_URL} className="w-full h-full border-none" title="PV-01" /> },
-  { id: "PV-02", name: "QR 인식 화면",           route: PAD_BASE_URL, component: <PVScanPage /> },
-  { id: "PV-03", name: "입장 확인 화면",          route: PAD_BASE_URL, component: <PVConfirmedPage /> },
-  { id: "PV-04", name: "미등록 방문객 QR 안내",   route: PAD_BASE_URL, component: <PVRegisterQRPage /> },
+  { id: "PV-01", name: "메인화면",               route: PAD_BASE_URL,      component: <iframe src={PAD_BASE_URL} className="w-full h-full border-none" title="PV-01" /> },
+  { id: "PV-02", name: "QR 인식 화면",           route: "/pad/scan",        component: <PVScanPage /> },
+  { id: "PV-03", name: "입장 확인 화면",          route: "/pad/confirmed",   component: <PVConfirmedPage /> },
+  { id: "PV-04", name: "미등록 방문객 QR 안내",   route: "/pad/register-qr", component: <PVRegisterQRPage /> },
 ];
 
 export default function Showcase() {
@@ -157,15 +157,24 @@ function ShowcaseSection({ title, description, screens, frameType, landscape = f
               {screen.component}
             </MobileDeviceFrame>
           ) : (
-            <TabletDeviceFrame
+            <a
               key={screen.id}
-              screenId={screen.id}
-              label={screen.name}
-              routePath={screen.route}
-              landscape={landscape}
+              href={screen.route}
+              target="_blank"
+              rel="noreferrer"
+              className="block relative group"
+              style={{ textDecoration: "none" }}
             >
-              {screen.component}
-            </TabletDeviceFrame>
+              <TabletDeviceFrame
+                screenId={screen.id}
+                label={screen.name}
+                landscape={landscape}
+              >
+                {screen.component}
+              </TabletDeviceFrame>
+              {/* 클릭 캡처 오버레이 */}
+              <div className="absolute inset-0 z-50 cursor-pointer" />
+            </a>
           )
         )}
       </div>
