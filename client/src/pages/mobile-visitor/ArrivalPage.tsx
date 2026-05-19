@@ -8,7 +8,7 @@ export default function MVArrivalPage() {
   const [, navigate] = useLocation();
 
   return (
-    <div className="min-h-full flex flex-col bg-[#F5F6FA]">
+    <div className="min-h-full flex flex-col bg-white">
       <ScreenHeader
         title="신청 조회"
         onBack={() => window.history.back()}
@@ -38,7 +38,7 @@ export default function MVArrivalPage() {
       </div>
 
       {/* 구분선 */}
-      <div className="h-2 bg-[#F5F6FA]" />
+      <div className="h-px bg-[#EDEDED]" />
 
       {/* 처리 현황 */}
       <div className="bg-white px-5 py-6">
@@ -68,7 +68,7 @@ export default function MVArrivalPage() {
       </div>
 
       {/* 구분선 */}
-      <div className="h-2 bg-[#F5F6FA]" />
+      <div className="h-px bg-[#EDEDED]" />
 
       {/* 대기 안내 */}
       <div className="bg-white px-5 py-6 flex flex-col gap-3">

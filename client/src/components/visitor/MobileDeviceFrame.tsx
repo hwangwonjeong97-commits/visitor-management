@@ -43,7 +43,7 @@ export function MobileDeviceFrame({ children, label, screenId, routePath, transp
         <div className="absolute top-[18px] left-1/2 -translate-x-1/2 w-[100px] h-[28px] bg-[#1A1A1A] rounded-full z-10" />
         {/* 스크린 영역 */}
         <div
-          className="relative overflow-hidden rounded-[32px] bg-white flex flex-col"
+          className="relative overflow-hidden rounded-[32px] bg-[#F5F6FA] flex flex-col"
           style={{ width: 390, height: 844 }}
         >
           <div className="absolute top-0 left-0 right-0 z-20">
