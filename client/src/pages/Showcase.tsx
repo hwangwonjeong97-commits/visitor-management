@@ -1,6 +1,9 @@
 import { useState } from "react";
 import { MobileDeviceFrame } from "@/components/visitor/MobileDeviceFrame";
 import { TabletDeviceFrame } from "@/components/visitor/TabletDeviceFrame";
+import PVScanPage from "./pad-visitor/PadScanPage";
+import PVConfirmedPage from "./pad-visitor/PadConfirmedPage";
+import PVRegisterQRPage from "./pad-visitor/PadRegisterQRPage";
 
 import MVMainPage from "./mobile-visitor/MainPage";
 import MVApplyPage from "./mobile-visitor/ApplyPage";
@@ -41,9 +44,9 @@ const PAD_BASE_URL = "https://visitor-access-system-pad.vercel.app";
 
 const PAD_VISITOR_SCREENS = [
   { id: "PV-01", name: "메인화면",               route: PAD_BASE_URL, component: <iframe src={PAD_BASE_URL} className="w-full h-full border-none" title="PV-01" /> },
-  { id: "PV-02", name: "QR 인식 화면",           route: PAD_BASE_URL, component: <iframe src={PAD_BASE_URL} className="w-full h-full border-none" title="PV-02" /> },
-  { id: "PV-03", name: "입장 확인 화면",          route: PAD_BASE_URL, component: <iframe src={PAD_BASE_URL} className="w-full h-full border-none" title="PV-03" /> },
-  { id: "PV-04", name: "미등록 방문객 QR 안내",   route: PAD_BASE_URL, component: <iframe src={PAD_BASE_URL} className="w-full h-full border-none" title="PV-04" /> },
+  { id: "PV-02", name: "QR 인식 화면",           route: PAD_BASE_URL, component: <PVScanPage /> },
+  { id: "PV-03", name: "입장 확인 화면",          route: PAD_BASE_URL, component: <PVConfirmedPage /> },
+  { id: "PV-04", name: "미등록 방문객 QR 안내",   route: PAD_BASE_URL, component: <PVRegisterQRPage /> },
 ];
 
 export default function Showcase() {
