@@ -51,7 +51,7 @@ export default function MVWaitingPage() {
         />
       </div>
 
-      <div className="flex-1" />
+      <div className="no-stagger flex-1" />
 
       {/* 하단 버튼 바 */}
       <div className="no-stagger sticky bottom-0 z-10 bg-white border-t border-[#EDEDED] px-5 py-4">
