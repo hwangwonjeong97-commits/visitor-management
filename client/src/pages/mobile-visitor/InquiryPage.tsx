@@ -34,7 +34,7 @@ export default function MVInquiryPage() {
     { label: "방문 일시", value: `${formatDateTime(form.visitStart)} ~ ${formatDateTime(form.visitEnd)}` },
     { label: "담당자 이름", value: form.hostName  || "박지훈" },
     { label: "담당자 연락처", value: form.hostPhone || "010-1234-5678" },
-    { label: "방문 장소", value: form.location   || "더존을지타워 본사 15층 회의실 A" },
+    { label: "방문 장소", value: form.location   || "더존을지타워 15층 회의실 A" },
     { label: "방문 목적", value: form.purpose    || "업무 미팅" },
   ];
 

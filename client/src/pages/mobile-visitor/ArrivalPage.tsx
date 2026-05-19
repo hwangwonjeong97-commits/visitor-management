@@ -93,7 +93,7 @@ export default function MVArrivalPage() {
         <div className="flex flex-col gap-4">
           <div className="flex gap-2 items-center">
             <p className="text-[14px] text-[#777777] tracking-[-0.28px] leading-[1.4] w-16 flex-shrink-0">주소</p>
-            <p className="text-[15px] text-[#333333] tracking-[-0.3px] leading-[1.4]">더존을지타워 본사 · 1층 안내 데스크</p>
+            <p className="text-[15px] text-[#333333] tracking-[-0.3px] leading-[1.4]">더존을지타워 · 1층 안내 데스크</p>
           </div>
           <div className="w-full h-[159px] rounded-[8px] border border-black/[0.06] overflow-hidden">
             <img src="/map.png" alt="지도" className="w-full h-full object-cover" />
