@@ -5,9 +5,13 @@ interface TabletDeviceFrameProps {
   label?: string;
   screenId?: string;
   routePath?: string;
+  landscape?: boolean;
 }
 
-export function TabletDeviceFrame({ children, label, screenId, routePath }: TabletDeviceFrameProps) {
+export function TabletDeviceFrame({ children, label, screenId, routePath, landscape = false }: TabletDeviceFrameProps) {
+  const screenW = landscape ? 1024 : 768;
+  const screenH = landscape ? 768 : 1024;
+
   return (
     <div className="flex flex-col items-center gap-3 flex-shrink-0">
       {(screenId || label) && (
@@ -36,14 +40,18 @@ export function TabletDeviceFrame({ children, label, screenId, routePath }: Tabl
         className="relative bg-[#2A2A2A] rounded-[24px] p-[12px]"
         style={{ boxShadow: "0 20px 60px rgba(0,0,0,0.25), 0 0 0 1px rgba(255,255,255,0.08)" }}
       >
-        {/* 홈 버튼 (우측 중앙) */}
-        <div className="absolute right-[4px] top-1/2 -translate-y-1/2 w-[4px] h-[48px] bg-[#3A3A3A] rounded-full" />
+        {/* 홈 버튼 — landscape: 하단 중앙, portrait: 우측 중앙 */}
+        {landscape ? (
+          <div className="absolute bottom-[4px] left-1/2 -translate-x-1/2 h-[4px] w-[48px] bg-[#3A3A3A] rounded-full" />
+        ) : (
+          <div className="absolute right-[4px] top-1/2 -translate-y-1/2 w-[4px] h-[48px] bg-[#3A3A3A] rounded-full" />
+        )}
         {/* 스크린 영역 */}
         <div
           className="relative overflow-hidden rounded-[16px] bg-[#F5F6FA]"
-          style={{ width: 768, height: 1024 }}
+          style={{ width: screenW, height: screenH }}
         >
-          <div className="w-full h-full overflow-y-auto overflow-x-hidden">
+          <div className="w-full h-full overflow-hidden">
             {children}
           </div>
         </div>

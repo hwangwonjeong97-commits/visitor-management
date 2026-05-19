@@ -109,6 +109,7 @@ export default function Showcase() {
             description="로비 패드에서 방문객이 QR 인식 또는 정보를 입력하는 화면"
             screens={PAD_VISITOR_SCREENS}
             frameType="tablet"
+            landscape={true}
           />
         )}
       </main>
@@ -128,9 +129,10 @@ interface ShowcaseSectionProps {
   description: string;
   screens: Screen[];
   frameType: "mobile" | "tablet";
+  landscape?: boolean;
 }
 
-function ShowcaseSection({ title, description, screens, frameType }: ShowcaseSectionProps) {
+function ShowcaseSection({ title, description, screens, frameType, landscape = false }: ShowcaseSectionProps) {
   return (
     <section>
       <div className="mb-8">
@@ -157,6 +159,7 @@ function ShowcaseSection({ title, description, screens, frameType }: ShowcaseSec
               screenId={screen.id}
               label={screen.name}
               routePath={screen.route}
+              landscape={landscape}
             >
               {screen.component}
             </TabletDeviceFrame>
