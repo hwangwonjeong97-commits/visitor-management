@@ -15,7 +15,7 @@ export default function MVWaitingPage() {
         leftIcon="close"
         onBack={() => navigate("/visitor")}
         rightElement={
-          <span className="border border-[#105AFF] flex items-center justify-center h-6 px-2 rounded-full text-[12px] font-medium text-[#105AFF] tracking-[-0.24px] whitespace-nowrap leading-[1.4]">
+          <span className="border border-[#949DAF] flex items-center justify-center h-6 px-2 rounded-full text-[12px] font-medium text-[#949DAF] tracking-[-0.24px] whitespace-nowrap leading-[1.4]">
             승인 대기
           </span>
         }
