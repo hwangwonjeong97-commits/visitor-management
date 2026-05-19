@@ -19,11 +19,11 @@ export default function MVMainPage() {
       {/* ── 히어로 헤더 (가운데 정렬) ── */}
       <div className="px-5 pt-[160px] pb-10 flex flex-col items-center gap-5" style={{ background: "linear-gradient(160deg, #D3E7FE 0%, #EFF4FF 50%, #FFFFFF 100%)" }}>
         {/* 더존비즈온 로고 */}
-        <img src="/douzone-logo.svg" alt="더존비즈온" className="h-[28px] w-auto" />
+        <img src="/douzone-logo.svg" alt="더존비즈온" className="h-[20px] w-auto" />
 
         {/* 타이틀 */}
         <div className="flex flex-col items-center gap-1">
-          <h1 className="text-[26px] font-bold text-[#222222] text-center">더존 을지타워 방문자 예약 시스템</h1>
+          <h1 className="text-[20px] font-bold text-[#222222] text-center">더존 을지타워 방문자 예약 시스템</h1>
         </div>
       </div>
 
@@ -54,14 +54,6 @@ export default function MVMainPage() {
               <path fillRule="evenodd" clipRule="evenodd" d="M13.8887 13C17.816 13 21 16.184 21 20.1113C20.9999 20.6021 20.6021 20.9999 20.1113 21H3.88867C3.39792 20.9999 3.00012 20.6021 3 20.1113C3 16.184 6.18397 13 10.1113 13H13.8887ZM11.7031 20.1299C11.7356 20.1924 11.7692 20.2542 11.8037 20.3154C11.7765 20.2543 11.743 20.1923 11.7031 20.1299Z" fill="#949DAF"/>
             </svg>
             <span className="text-[16px] font-semibold text-[#333333]">신청 조회</span>
-          </button>
-          <button
-            className="flex-1 h-[64px] bg-[#F5F6FA] rounded-2xl px-4 flex items-center gap-3 active:bg-[#EDEDED] transition-colors"
-          >
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="flex-shrink-0">
-              <path fillRule="evenodd" clipRule="evenodd" d="M18 3C19.6569 3 21 4.34315 21 6V18C21 19.6569 19.6569 21 18 21H6C4.34315 21 3 19.6569 3 18V6C3 4.34315 4.34315 3 6 3H18ZM7.66992 15.25C7.25571 15.25 6.91992 15.5858 6.91992 16C6.91992 16.4142 7.25571 16.75 7.66992 16.75H16.3301C16.7442 16.7499 17.0801 16.4142 17.0801 16C17.0801 15.5858 16.7442 15.2501 16.3301 15.25H7.66992ZM7.66992 11.25C7.25571 11.25 6.91992 11.5858 6.91992 12C6.91992 12.4142 7.25571 12.75 7.66992 12.75H16.3301C16.7442 12.7499 17.0801 12.4142 17.0801 12C17.0801 11.5858 16.7442 11.2501 16.3301 11.25H7.66992ZM7.66992 7.25C7.25571 7.25 6.91992 7.58579 6.91992 8C6.91992 8.41421 7.25571 8.75 7.66992 8.75H13.0801L13.1562 8.74609C13.5346 8.70785 13.8301 8.38844 13.8301 8C13.8301 7.61156 13.5346 7.29215 13.1562 7.25391L13.0801 7.25H7.66992Z" fill="#949DAF"/>
-            </svg>
-            <span className="text-[16px] font-semibold text-[#333333]">신청 내역</span>
           </button>
         </div>
       </div>
