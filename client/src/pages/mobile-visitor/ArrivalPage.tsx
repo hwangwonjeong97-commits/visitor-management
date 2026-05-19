@@ -101,7 +101,7 @@ export default function MVArrivalPage() {
         </div>
       </div>
 
-      <div className="no-stagger flex-1" />
+      <div className="flex-1" />
     </div>
   );
 }

@@ -239,7 +239,7 @@ export default function MVApplyPage() {
       <div className="flex-1" />
 
       {/* ── 하단 버튼 바 ── */}
-      <div className="no-stagger sticky bottom-0 z-10 bg-white border-t border-[#EDEDED] px-5 py-4">
+      <div className="sticky bottom-0 z-10 bg-white border-t border-[#EDEDED] px-5 py-4">
         <div className="flex gap-2.5">
           <div className="flex-1">
             <SecondaryButton fullWidth size="md" variant="tertiary" onClick={() => {}}>
