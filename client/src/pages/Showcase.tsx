@@ -56,7 +56,7 @@ export default function Showcase() {
   return (
     <div className="min-h-screen bg-[#F0F2F7]">
       <header className="sticky top-0 z-20 bg-white border-b border-[#EDEDED]" style={{ boxShadow: "0 2px 4px rgba(0,0,0,0.06)" }}>
-        <div className="max-w-[1600px] mx-auto px-8 h-16 flex items-center justify-between">
+        <div className="max-w-[1600px] mx-auto px-8 pt-6 pb-4 flex items-center justify-between">
           <div className="flex items-center gap-3">
             <div className="w-9 h-9 rounded-lg bg-[#F0F2F7] flex items-center justify-center">
               <img src="/douzone-icon.png" alt="더존을지타워" className="w-6 h-6 object-contain" />
