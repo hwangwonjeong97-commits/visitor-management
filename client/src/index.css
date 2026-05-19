@@ -6,21 +6,25 @@
   to   { opacity: 1; transform: translateY(0); }
 }
 
+@keyframes page-fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
 .page-stagger > * > *:not(.no-stagger) {
   animation: page-slide-up 0.55s cubic-bezier(0.23, 1, 0.32, 1) both;
   will-change: transform, opacity;
 }
 .page-stagger > * > *.no-stagger {
-  animation: none !important;
-  opacity: 1 !important;
-  transform: none !important;
+  animation: page-fade-in 0.55s cubic-bezier(0.23, 1, 0.32, 1) both;
+  animation-delay: 0.25s;
 }
-.page-stagger > * > *:nth-child(1) { animation-delay: 0.00s; }
-.page-stagger > * > *:nth-child(2) { animation-delay: 0.10s; }
-.page-stagger > * > *:nth-child(3) { animation-delay: 0.20s; }
-.page-stagger > * > *:nth-child(4) { animation-delay: 0.30s; }
-.page-stagger > * > *:nth-child(5) { animation-delay: 0.40s; }
-.page-stagger > * > *:nth-child(6) { animation-delay: 0.50s; }
+.page-stagger > * > *:not(.no-stagger):nth-child(1) { animation-delay: 0.00s; }
+.page-stagger > * > *:not(.no-stagger):nth-child(2) { animation-delay: 0.10s; }
+.page-stagger > * > *:not(.no-stagger):nth-child(3) { animation-delay: 0.20s; }
+.page-stagger > * > *:not(.no-stagger):nth-child(4) { animation-delay: 0.30s; }
+.page-stagger > * > *:not(.no-stagger):nth-child(5) { animation-delay: 0.40s; }
+.page-stagger > * > *:not(.no-stagger):nth-child(6) { animation-delay: 0.50s; }
 
 @custom-variant dark (&:is(.dark *));
 
