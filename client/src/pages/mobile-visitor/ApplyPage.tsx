@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { useLocation, useSearch } from "wouter";
 import { ScreenHeader } from "@/components/visitor/ScreenHeader";
 import { SectionTitle } from "@/components/visitor/SectionTitle";
@@ -155,13 +154,12 @@ const AdditionalInfoSection = ({
   </div>
 );
 
-export default function MVApplyPage() {
+export default function MVApplyPage({ isInvited = true }: { isInvited?: boolean }) {
   const [, navigate] = useLocation();
   const search = useSearch();
   const isEditMode = new URLSearchParams(search).get("mode") === "edit";
   const { form, setField } = useVisitorForm();
 
-  const [isInvited, setIsInvited] = useState(true);
   const canSubmit = form.consentSecurity && form.consentPrivacy && form.visitorName && form.visitorPhone && form.company;
 
   const basicInfoRows = [
@@ -183,23 +181,6 @@ export default function MVApplyPage() {
   return (
     <div className="min-h-full flex flex-col bg-white">
       <ScreenHeader title={isEditMode ? "신청정보 수정" : "방문신청"} onBack={() => window.history.back()} />
-
-      {/* 사전등록 탭 */}
-      <div className="bg-white px-5 pt-4 pb-0 flex gap-1">
-        {[{ label: "사전등록 O", value: true }, { label: "사전등록 X", value: false }].map((tab) => (
-          <button
-            key={String(tab.value)}
-            onClick={() => setIsInvited(tab.value)}
-            className={`px-4 h-9 rounded-full text-[13px] font-semibold transition-colors ${
-              isInvited === tab.value
-                ? "bg-[#105AFF] text-white"
-                : "bg-[#F5F6FA] text-[#777777]"
-            }`}
-          >
-            {tab.label}
-          </button>
-        ))}
-      </div>
 
       {isInvited ? (
         /* ── 사전등록 O ── */
