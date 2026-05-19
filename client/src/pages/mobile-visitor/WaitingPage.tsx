@@ -34,10 +34,6 @@ export default function MVWaitingPage() {
         <p className="text-[14px] text-[#777777] leading-[1.4]">
           승인이 완료되면 카카오 알림톡으로 QR 패스가 발송됩니다.
         </p>
-        <div className="mt-5 flex items-center gap-2 px-4 py-2.5 bg-[#F5F6FA] rounded-full">
-          <img src="/kakaotalk-icon.png" alt="카카오톡" className="w-4 h-4 flex-shrink-0" />
-          <span className="text-[12px] text-[#777777]">카카오 알림톡으로 QR패스가 발송됩니다.</span>
-        </div>
       </div>
 
 
