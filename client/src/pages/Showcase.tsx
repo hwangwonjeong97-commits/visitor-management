@@ -154,23 +154,27 @@ function ShowcaseSection({ title, description, screens, openUrl, isTablet = fals
         </a>
       </div>
 
-      <div className="flex gap-10 overflow-x-auto pb-6">
-        {screens.map((screen) =>
-          isTablet ? (
-            <TabletDeviceFrame key={screen.id} screenId={screen.id} label={screen.name} landscape>
-              {screen.component}
-            </TabletDeviceFrame>
-          ) : (
-            <MobileDeviceFrame
-              key={screen.id}
-              screenId={screen.id}
-              label={screen.name}
-              transparentStatusBar={screen.id === "01"}
-            >
-              {screen.component}
-            </MobileDeviceFrame>
-          )
-        )}
+      <div className="overflow-x-auto">
+        <div className="flex gap-10 px-6 pt-4 pb-16">
+          {screens.map((screen) =>
+            isTablet ? (
+              <TabletDeviceFrame key={screen.id} screenId={screen.id} label={screen.name} landscape>
+                {screen.component}
+              </TabletDeviceFrame>
+            ) : (
+              <MobileDeviceFrame
+                key={screen.id}
+                screenId={screen.id}
+                label={screen.name}
+                transparentStatusBar={screen.id === "01"}
+              >
+                {screen.component}
+              </MobileDeviceFrame>
+            )
+          )}
+          {/* 우측 그림자 공간 확보 */}
+          <div className="flex-shrink-0 w-6" />
+        </div>
       </div>
     </section>
   );
