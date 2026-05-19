@@ -44,7 +44,7 @@ export default function MVWaitingPage() {
       {/* 신청 요약 */}
       <div className="bg-white px-5 pt-9 pb-6">
         <div className="flex items-center h-9 mb-0.5">
-          <p className="flex-1 text-[13px] font-normal text-[#333333]">신청 정보</p>
+          <p className="flex-1 text-[15px] font-normal text-[#333333]">신청 정보</p>
           <button onClick={() => navigate("/visitor/apply?mode=edit")} className="active:opacity-60">
             <Pencil className="w-5 h-5 text-[#989898]" strokeWidth={1.5} />
           </button>
