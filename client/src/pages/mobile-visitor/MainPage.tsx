@@ -1,5 +1,5 @@
 import { useLocation } from "wouter";
-import { PenLine, CheckCircle2, QrCode, MapPin, ChevronRight } from "lucide-react";
+import { PenLine, CheckCircle2, QrCode, MapPin } from "lucide-react";
 import { useVisitorForm } from "@/contexts/VisitorFormContext";
 
 const STEPS = [
@@ -28,34 +28,31 @@ export default function MVMainPage() {
       </div>
 
       {/* ── CTA 영역 ── */}
-      <div className="px-5 flex flex-col gap-3">
+      <div className="px-5 flex gap-3">
 
-        {/* Primary 대형 버튼 */}
+        {/* 방문 신청하기 */}
         <button
           onClick={() => { resetForm(); navigate("/visitor/apply"); }}
-          className="w-full h-[64px] bg-[#105AFF] rounded-2xl px-5 flex items-center justify-center gap-3 active:bg-[#0943C6] transition-colors"
+          className="flex-1 h-[64px] bg-[#105AFF] rounded-2xl px-4 flex flex-col items-center justify-center gap-1 active:bg-[#0943C6] transition-colors"
         >
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="flex-shrink-0">
-              <path d="M18.3682 11.8596L9.35938 20.8527C9.24791 20.9642 9.09646 21.0098 8.95117 20.9933L3.49707 21.0002C3.2227 21.0001 3.00027 20.7771 3 20.5021V15.0226C3.00005 15.0147 3.00156 15.0068 3.00488 15.0002C2.99449 14.8606 3.04118 14.7173 3.14746 14.6105L12.1006 5.63592L18.3682 11.8596Z" fill="white"/>
-              <path d="M13.6406 4.09393C15.0573 2.67439 17.5961 2.6167 19.0127 4.03631L19.9971 5.02362C21.3315 6.36148 21.3558 8.87258 19.9395 10.2922L19.0732 11.1555L12.8037 4.93182L13.6406 4.09393Z" fill="white"/>
-            </svg>
-          <span className="flex-1 text-[17px] font-bold text-white text-left">방문 신청하기</span>
-          <ChevronRight className="w-5 h-5 text-white/60 flex-shrink-0" />
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M18.3682 11.8596L9.35938 20.8527C9.24791 20.9642 9.09646 21.0098 8.95117 20.9933L3.49707 21.0002C3.2227 21.0001 3.00027 20.7771 3 20.5021V15.0226C3.00005 15.0147 3.00156 15.0068 3.00488 15.0002C2.99449 14.8606 3.04118 14.7173 3.14746 14.6105L12.1006 5.63592L18.3682 11.8596Z" fill="white"/>
+            <path d="M13.6406 4.09393C15.0573 2.67439 17.5961 2.6167 19.0127 4.03631L19.9971 5.02362C21.3315 6.36148 21.3558 8.87258 19.9395 10.2922L19.0732 11.1555L12.8037 4.93182L13.6406 4.09393Z" fill="white"/>
+          </svg>
+          <span className="text-[14px] font-bold text-white">방문 신청하기</span>
         </button>
 
-        {/* Secondary 카드 2개 */}
-        <div className="flex gap-2">
-          <button
-            onClick={() => navigate("/visitor/inquiry")}
-            className="flex-1 h-[64px] bg-[#F5F6FA] rounded-2xl px-4 flex items-center gap-3 active:bg-[#EDEDED] transition-colors"
-          >
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="flex-shrink-0">
-              <path d="M12 2C14.4853 2 16.5 4.01472 16.5 6.5C16.5 8.98528 14.4853 11 12 11C9.51472 11 7.5 8.98528 7.5 6.5C7.5 4.01472 9.51472 2 12 2Z" fill="#949DAF"/>
-              <path fillRule="evenodd" clipRule="evenodd" d="M13.8887 13C17.816 13 21 16.184 21 20.1113C20.9999 20.6021 20.6021 20.9999 20.1113 21H3.88867C3.39792 20.9999 3.00012 20.6021 3 20.1113C3 16.184 6.18397 13 10.1113 13H13.8887ZM11.7031 20.1299C11.7356 20.1924 11.7692 20.2542 11.8037 20.3154C11.7765 20.2543 11.743 20.1923 11.7031 20.1299Z" fill="#949DAF"/>
-            </svg>
-            <span className="text-[16px] font-semibold text-[#333333]">신청 조회</span>
-          </button>
-        </div>
+        {/* 신청 조회 */}
+        <button
+          onClick={() => navigate("/visitor/inquiry")}
+          className="flex-1 h-[64px] bg-[#F5F6FA] rounded-2xl px-4 flex flex-col items-center justify-center gap-1 active:bg-[#EDEDED] transition-colors"
+        >
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2C14.4853 2 16.5 4.01472 16.5 6.5C16.5 8.98528 14.4853 11 12 11C9.51472 11 7.5 8.98528 7.5 6.5C7.5 4.01472 9.51472 2 12 2Z" fill="#949DAF"/>
+            <path fillRule="evenodd" clipRule="evenodd" d="M13.8887 13C17.816 13 21 16.184 21 20.1113C20.9999 20.6021 20.6021 20.9999 20.1113 21H3.88867C3.39792 20.9999 3.00012 20.6021 3 20.1113C3 16.184 6.18397 13 10.1113 13H13.8887Z" fill="#949DAF"/>
+          </svg>
+          <span className="text-[14px] font-semibold text-[#333333]">신청 조회</span>
+        </button>
       </div>
 
       {/* ── 신청 절차 ── */}
