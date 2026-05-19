@@ -81,7 +81,7 @@ export default function MVArrivalPage() {
       <div className="h-2 bg-[#F5F6FA]" />
 
       {/* 대기 안내 */}
-      <div className="bg-white px-5 py-6 flex flex-col gap-2">
+      <div className="bg-white px-5 py-6 flex flex-col gap-4">
         <SectionTitle>대기 안내</SectionTitle>
         <div className="w-full h-[46px] bg-[#EFF4FF] rounded-[8px] px-3 flex items-center gap-1">
           <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" className="flex-shrink-0">
