@@ -4,7 +4,7 @@ import { StatusBar } from "./StatusBar";
 
 export function MobilePageLayout({ children, transparentStatusBar = false }: { children: ReactNode; transparentStatusBar?: boolean }) {
   return (
-    <div className="min-h-screen bg-white flex items-start justify-center py-10">
+    <div className="min-h-screen bg-[#F0F2F7] flex items-start justify-center py-10">
       <div
         className="relative w-[390px] h-[844px] bg-white flex flex-col overflow-hidden"
         style={{ boxShadow: "0 8px 32px rgba(0,0,0,0.12)" }}
