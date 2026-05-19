@@ -10,7 +10,7 @@ import { PrimaryButton } from "@/components/visitor/PrimaryButton";
 import { SecondaryButton } from "@/components/visitor/SecondaryButton";
 import { useVisitorForm } from "@/contexts/VisitorFormContext";
 
-const IS_INVITED = true;
+const IS_INVITED = false;
 
 const PURPOSE_OPTIONS = [
   { value: "업무 미팅", label: "업무 미팅" },
