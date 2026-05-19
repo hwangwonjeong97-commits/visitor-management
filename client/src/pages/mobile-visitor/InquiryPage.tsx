@@ -89,10 +89,10 @@ export default function MVInquiryPage() {
           <div className="px-5 py-4">
             <button
               onClick={() => navigate("/visitor/qr-pass")}
-              className="w-full h-12 rounded-[8px] bg-white border border-[#105AFF] flex items-center justify-center gap-[4px] active:bg-[#EFF4FF] transition-colors"
+              className="w-full h-12 rounded-[8px] bg-[#105AFF] flex items-center justify-center gap-[4px] active:bg-[#0943C6] transition-colors"
             >
-              <QrCode className="w-[18px] h-[18px] text-[#105AFF]" />
-              <span className="text-[15px] font-bold text-[#105AFF] tracking-[-0.3px]">QR 패스 확인</span>
+              <QrCode className="w-[18px] h-[18px] text-white" />
+              <span className="text-[15px] font-bold text-white tracking-[-0.3px]">QR 패스 확인</span>
             </button>
           </div>
         </div>
