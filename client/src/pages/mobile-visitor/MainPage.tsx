@@ -23,8 +23,7 @@ export default function MVMainPage() {
 
         {/* 타이틀 */}
         <div className="flex flex-col items-center gap-1">
-          <h1 className="text-[26px] font-bold text-[#222222] text-center">더존비즈온</h1>
-          <p className="text-[16px] text-[#777777] text-center">방문자 예약 관리</p>
+          <h1 className="text-[26px] font-bold text-[#222222] text-center">더존 을지타워 방문자 예약 시스템</h1>
         </div>
       </div>
 
