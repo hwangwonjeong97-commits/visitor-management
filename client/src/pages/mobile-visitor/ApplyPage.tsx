@@ -225,7 +225,7 @@ export default function MVApplyPage({ isInvited = true }: { isInvited?: boolean 
         /* ── 사전등록 X ── */
         <>
           {/* 안내 텍스트 */}
-          <div className="bg-white px-5 pt-6 pb-0">
+          <div className="bg-white px-5 pt-5 pb-0">
             <p className="text-[22px] font-normal text-[#333333] leading-[1.4] tracking-[-0.44px]">
               <span className="font-bold">방문 정보</span>를 입력하고,<br />
               <span className="font-bold">필요한 항목</span>을 작성해주세요.
@@ -233,7 +233,7 @@ export default function MVApplyPage({ isInvited = true }: { isInvited?: boolean 
           </div>
 
           {/* 섹션 B: 방문자 정보 (먼저) */}
-          <div className="pt-6">
+          <div className="pt-10">
             <VisitorInfoSection form={form} setField={setField} />
           </div>
 
