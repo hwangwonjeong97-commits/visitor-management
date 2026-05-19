@@ -2,6 +2,7 @@ import { useLocation } from "wouter";
 
 import { QrCode } from "lucide-react";
 import { ScreenHeader } from "@/components/visitor/ScreenHeader";
+import { StatusBadge } from "@/components/visitor/StatusBadge";
 import { SecondaryButton } from "@/components/visitor/SecondaryButton";
 import { useVisitorForm } from "@/contexts/VisitorFormContext";
 
@@ -76,9 +77,7 @@ export default function MVInquiryPage() {
             <span className="text-[14px] text-[#777777] w-[60px] flex-shrink-0 leading-[1.4]">
               신청상태
             </span>
-            <span className="text-[15px] font-semibold leading-[1.4]" style={{ color: statusColor }}>
-              {statusLabel}
-            </span>
+            <StatusBadge status={currentStatus} />
           </div>
 
           {/* 메모 (입력된 경우만) */}
