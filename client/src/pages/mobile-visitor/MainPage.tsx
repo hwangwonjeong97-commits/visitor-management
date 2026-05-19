@@ -77,7 +77,7 @@ export default function MVMainPage() {
       </div>
 
       {/* ── 하단 주소 정보 ── */}
-      <div className="mt-auto bg-white px-5 pt-3 pb-8 flex flex-col items-center gap-0.5">
+      <div className="no-stagger mt-auto bg-white px-5 pt-3 pb-8 flex flex-col items-center gap-0.5">
         <p className="text-[11px] text-[#B4B4B4] text-center leading-[1.3]">
           주소 : 서울특별시 중구 을지로 29 더존을지타워
         </p>

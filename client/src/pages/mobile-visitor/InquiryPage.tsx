@@ -107,7 +107,7 @@ export default function MVInquiryPage() {
       </div>
 
       {/* 하단 버튼 바 */}
-      <div className="sticky bottom-0 z-10 bg-white border-t border-[#EDEDED] px-5 py-4">
+      <div className="no-stagger sticky bottom-0 z-10 bg-white border-t border-[#EDEDED] px-5 py-4">
         <SecondaryButton fullWidth size="md" variant="tertiary" onClick={() => navigate("/visitor")}>
           신청취소
         </SecondaryButton>
