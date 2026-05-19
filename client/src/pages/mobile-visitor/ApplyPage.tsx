@@ -28,7 +28,7 @@ export default function MVApplyPage() {
   const canSubmit = form.consentSecurity && form.consentPrivacy && form.visitorName && form.visitorPhone && form.company;
 
   return (
-    <div className="min-h-full flex flex-col bg-[#F5F6FA]">
+    <div className="min-h-full flex flex-col bg-white">
       <ScreenHeader title={isEditMode ? "신청정보 수정" : "방문신청"} onBack={() => window.history.back()} />
 
       {/* 초대 안내 배너 */}
