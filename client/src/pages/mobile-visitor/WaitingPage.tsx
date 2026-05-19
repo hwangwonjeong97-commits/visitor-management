@@ -8,11 +8,13 @@ import { SecondaryButton } from "@/components/visitor/SecondaryButton";
 import waitingAnimation from "@/assets/waiting-animation.json";
 import { useVisitorForm } from "@/contexts/VisitorFormContext";
 
-export default function MVWaitingPage() {
+export default function MVWaitingPage({ isInvited: isInvitedProp }: { isInvited?: boolean }) {
   const [, navigate] = useLocation();
-  const { isInvited } = useVisitorForm();
+  const { isInvited: isInvitedCtx } = useVisitorForm();
 
-  // 사전등록 여부에 따라 다음 화면 분기
+  // prop 우선, 없으면 context fallback
+  const isInvited = isInvitedProp ?? isInvitedCtx;
+
   const handleInquiry = () => {
     navigate(isInvited ? "/visitor/inquiry" : "/visitor/arrival");
   };
