@@ -206,7 +206,7 @@ export default function MVApplyPage({ isInvited = true }: { isInvited?: boolean 
           </div>
 
           {/* 기본정보 카드 (read-only) */}
-          <div className="bg-white px-5 py-6">
+          <div className="bg-[#F5F6FA] px-5 py-5">
             <div className="bg-white rounded-2xl overflow-hidden" style={{ boxShadow: "0 2px 8px rgba(0,0,0,0.08)" }}>
               <div className="px-5 pt-4 pb-2">
                 <p className="text-[16px] font-bold text-[#222222]">기본정보</p>
