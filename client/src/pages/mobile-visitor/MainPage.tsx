@@ -22,7 +22,7 @@ export default function MVMainPage({ isInvited = true }: { isInvited?: boolean }
       <div className="relative flex flex-col flex-1 px-5" style={{ animation: 'none' }}>
 
         {/* 타이틀 영역 */}
-        <div className="flex flex-col items-center gap-10 pt-[230px] pb-0 animate-fade-in-up" style={{ animationDelay: '0s' }}>
+        <div className="flex flex-col items-center gap-10 pt-[209px] pb-0 animate-fade-in-up" style={{ animationDelay: '0s' }}>
           <div className="flex flex-col items-center text-center">
             <p className="text-[26px] font-normal text-[#333333] tracking-[-0.52px] leading-[1.4]">더존을지타워</p>
             <p className="text-[26px] font-bold text-[#333333] tracking-[-0.52px] leading-[1.4]">방문객 예약 시스템</p>
@@ -58,7 +58,7 @@ export default function MVMainPage({ isInvited = true }: { isInvited?: boolean }
         </div>
 
         {/* 신청 절차 + 푸터 */}
-        <div className="mt-auto flex flex-col gap-[50px] animate-fade-in-up" style={{ animationDelay: '0.25s' }}>
+        <div className="mt-auto flex flex-col gap-[40px] animate-fade-in-up" style={{ animationDelay: '0.25s' }}>
           {/* 방문 신청 절차 */}
           <div className="flex flex-col gap-[14px]">
             <p className="text-[14px] font-medium text-[#333333] tracking-[-0.28px] leading-[1.4]">방문 신청 절차</p>
@@ -83,7 +83,7 @@ export default function MVMainPage({ isInvited = true }: { isInvited?: boolean }
           </div>
 
           {/* 푸터 */}
-          <div className="border-t border-[#EDEDED] pt-6 pb-8 flex items-center justify-center gap-2">
+          <div className="border-t border-[#EDEDED] pt-6 pb-4 flex items-center justify-center gap-2">
             <img src="/images/douzone-logo.png" alt="DOUZONE" className="h-[10px] w-auto object-contain" />
             <div className="flex items-center" style={{ gap: 4 }}>
               <p className="text-[12px] text-[#989898] tracking-[-0.24px] leading-[1.4] whitespace-nowrap">
