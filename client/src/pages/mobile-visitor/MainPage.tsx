@@ -13,10 +13,10 @@ export default function MVMainPage({ isInvited = true }: { isInvited?: boolean }
   const { resetForm } = useVisitorForm();
 
   return (
-    <div className="min-h-full flex flex-col bg-white relative overflow-hidden">
-
-      {/* 배경 이미지 */}
-      <img src="/bg.png" alt="" className="absolute inset-0 w-full h-full object-cover pointer-events-none" />
+    <div
+      className="min-h-full flex flex-col bg-white relative overflow-hidden"
+      style={{ backgroundImage: 'url(/bg.png)', backgroundSize: 'cover', backgroundPosition: 'center' }}
+    >
 
       {/* 컨텐츠 */}
       <div className="relative flex flex-col flex-1 px-5">
@@ -58,7 +58,7 @@ export default function MVMainPage({ isInvited = true }: { isInvited?: boolean }
         </div>
 
         {/* 신청 절차 + 푸터 */}
-        <div className="absolute bottom-0 left-0 right-0 px-5 flex flex-col gap-[50px]">
+        <div className="mt-auto flex flex-col gap-[50px]">
           {/* 신청 절차 */}
           <div className="flex flex-col gap-3">
             <p className="text-[14px] font-medium text-[#333333] tracking-[-0.28px] leading-[1.4]">신청 절차</p>
