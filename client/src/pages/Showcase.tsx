@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { MobileDeviceFrame } from "@/components/visitor/MobileDeviceFrame";
 import { TabletDeviceFrame } from "@/components/visitor/TabletDeviceFrame";
+import { VisitorPadSystem } from "@/components/visitor/VisitorPadSystem";
 
 import MVMainPage from "./mobile-visitor/MainPage";
 import MVApplyPage from "./mobile-visitor/ApplyPage";
@@ -44,10 +45,10 @@ const MOBILE_EMPLOYEE_SCREENS = [
 
 const PAD_BASE_URL = "https://visitor-access-system-pad.vercel.app";
 const PAD_VISITOR_SCREENS = [
-  { id: "01", name: "메인화면",             component: <iframe src={PAD_BASE_URL} className="w-full h-full border-none" title="PV-01" /> },
-  { id: "02", name: "QR 인식 화면",         component: <iframe src={PAD_BASE_URL} className="w-full h-full border-none" title="PV-02" /> },
-  { id: "03", name: "입장 확인 화면",        component: <iframe src={PAD_BASE_URL} className="w-full h-full border-none" title="PV-03" /> },
-  { id: "04", name: "미등록 방문객 QR 안내", component: <iframe src={PAD_BASE_URL} className="w-full h-full border-none" title="PV-04" /> },
+  { id: "01", name: "메인화면",             component: <VisitorPadSystem step="HOME" /> },
+  { id: "02", name: "QR 인식 화면",         component: <VisitorPadSystem step="CASE_QR" /> },
+  { id: "03", name: "입장 확인 화면",        component: <VisitorPadSystem step="CASE_SUCCESS" /> },
+  { id: "04", name: "미등록 방문객 QR 안내", component: <VisitorPadSystem step="CASE_INFO" /> },
 ];
 
 export default function Showcase() {
