@@ -1,5 +1,6 @@
 import { useLocation } from "wouter";
 import { useVisitorForm } from "@/contexts/VisitorFormContext";
+import { useShowcaseMode } from "@/contexts/ShowcaseModeContext";
 
 const STEPS = [
   { iconSrc: "/ic_edit_flat.svg",        label: "방문신청" },
@@ -11,6 +12,7 @@ const STEPS = [
 export default function MVMainPage({ isInvited = true }: { isInvited?: boolean }) {
   const [, navigate] = useLocation();
   const { resetForm } = useVisitorForm();
+  const isShowcase = useShowcaseMode();
 
   return (
     <div
@@ -31,7 +33,7 @@ export default function MVMainPage({ isInvited = true }: { isInvited?: boolean }
           {/* CTA 버튼 */}
           <div className="flex gap-2 w-full animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
             <button
-              onClick={() => { resetForm(); navigate(`/visitor/apply?invited=${isInvited}`); }}
+              onClick={() => { if (isShowcase) return; resetForm(); navigate(`/visitor/apply?invited=${isInvited}`); }}
               className="flex-1 h-[120px] rounded-[16px] p-[18px] flex flex-col items-start justify-between active:opacity-90 transition-opacity"
               style={{ background: "linear-gradient(123deg, #6E92FF 1.86%, #4F7BFF 100%)", boxShadow: "0 4px 12px rgba(0,0,0,0.12)" }}
             >
@@ -42,7 +44,7 @@ export default function MVMainPage({ isInvited = true }: { isInvited?: boolean }
             </button>
 
             <button
-              onClick={() => navigate(isInvited ? "/visitor/inquiry" : "/visitor/arrival")}
+              onClick={() => { if (isShowcase) return; navigate(isInvited ? "/visitor/inquiry" : "/visitor/arrival"); }}
               className="flex-1 h-[120px] rounded-[16px] p-[18px] flex flex-col items-start justify-between active:opacity-90 transition-opacity"
               style={{ background: "linear-gradient(122deg, #4BCAEB 2%, #22B2D6 100%)", boxShadow: "0 4px 12px rgba(0,0,0,0.12)" }}
             >

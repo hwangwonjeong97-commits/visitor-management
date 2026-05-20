@@ -1,6 +1,7 @@
 import { ReactNode } from "react";
 import { StatusBar } from "./StatusBar";
 import { HomeIndicator } from "./HomeIndicator";
+import { ShowcaseModeProvider } from "@/contexts/ShowcaseModeContext";
 
 interface MobileDeviceFrameProps {
   children: ReactNode;
@@ -9,9 +10,11 @@ interface MobileDeviceFrameProps {
   routePath?: string;
   transparentStatusBar?: boolean;
   hideChrome?: boolean;
+  showcaseMode?: boolean;
 }
 
-export function MobileDeviceFrame({ children, label, screenId, routePath, transparentStatusBar = false, hideChrome = false }: MobileDeviceFrameProps) {
+export function MobileDeviceFrame({ children, label, screenId, routePath, transparentStatusBar = false, hideChrome = false, showcaseMode = false }: MobileDeviceFrameProps) {
+  const content = showcaseMode ? <ShowcaseModeProvider>{children}</ShowcaseModeProvider> : children;
   return (
     <div className="flex flex-col items-center gap-3 flex-shrink-0">
       {(screenId || label) && (
@@ -51,9 +54,9 @@ export function MobileDeviceFrame({ children, label, screenId, routePath, transp
             </div>
           )}
           <div className={`flex-1 overflow-y-auto overflow-x-hidden ${!hideChrome && !transparentStatusBar ? "pt-[44px]" : ""}`}>
-            {hideChrome ? children : (
+            {hideChrome ? content : (
               <div className="page-stagger" style={{ height: transparentStatusBar ? '778px' : '734px' }}>
-                {children}
+                {content}
               </div>
             )}
           </div>

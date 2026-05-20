@@ -1,3 +1,4 @@
+import { useShowcaseMode } from "@/contexts/ShowcaseModeContext";
 import Lottie from "lottie-react";
 import { useLocation } from "wouter";
 import { ScreenHeader } from "@/components/visitor/ScreenHeader";
@@ -12,6 +13,7 @@ export default function MVWaitingPage({ isInvited: isInvitedProp }: { isInvited?
   const [, navigate] = useLocation();
   const search = useSearch();
   const { isInvited: isInvitedCtx, form } = useVisitorForm();
+  const isShowcase = useShowcaseMode();
 
   // URL 파라미터 → prop → context 순으로 우선순위
   const searchParams = new URLSearchParams(search);
@@ -19,6 +21,7 @@ export default function MVWaitingPage({ isInvited: isInvitedProp }: { isInvited?
   const isInvited = urlInvited ?? isInvitedProp ?? isInvitedCtx;
 
   const handleInquiry = () => {
+    if (isShowcase) return;
     navigate(isInvited ? "/visitor/inquiry" : "/visitor/arrival");
   };
 
@@ -27,7 +30,7 @@ export default function MVWaitingPage({ isInvited: isInvitedProp }: { isInvited?
       <ScreenHeader
         title="신청 완료"
         leftIcon="close"
-        onBack={() => navigate("/visitor")}
+        onBack={() => { if (!isShowcase) navigate("/visitor"); }}
         rightElement={
           <span className="border border-[#949DAF] flex items-center justify-center h-6 px-2 rounded-full text-[12px] font-medium text-[#949DAF] tracking-[-0.24px] whitespace-nowrap leading-[1.4]">
             승인 대기
@@ -51,7 +54,7 @@ export default function MVWaitingPage({ isInvited: isInvitedProp }: { isInvited?
       <div className="bg-white px-5 pt-9 pb-6">
         <div className="flex items-center h-9">
           <p className="flex-1 text-[15px] font-normal text-[#333333]">신청 정보</p>
-          <button onClick={() => navigate("/visitor/apply?mode=edit")} className="active:opacity-60">
+          <button onClick={() => { if (!isShowcase) navigate("/visitor/apply?mode=edit"); }} className="active:opacity-60">
             <img src="/ic_edit.svg" alt="편집" className="w-5 h-5" />
           </button>
         </div>
@@ -72,7 +75,7 @@ export default function MVWaitingPage({ isInvited: isInvitedProp }: { isInvited?
       {/* 하단 버튼 바 */}
       <div className="sticky bottom-0 z-10 bg-white border-t border-[#EDEDED] px-5 py-4">
         <div className="flex gap-2.5">
-          <SecondaryButton size="md" fullWidth variant="tertiary" onClick={() => navigate("/visitor")}>신청취소</SecondaryButton>
+          <SecondaryButton size="md" fullWidth variant="tertiary" onClick={() => { if (!isShowcase) navigate("/visitor"); }}>신청취소</SecondaryButton>
           <PrimaryButton size="md" fullWidth onClick={handleInquiry}>신청조회</PrimaryButton>
         </div>
       </div>

@@ -1,3 +1,4 @@
+import { useShowcaseMode } from "@/contexts/ShowcaseModeContext";
 import Lottie from "lottie-react";
 import { useLocation } from "wouter";
 import { CheckCircle2 } from "lucide-react";

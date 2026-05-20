@@ -1,3 +1,4 @@
+import { useShowcaseMode } from "@/contexts/ShowcaseModeContext";
 import { useLocation } from "wouter";
 import { ScreenHeader } from "@/components/visitor/ScreenHeader";
 import { QRDisplayCard } from "@/components/visitor/QRDisplayCard";
@@ -6,10 +7,11 @@ import { useVisitorForm } from "@/contexts/VisitorFormContext";
 export default function MVQRPassPage() {
   const [, navigate] = useLocation();
   const { form } = useVisitorForm();
+  const isShowcase = useShowcaseMode();
 
   return (
     <div className="min-h-full flex flex-col bg-[#F5F6FA]">
-      <ScreenHeader title="신청 조회" onBack={() => navigate("/visitor/inquiry")} />
+      <ScreenHeader title="신청 조회" onBack={() => { if (!isShowcase) navigate("/visitor/inquiry"); }} />
 
       <div className="flex-1 px-5 pt-8 pb-5">
         <div
@@ -34,7 +36,7 @@ export default function MVQRPassPage() {
           {/* 신청 정보 보기 */}
           <div className="mt-auto w-full">
             <button
-              onClick={() => navigate("/visitor/inquiry")}
+              onClick={() => { if (!isShowcase) navigate("/visitor/inquiry"); }}
               className="w-full h-12 rounded-[8px] bg-white border border-[#e1e1e1] flex items-center justify-center gap-[4px] active:opacity-70 transition-opacity"
             >
               <span className="text-[15px] font-normal text-[#333333] tracking-[-0.3px] leading-[1.4]">신청 정보 보기</span>
@@ -45,7 +47,7 @@ export default function MVQRPassPage() {
       {/* 하단 텍스트 버튼 */}
       <div className="sticky bottom-0 z-10 px-5 py-4 flex items-center justify-center">
         <button
-          onClick={() => navigate("/visitor")}
+          onClick={() => { if (!isShowcase) navigate("/visitor"); }}
           className="text-[13px] font-normal text-[#777777] underline leading-[1.4] tracking-[-0.26px] active:opacity-60 transition-opacity"
         >
           신청취소

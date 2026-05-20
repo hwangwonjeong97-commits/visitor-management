@@ -236,6 +236,7 @@ function ShowcaseSection({ title, description, screens, openUrl, isTablet = fals
                     label={screen.name}
                     transparentStatusBar={screen.id === "01"}
                     hideChrome={hideChrome || !!screen.hideChrome}
+                    showcaseMode={!hideChrome && !screen.hideChrome}
                   >
                     {screen.component}
                   </MobileDeviceFrame>

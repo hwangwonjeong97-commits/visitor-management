@@ -1,3 +1,4 @@
+import { useShowcaseMode } from "@/contexts/ShowcaseModeContext";
 import { useState, useEffect } from "react";
 import { useLocation, useSearch } from "wouter";
 import { InfoCard } from "@/components/visitor/InfoCard";
@@ -296,6 +297,7 @@ export default function MVApplyPage({ isInvited: isInvitedProp = true }: { isInv
   const [, navigate] = useLocation();
   const search = useSearch();
   const searchParams = new URLSearchParams(search);
+  const isShowcase = useShowcaseMode();
   const isEditMode = searchParams.get("mode") === "edit";
   const { form, setField, setIsInvited } = useVisitorForm();
 
@@ -402,7 +404,7 @@ export default function MVApplyPage({ isInvited: isInvitedProp = true }: { isInv
               fullWidth
               size="md"
               disabled={!canSubmit}
-              onClick={() => { if (canSubmit) navigate(`/visitor/waiting?invited=${isInvited}`); }}
+              onClick={() => { if (canSubmit && !isShowcase) navigate(`/visitor/waiting?invited=${isInvited}`); }}
             >
               완료
             </PrimaryButton>
