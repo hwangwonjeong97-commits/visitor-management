@@ -27,7 +27,7 @@ export function BrowserDeviceFrame({ children, label, screenId }: BrowserDeviceF
       >
         <div
           className="relative overflow-hidden rounded-[12px] bg-[#F5F6FA]"
-          style={{ width: 1280, height: 720 }}
+          style={{ width: 1440, height: 1080 }}
         >
           {children}
         </div>

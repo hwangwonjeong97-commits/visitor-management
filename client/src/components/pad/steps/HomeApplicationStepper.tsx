@@ -1,10 +1,10 @@
 import { Fragment } from "react";
 
 const STEPS = [
-  { label: "방문신청", iconSrc: "/images/ic-edit.svg" },
-  { label: "내부승인", iconSrc: "/images/ic-check-circle.svg" },
-  { label: "방문수속", iconSrc: "/images/ic-document-check.svg" },
-  { label: "방문완료", iconSrc: "/images/ic-location.svg" },
+  { label: "방문신청", iconSrc: "/ic_edit_flat.svg" },
+  { label: "내부승인", iconSrc: "/ic_check_circle.svg" },
+  { label: "방문수속", iconSrc: "/ic_doc_result_flat.svg" },
+  { label: "방문완료", iconSrc: "/ic_location_fill.svg" },
 ] as const;
 
 export function HomeApplicationStepper() {

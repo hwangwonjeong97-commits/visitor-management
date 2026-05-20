@@ -48,7 +48,7 @@ const MOBILE_EMPLOYEE_SCREENS = [
   { id: "03", name: "방문객 도착 알림",     component: <MEArrivalNoticePage /> },
 ];
 
-const PAD_BASE_URL = "https://visitor-access-system-pad.vercel.app";
+const PAD_BASE_URL = "https://visitor-access-system-eight.vercel.app";
 const PAD_VISITOR_SCREENS = [
   { id: "01", name: "메인화면",             component: <VisitorPadSystem forcedStep="HOME" /> },
   { id: "02", name: "QR 인식 화면",         component: <VisitorPadSystem forcedStep="CASE_QR" /> },
@@ -136,13 +136,12 @@ export default function Showcase() {
             </div>
             <div className="overflow-x-auto pb-6" style={{ scrollbarWidth: "thin", scrollbarColor: "#D3D3D3 transparent" }}>
               <div className="flex justify-center gap-10 pt-4 pb-20 flex-nowrap">
-                <BrowserDeviceFrame screenId="01" label="대시보드">
-                  <div className="w-full h-full bg-[#F5F6FA] flex items-center justify-center">
-                    <div className="flex flex-col items-center gap-3">
-                      <p className="text-[16px] font-bold text-[#222222]">대시보드</p>
-                      <p className="text-[13px] text-[#989898]">화면 구현 예정</p>
-                    </div>
-                  </div>
+                <BrowserDeviceFrame url="visitor-system-three.vercel.app">
+                  <iframe
+                    src="https://visitor-system-three.vercel.app/"
+                    className="w-full h-full border-none"
+                    title="웹-관리자 대시보드"
+                  />
                 </BrowserDeviceFrame>
               </div>
             </div>
