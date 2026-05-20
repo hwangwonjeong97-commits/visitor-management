@@ -1,6 +1,7 @@
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/NotFound";
+import { ReactNode } from "react";
 import { Route, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { MobilePageLayout } from "./components/visitor/MobilePageLayout";
@@ -9,6 +10,19 @@ import { ThemeProvider } from "./contexts/ThemeContext";
 import { VisitorFormProvider } from "./contexts/VisitorFormContext";
 import Report from "./pages/Report";
 import Showcase from "./pages/Showcase";
+
+function EmployeePageLayout({ children }: { children: ReactNode }) {
+  return (
+    <div className="min-h-screen bg-[#F0F2F7] flex items-start justify-center py-10">
+      <div
+        className="relative w-[375px] h-[812px] overflow-hidden"
+        style={{ boxShadow: "0 8px 32px rgba(0,0,0,0.12)" }}
+      >
+        {children}
+      </div>
+    </div>
+  );
+}
 
 // 모바일 — 방문객
 import MVMainPage from "./pages/mobile-visitor/MainPage";
@@ -50,9 +64,9 @@ function Router() {
       <Route path="/visitor/search">{() => <MobilePageLayout><MVSearchPage /></MobilePageLayout>}</Route>
 
       {/* 모바일 — 직원 */}
-      <Route path="/employee/invite">{() => <MobilePageLayout><MEInvitePage /></MobilePageLayout>}</Route>
-      <Route path="/employee/approve">{() => <MobilePageLayout><MEApprovePage /></MobilePageLayout>}</Route>
-      <Route path="/employee/arrival-notice">{() => <MobilePageLayout><MEArrivalNoticePage /></MobilePageLayout>}</Route>
+      <Route path="/employee/invite">{() => <EmployeePageLayout><MEInvitePage /></EmployeePageLayout>}</Route>
+      <Route path="/employee/approve">{() => <EmployeePageLayout><MEApprovePage /></EmployeePageLayout>}</Route>
+      <Route path="/employee/arrival-notice">{() => <EmployeePageLayout><MEArrivalNoticePage /></EmployeePageLayout>}</Route>
 
       {/* 패드 — 방문객 */}
       <Route path="/pad">{() => <PadPageLayout><PVMainPage /></PadPageLayout>}</Route>

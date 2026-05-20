@@ -8,9 +8,10 @@ interface MobileDeviceFrameProps {
   screenId?: string;
   routePath?: string;
   transparentStatusBar?: boolean;
+  hideChrome?: boolean;
 }
 
-export function MobileDeviceFrame({ children, label, screenId, routePath, transparentStatusBar = false }: MobileDeviceFrameProps) {
+export function MobileDeviceFrame({ children, label, screenId, routePath, transparentStatusBar = false, hideChrome = false }: MobileDeviceFrameProps) {
   return (
     <div className="flex flex-col items-center gap-3 flex-shrink-0">
       {(screenId || label) && (
@@ -44,13 +45,15 @@ export function MobileDeviceFrame({ children, label, screenId, routePath, transp
           className="relative overflow-hidden rounded-[32px] bg-[#F5F6FA] flex flex-col"
           style={{ width: 375, height: 812 }}
         >
-          <div className="absolute top-0 left-0 right-0 z-20">
-            <StatusBar transparent={transparentStatusBar} />
-          </div>
-          <div className={`flex-1 overflow-y-auto overflow-x-hidden ${transparentStatusBar ? "" : "pt-[44px]"}`}>
+          {!hideChrome && (
+            <div className="absolute top-0 left-0 right-0 z-20">
+              <StatusBar transparent={transparentStatusBar} />
+            </div>
+          )}
+          <div className={`flex-1 overflow-y-auto overflow-x-hidden ${!hideChrome && !transparentStatusBar ? "pt-[44px]" : ""}`}>
             {children}
           </div>
-          <HomeIndicator />
+          {!hideChrome && <HomeIndicator />}
         </div>
       </div>
     </div>

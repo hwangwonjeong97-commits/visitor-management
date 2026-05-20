@@ -21,15 +21,15 @@ const STATUS_MAP = {
   rejected: { label: "거절",     color: "#FA4553" },
 } as const;
 
-const CARD_HEIGHT = 520;
+const CARD_HEIGHT = 530;
 
 const CARD_SHADOW = "0 2px 8px rgba(0,0,0,0.08)";
 const CARD_RADIUS = "16px";
 
-export default function MVInquiryPage() {
+export default function MVInquiryPage({ initialFlipped = false }: { initialFlipped?: boolean }) {
   const [, navigate] = useLocation();
   const { form } = useVisitorForm();
-  const [isFlipped, setIsFlipped] = useState(false);
+  const [isFlipped, setIsFlipped] = useState(initialFlipped);
 
   const currentStatus = "approved" as keyof typeof STATUS_MAP;
   const { label: statusLabel } = STATUS_MAP[currentStatus];
@@ -37,7 +37,7 @@ export default function MVInquiryPage() {
   const rows = [
     { label: "이름",        value: form.visitorName || "홍길동" },
     { label: "소속(회사명)", value: form.company    || "(주)방문회사" },
-    { label: "방문 일시",   value: form.visitStart && form.visitEnd ? `${formatDateTime(form.visitStart)} ~ ${formatDateTime(form.visitEnd)}` : "" },
+    { label: "방문 일시",   value: "5월 20일  10:00 ~ 18:00" },
     { label: "담당자 이름",  value: form.hostName   || "박지훈" },
     { label: "담당자 연락처", value: form.hostPhone  || "010-1234-5678" },
     { label: "방문 장소",   value: form.location    || "더존을지타워 15층 회의실 A" },
@@ -111,12 +111,27 @@ export default function MVInquiryPage() {
               <span className="text-[14px] text-[#777777] w-[80px] flex-shrink-0 leading-[1.4]">
                 신청상태
               </span>
-              <span
-                className="inline-flex items-center px-1 h-6 rounded-[4px] text-[13px] font-semibold"
-                style={{ backgroundColor: "#F2FFFA", color: "#27C36F" }}
-              >
-                {statusLabel}
+              <div className="flex items-center gap-[2px]">
+                <img src="/ic_check_circle_fill.svg" alt="" className="w-[18px] h-[18px] flex-shrink-0" />
+                <span className="text-[14px] font-medium text-[#27C36F] leading-[1.4]">
+                  {statusLabel}
+                </span>
+              </div>
+            </div>
+
+            <div className="px-5 py-[10px] flex gap-4 items-center">
+              <span className="text-[14px] text-[#777777] w-[80px] flex-shrink-0 leading-[1.4]">
+                차량 이용
               </span>
+              <div className="flex items-center gap-[8px] flex-1">
+                <span className="text-[15px] text-[#333333] leading-[1.4]">123가4567</span>
+                <button
+                  type="button"
+                  className="h-[28px] px-[8px] border border-[#E1E1E1] bg-white rounded-[4px] text-[12px] text-[#333333] tracking-[-0.24px] leading-[1.4] font-normal flex-shrink-0 active:opacity-60 transition-opacity"
+                >
+                  주차권 등록
+                </button>
+              </div>
             </div>
 
             <div className="mt-auto px-5 pb-6">

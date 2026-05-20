@@ -1,6 +1,5 @@
 import Lottie from "lottie-react";
 import { useLocation } from "wouter";
-import { Pencil } from "lucide-react";
 import { ScreenHeader } from "@/components/visitor/ScreenHeader";
 import { InfoCard } from "@/components/visitor/InfoCard";
 import { PrimaryButton } from "@/components/visitor/PrimaryButton";
@@ -12,7 +11,7 @@ import { useSearch } from "wouter";
 export default function MVWaitingPage({ isInvited: isInvitedProp }: { isInvited?: boolean }) {
   const [, navigate] = useLocation();
   const search = useSearch();
-  const { isInvited: isInvitedCtx } = useVisitorForm();
+  const { isInvited: isInvitedCtx, form } = useVisitorForm();
 
   // URL 파라미터 → prop → context 순으로 우선순위
   const searchParams = new URLSearchParams(search);
@@ -50,18 +49,20 @@ export default function MVWaitingPage({ isInvited: isInvitedProp }: { isInvited?
 
       {/* 신청 요약 */}
       <div className="bg-white px-5 pt-9 pb-6">
-        <div className="flex items-center h-9 mb-0.5">
+        <div className="flex items-center h-9">
           <p className="flex-1 text-[15px] font-normal text-[#333333]">신청 정보</p>
           <button onClick={() => navigate("/visitor/apply?mode=edit")} className="active:opacity-60">
-            <Pencil className="w-5 h-5 text-[#989898]" strokeWidth={1.5} />
+            <img src="/ic_edit.svg" alt="편집" className="w-5 h-5" />
           </button>
         </div>
         <InfoCard
           rows={[
-            { label: "방문 일시", value: "2026년 5월 20일 10:00 ~ 18:00" },
-            { label: "담당자",   value: "박지훈 (010-1234-5678)" },
-            { label: "방문 장소", value: "더존을지타워 15층 회의실 A" },
-            { label: "방문 목적", value: "업무 미팅" },
+            { label: "신청자",   value: form.visitorName || "홍길동" },
+            { label: "소속",     value: form.company     || "(주)방문회사" },
+            { label: "방문 일시", value: "5월 20일  10:00 ~ 18:00" },
+            { label: "담당자",   value: form.hostName    || "박지훈" },
+            { label: "방문 장소", value: form.location    || "더존을지타워 15층 회의실 A" },
+            { label: "방문 목적", value: form.purpose     || "업무 미팅" },
           ]}
         />
       </div>

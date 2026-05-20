@@ -27,7 +27,7 @@ const MOBILE_VISITOR_PRE_SCREENS = [
   { id: "02", name: "방문신청 입력",          component: <MVApplyPage isInvited={true} /> },
   { id: "03", name: "신청완료 / 승인 대기",   component: <MVWaitingPage isInvited={true} /> },
   { id: "04", name: "신청 조회_등록",         component: <MVInquiryPage /> },
-  { id: "05", name: "QR 패스",               component: <MVQRPassPage /> },
+  { id: "05", name: "QR 패스",               component: <MVInquiryPage initialFlipped={true} /> },
 ];
 
 const MOBILE_VISITOR_NEW_SCREENS = [
@@ -109,6 +109,7 @@ export default function Showcase() {
             description="직원이 방문 초대를 보내고, 신청을 승인하고, 도착을 확인하는 화면"
             screens={MOBILE_EMPLOYEE_SCREENS}
             openUrl="/employee/invite"
+            hideChrome
           />
         )}
         {activeTab === "pad-visitor" && (
@@ -131,12 +132,13 @@ interface Screen {
   component: React.ReactNode;
 }
 
-function ShowcaseSection({ title, description, screens, openUrl, isTablet = false }: {
+function ShowcaseSection({ title, description, screens, openUrl, isTablet = false, hideChrome = false }: {
   title: string;
   description: string;
   screens: Screen[];
   openUrl: string;
   isTablet?: boolean;
+  hideChrome?: boolean;
 }) {
   return (
     <section>
@@ -149,9 +151,9 @@ function ShowcaseSection({ title, description, screens, openUrl, isTablet = fals
           href={openUrl}
           target="_blank"
           rel="noreferrer"
-          className="flex items-center gap-1.5 h-9 px-4 rounded-[8px] bg-[#105AFF] text-white text-[13px] font-medium hover:bg-[#0943C6] transition-colors"
+          className="flex items-center gap-1.5 h-10 px-4 rounded-[8px] bg-[#105AFF] text-white text-[14px] font-medium hover:bg-[#0943C6] transition-colors"
         >
-          열기 ↗
+          프로토타입 보기 ↗
         </a>
       </div>
 
@@ -168,6 +170,7 @@ function ShowcaseSection({ title, description, screens, openUrl, isTablet = fals
                 screenId={screen.id}
                 label={screen.name}
                 transparentStatusBar={screen.id === "01"}
+                hideChrome={hideChrome}
               >
                 {screen.component}
               </MobileDeviceFrame>

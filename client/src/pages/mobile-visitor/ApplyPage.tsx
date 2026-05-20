@@ -315,9 +315,7 @@ export default function MVApplyPage({ isInvited: isInvitedProp = true }: { isInv
     {
       label: "방문 일시",
       value:
-        form.visitStart && form.visitEnd
-          ? `${formatDateTime(form.visitStart)} ~ ${formatDateTime(form.visitEnd)}`
-          : "6월 3일  09:00 ~ 18:00",
+        "5월 20일  10:00 ~ 18:00",
     },
     { label: "담당자", value: `${form.hostName || "박지훈"} (${form.hostPhone || "010-1234-5678"})` },
     { label: "방문 장소", value: form.location || "더존을지타워 15층 회의실 A" },

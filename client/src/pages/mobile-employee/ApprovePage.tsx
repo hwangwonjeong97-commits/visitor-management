@@ -1,8 +1,21 @@
 export default function MEApprovePage() {
   return (
-    <div className="min-h-full bg-[#F5F6FA] flex flex-col items-center justify-center px-5 gap-4">
-      <p className="text-[16px] font-bold text-[#222222]">방문신청 승인 처리</p>
-      <p className="text-[13px] text-[#777777]">ME-02 · 화면 구현 예정</p>
+    <div className="relative w-full h-full overflow-hidden">
+      <img
+        src="/screen_approve.png"
+        alt="방문신청 승인 처리"
+        style={{ width: 375, height: 812, display: 'block' }}
+        draggable={false}
+      />
+      <div className="absolute inset-x-0 flex justify-center" style={{ top: 240 }}>
+        <img
+          src="/approve_alert.png"
+          alt="승인 알림"
+          className="animate-fade-in-up"
+          style={{ width: 315, height: 320, animationDelay: '0.3s' }}
+          draggable={false}
+        />
+      </div>
     </div>
   );
 }

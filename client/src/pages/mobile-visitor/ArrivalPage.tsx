@@ -36,11 +36,8 @@ export default function MVArrivalPage() {
         </div>
       </div>
 
-      {/* 구분선 */}
-      <div className="h-2 bg-[#F5F6FA]" />
-
       {/* 처리 현황 */}
-      <div className="bg-white px-5 py-6">
+      <div className="bg-white px-5 pt-0 pb-5">
         <SectionTitle className="mb-3">처리 현황</SectionTitle>
 
         <div className="flex flex-col gap-2">
@@ -76,29 +73,36 @@ export default function MVArrivalPage() {
         </div>
       </div>
 
-      {/* 구분선 */}
-      <div className="h-2 bg-[#F5F6FA]" />
+      <div className="h-px bg-[#EDEDED] mx-5" />
 
       {/* 대기 안내 */}
-      <div className="bg-white px-5 py-6 flex flex-col gap-4">
+      <div className="bg-white px-5 pt-5 pb-5 flex flex-col gap-4">
         <SectionTitle>대기 안내</SectionTitle>
-        <div className="w-full h-[46px] bg-[#EFF4FF] rounded-[8px] px-3 flex items-center gap-1">
-          <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" className="flex-shrink-0">
-            <path fillRule="evenodd" clipRule="evenodd" d="M9 1.5C13.1421 1.5 16.5 4.85786 16.5 9C16.5 13.1421 13.1421 16.5 9 16.5C4.85786 16.5 1.5 13.1421 1.5 9C1.5 4.85786 4.85786 1.5 9 1.5ZM9 7.5C8.46167 7.50008 8.02527 7.94763 8.02515 8.49976V12.5002C8.02528 13.0524 8.46167 13.4999 9 13.5C9.5384 13.5 9.97472 13.0524 9.97485 12.5002V8.49976C9.97472 7.94758 9.5384 7.5 9 7.5ZM9 4.5C8.46159 4.50008 8.02515 4.93642 8.02515 5.47485C8.02523 6.01322 8.46164 6.44963 9 6.44971C9.53843 6.44971 9.97477 6.01326 9.97485 5.47485C9.97485 4.93638 9.53848 4.5 9 4.5Z" fill="#105AFF"/>
-          </svg>
-          <span className="text-[14px] text-[#105AFF] leading-[1.4] tracking-[-0.3px] flex-1">
-            로비 1층 안내 데스크에서 방문증을 수령해 주세요.
-          </span>
-        </div>
-        <div className="flex flex-col gap-4">
+<div className="flex flex-col gap-4">
           <div className="flex gap-2 items-center">
-            <p className="text-[14px] text-[#777777] tracking-[-0.28px] leading-[1.4] w-16 flex-shrink-0">주소</p>
+            <p className="text-[14px] text-[#777777] tracking-[-0.28px] leading-[1.4] w-16 flex-shrink-0">수령위치</p>
             <p className="text-[15px] text-[#333333] tracking-[-0.3px] leading-[1.4]">더존을지타워 · 1층 안내 데스크</p>
           </div>
-          <div className="w-full h-[159px] rounded-[8px] border border-black/[0.06] overflow-hidden">
-            <img src="/map.png" alt="지도" className="w-full h-full object-cover" />
-          </div>
         </div>
+      </div>
+
+      <div className="h-px bg-[#EDEDED] mx-5" />
+
+      {/* 차량 이용 안내 */}
+      <div className="bg-white px-5 pt-5 pb-6 flex flex-col gap-4" style={{ animationDelay: '0.6s' }}>
+        <div>
+          <SectionTitle>차량 이용 안내</SectionTitle>
+          <p className="text-[14px] text-[#777777] leading-[1.4] tracking-[-0.28px] mt-1">
+            차량 이용 시 주차권을 발급해 주세요.
+          </p>
+        </div>
+        <button
+          type="button"
+          className="w-full inline-flex items-center justify-center rounded-[10px] border border-[#E1E1E1] text-[#333333] bg-white active:bg-[#F7F8FA] font-normal text-[14px] transition-colors"
+          style={{ height: 44 }}
+        >
+          주차권 등록
+        </button>
       </div>
 
       <div className="flex-1" />
