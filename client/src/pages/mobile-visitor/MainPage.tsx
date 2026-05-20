@@ -34,7 +34,7 @@ export default function MVMainPage({ isInvited = true }: { isInvited?: boolean }
           <div className="flex gap-2 w-full animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
             <button
               onClick={() => { if (isShowcase) return; resetForm(); navigate(`/visitor/apply?invited=${isInvited}`); }}
-              className="flex-1 h-[120px] rounded-[16px] p-[18px] flex flex-col items-start justify-between active:opacity-90 transition-opacity"
+              className="flex-1 h-[120px] rounded-[16px] p-[18px] flex flex-col items-start justify-between hover:opacity-90 active:opacity-80 transition-opacity"
               style={{ background: "linear-gradient(123deg, #6E92FF 1.86%, #4F7BFF 100%)", boxShadow: "0 4px 12px rgba(0,0,0,0.12)" }}
             >
               <span className="text-[18px] font-bold text-white tracking-[-0.36px] leading-[1.4]">방문 신청</span>
@@ -45,7 +45,7 @@ export default function MVMainPage({ isInvited = true }: { isInvited?: boolean }
 
             <button
               onClick={() => { if (isShowcase) return; navigate(isInvited ? "/visitor/inquiry" : "/visitor/arrival"); }}
-              className="flex-1 h-[120px] rounded-[16px] p-[18px] flex flex-col items-start justify-between active:opacity-90 transition-opacity"
+              className="flex-1 h-[120px] rounded-[16px] p-[18px] flex flex-col items-start justify-between hover:opacity-90 active:opacity-80 transition-opacity"
               style={{ background: "linear-gradient(122deg, #4BCAEB 2%, #22B2D6 100%)", boxShadow: "0 4px 12px rgba(0,0,0,0.12)" }}
             >
               <span className="text-[18px] font-bold text-white tracking-[-0.36px] leading-[1.4]">신청 조회</span>

@@ -34,7 +34,7 @@ export function PrimaryButton({
         fullWidth ? "w-full" : "",
         disabled
           ? "bg-[#F4F4F4] text-[#B4B4B4] cursor-not-allowed"
-          : "bg-[#105AFF] text-white active:bg-[#0943C6]",
+          : "bg-[#105AFF] text-white hover:bg-[#124ceb] active:bg-[#0943C6]",
       ].join(" ")}
     >
       {children}

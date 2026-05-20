@@ -68,7 +68,7 @@ export default function Showcase() {
               <img src="/douzone-icon.png" alt="더존을지타워" className="w-6 h-6 object-contain" />
             </div>
             <div className="flex flex-col gap-[2px]">
-              <p className="text-[20px] font-bold text-[#222222] leading-tight">더존을지타워 방문자 출입관리 시스템</p>
+              <p className="text-[20px] font-bold text-[#222222] leading-tight">더존을지타워 방문객 출입관리 시스템</p>
               <p className="text-[14px] text-[#989898]">UI 화면 시안</p>
             </div>
           </div>

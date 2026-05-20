@@ -27,10 +27,10 @@ export function SecondaryButton({
 }: SecondaryButtonProps) {
   const variantClasses =
     variant === "outline"
-      ? "border border-[#105AFF] text-[#105AFF] bg-white active:bg-[#EFF4FF] font-semibold"
+      ? "border border-[#105AFF] text-[#105AFF] bg-white hover:bg-[#EFF4FF] active:bg-[#E4EEFA] font-semibold"
       : variant === "tertiary"
-      ? "border border-[#E1E1E1] text-[#333333] bg-white active:bg-[#F7F8FA] font-normal"
-      : "text-[#105AFF] bg-transparent active:bg-[#EFF4FF] font-semibold";
+      ? "border border-[#E1E1E1] text-[#333333] bg-white hover:bg-[#F7F8FA] active:bg-[#F0F2F7] font-normal"
+      : "text-[#105AFF] bg-transparent hover:bg-[#EFF4FF] active:bg-[#E4EEFA] font-semibold";
 
   return (
     <button

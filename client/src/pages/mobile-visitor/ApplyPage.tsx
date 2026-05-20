@@ -87,7 +87,7 @@ type FormProps = {
 function VisitorInfoSection({ form, setField }: FormProps) {
   return (
     <div className="bg-white px-5 py-6 flex flex-col gap-4">
-      <SectionTitle>방문자 정보</SectionTitle>
+      <SectionTitle>방문객 정보</SectionTitle>
       <TextInput label="이름" value={form.visitorName} onChange={(v) => setField("visitorName", v)} required placeholder="홍길동" />
       <TextInput label="연락처" value={form.visitorPhone} onChange={(v) => setField("visitorPhone", v)} required type="tel" placeholder="010-0000-0000" />
       <TextInput label="소속(회사명)" value={form.company} onChange={(v) => setField("company", v)} required placeholder="회사명 또는 소속을 입력해 주세요" />

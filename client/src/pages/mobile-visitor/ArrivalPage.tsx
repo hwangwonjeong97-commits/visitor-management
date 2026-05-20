@@ -99,7 +99,7 @@ export default function MVArrivalPage() {
         </div>
         <button
           type="button"
-          className="w-full inline-flex items-center justify-center rounded-[10px] border border-[#E1E1E1] text-[#333333] bg-white active:bg-[#F7F8FA] font-normal text-[14px] transition-colors"
+          className="w-full inline-flex items-center justify-center rounded-[10px] border border-[#E1E1E1] text-[#333333] bg-white hover:bg-[#F7F8FA] active:bg-[#F0F2F7] font-normal text-[14px] transition-colors"
           style={{ height: 44 }}
         >
           주차권 등록

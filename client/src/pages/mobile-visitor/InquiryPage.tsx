@@ -129,7 +129,7 @@ export default function MVInquiryPage({ initialFlipped = false }: { initialFlipp
                 <span className="text-[15px] text-[#333333] leading-[1.4]">123가4567</span>
                 <button
                   type="button"
-                  className="h-[28px] px-[8px] border border-[#E1E1E1] bg-white rounded-[4px] text-[12px] text-[#333333] tracking-[-0.24px] leading-[1.4] font-normal flex-shrink-0 active:opacity-60 transition-opacity"
+                  className="h-[28px] px-[8px] border border-[#E1E1E1] bg-white rounded-[4px] text-[12px] text-[#333333] tracking-[-0.24px] leading-[1.4] font-normal flex-shrink-0 hover:bg-[#F7F8FA] active:opacity-60 transition-colors"
                 >
                   주차권 등록
                 </button>
@@ -139,7 +139,7 @@ export default function MVInquiryPage({ initialFlipped = false }: { initialFlipp
             <div className="mt-auto px-5 pb-6">
               <button
                 onClick={() => setIsFlipped(true)}
-                className="w-full h-12 rounded-[8px] bg-[#105AFF] flex items-center justify-center gap-[4px] active:bg-[#0943C6] transition-colors"
+                className="w-full h-12 rounded-[8px] bg-[#105AFF] flex items-center justify-center gap-[4px] hover:bg-[#124ceb] active:bg-[#0943C6] transition-colors"
               >
                 <QrCode className="w-[18px] h-[18px] text-white" />
                 <span className="text-[15px] font-bold text-white tracking-[-0.3px]">QR 패스 확인</span>
@@ -165,7 +165,7 @@ export default function MVInquiryPage({ initialFlipped = false }: { initialFlipp
             <div className="mt-auto w-full">
               <button
                 onClick={() => setIsFlipped(false)}
-                className="w-full h-12 rounded-[8px] bg-white border border-[#e1e1e1] flex items-center justify-center gap-[4px] active:opacity-70 transition-opacity"
+                className="w-full h-12 rounded-[8px] bg-white border border-[#e1e1e1] flex items-center justify-center gap-[4px] hover:bg-[#F7F8FA] active:opacity-70 transition-colors"
               >
                 <span className="text-[15px] font-normal text-[#333333] tracking-[-0.3px] leading-[1.4]">신청 정보 보기</span>
               </button>
