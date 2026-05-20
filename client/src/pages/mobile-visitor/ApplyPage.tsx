@@ -248,9 +248,9 @@ function NonInvitedVisitInfoSection({ form, setField }: FormProps) {
           )}
 
           {/* 방문 일시 */}
-          <div className="flex flex-col gap-3">
-            <DateTimeField label="방문 시작" value={form.visitStart} onChange={(v) => setField("visitStart", v)} required />
-            <DateTimeField label="방문 종료" value={form.visitEnd} onChange={(v) => setField("visitEnd", v)} required />
+          <div className="flex gap-2">
+            <DateTimeField label="방문 시작" value={form.visitStart} onChange={(v) => setField("visitStart", v)} required className="flex-1" />
+            <DateTimeField label="방문 종료" value={form.visitEnd} onChange={(v) => setField("visitEnd", v)} required className="flex-1" />
           </div>
         </>
       )}
