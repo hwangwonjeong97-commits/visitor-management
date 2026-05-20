@@ -85,7 +85,7 @@ export default function Showcase() {
         </div>
       </header>
 
-      <main className="max-w-[1600px] mx-auto px-8 py-10">
+      <main className="max-w-[1600px] mx-auto pl-0 pr-8 py-10">
         {activeTab === "mobile-visitor-pre" && (
           <ShowcaseSection
             title="모바일-방문객(사전등록 O)"
