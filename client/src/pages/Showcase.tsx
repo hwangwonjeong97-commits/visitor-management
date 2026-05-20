@@ -113,7 +113,6 @@ export default function Showcase() {
             title="모바일-직원"
             description="직원이 방문 초대를 보내고, 신청을 승인하고, 도착을 확인하는 화면"
             screens={MOBILE_EMPLOYEE_SCREENS}
-            openUrl="/employee/invite"
             hideChrome
           />
         )}
@@ -163,7 +162,7 @@ function ShowcaseSection({ title, description, screens, openUrl, isTablet = fals
   title: string;
   description: string;
   screens: Screen[];
-  openUrl: string;
+  openUrl?: string;
   isTablet?: boolean;
   hideChrome?: boolean;
 }) {
@@ -189,14 +188,16 @@ function ShowcaseSection({ title, description, screens, openUrl, isTablet = fals
           <h2 className="text-[20px] font-bold text-[#222222]">{title}</h2>
           <p className="text-[14px] text-[#777777] mt-1">{description}</p>
         </div>
-        <a
-          href={openUrl}
-          target="_blank"
-          rel="noreferrer"
-          className="flex items-center gap-1.5 h-10 px-4 rounded-[8px] bg-[#105AFF] text-white text-[14px] font-medium hover:bg-[#0943C6] transition-colors"
-        >
-          프로토타입 보기 ↗
-        </a>
+        {openUrl && (
+          <a
+            href={openUrl}
+            target="_blank"
+            rel="noreferrer"
+            className="flex items-center gap-1.5 h-10 px-4 rounded-[8px] bg-[#105AFF] text-white text-[14px] font-medium hover:bg-[#0943C6] transition-colors"
+          >
+            프로토타입 보기 ↗
+          </a>
+        )}
       </div>
 
       <div className="relative">
