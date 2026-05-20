@@ -21,7 +21,7 @@ export function HomeStep({ onSelectPreRegistered, onSelectUnregistered, highligh
             <DateDisplay className="mb-[12px]" />
             <h1 className="text-[36px] font-bold leading-[50px] tracking-[-0.5px] text-gray-900">
               안녕하세요,<br />
-              <span className="text-blue-500">더존을지타워</span> 방문을<br />
+              <span className="text-blue-500" style={{ fontWeight: 700 }}>더존을지타워</span> 방문을<br />
               진심으로 환영합니다.
             </h1>
           </div>
@@ -44,18 +44,18 @@ export function HomeStep({ onSelectPreRegistered, onSelectUnregistered, highligh
             style={{ animationDelay: "120ms" }}
           >
             <div>
-              <p className="text-[24px] font-bold leading-[36px] tracking-[-0.5px] text-white">사전등록 방문객</p>
-              <p className="mt-1 text-[18px] leading-[27px] tracking-[-0.5px] text-white/80">사전 예약 정보로 빠르게 입장</p>
+              <p className="text-[24px] font-bold leading-[36px] tracking-[-0.5px] text-gray-0">사전등록 방문객</p>
+              <p className="mt-1 text-[18px] leading-[27px] tracking-[-0.5px] text-gray-0/80">사전 예약 정보로 빠르게 입장</p>
             </div>
-            <QrCode size={84} className="shrink-0 text-white/90 transition-all duration-300" strokeWidth={1.5} aria-hidden />
+            <QrCode size={84} className="shrink-0 text-gray-0/90 transition-all duration-300" strokeWidth={1.5} aria-hidden />
           </button>
 
           <button
             type="button"
             onClick={onSelectUnregistered}
             className={[
-              "flex h-[180px] w-full flex-row items-center justify-between rounded-[20px] border border-gray-200 bg-white px-[40px] text-left shadow-level-3 transition-all duration-200 active:scale-[0.98]",
-              "hover:border-gray-100 hover:bg-gray-50 active:border-gray-100 active:bg-gray-50",
+              "flex h-[180px] w-full flex-row items-center justify-between rounded-[20px] border border-gray-200 bg-gray-0 px-[40px] text-left shadow-level-3 transition-all duration-200 active:scale-[0.98]",
+              "hover:border-gray-100 hover:bg-neutral-30 active:border-gray-100 active:bg-neutral-30",
               highlightEntry === "unregistered" ? "ring-4 ring-gray-200 ring-offset-2 ring-offset-neutral-50" : "",
               highlightEntry === "pre-registered" ? "opacity-60" : "",
               "animate-fade-in-up",

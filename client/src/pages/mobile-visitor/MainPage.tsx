@@ -19,18 +19,18 @@ export default function MVMainPage({ isInvited = true }: { isInvited?: boolean }
     >
 
       {/* 컨텐츠 */}
-      <div className="relative flex flex-col flex-1 px-5">
+      <div className="relative flex flex-col flex-1 px-5" style={{ animation: 'none' }}>
 
         {/* 타이틀 영역 */}
-        <div className="flex flex-col items-center gap-3 pt-[230px] pb-10">
+        <div className="flex flex-col items-center gap-3 pt-[230px] pb-10 animate-fade-in-up" style={{ animationDelay: '0s' }}>
           <img src="/images/douzone-logo.png" alt="DOUZONE" className="h-[14px] w-auto object-contain" />
           <h1 className="text-[24px] text-[#333333] text-center tracking-[-0.48px] leading-[1.4] font-normal">
-            <span className="font-bold">더존을지타워</span>{" "}방문객 예약 시스템
+            <span style={{ fontWeight: 700 }}>더존을지타워</span>{" "}방문객 예약 시스템
           </h1>
         </div>
 
         {/* CTA 버튼 */}
-        <div className="flex gap-2">
+        <div className="flex gap-2 animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
           <button
             onClick={() => { resetForm(); navigate(`/visitor/apply?invited=${isInvited}`); }}
             className="flex-1 h-[112px] rounded-[16px] p-4 flex flex-col items-start justify-between active:opacity-90 transition-opacity"
@@ -58,7 +58,7 @@ export default function MVMainPage({ isInvited = true }: { isInvited?: boolean }
         </div>
 
         {/* 신청 절차 + 푸터 */}
-        <div className="mt-auto flex flex-col gap-[50px]">
+        <div className="mt-auto flex flex-col gap-[50px] animate-fade-in-up" style={{ animationDelay: '0.25s' }}>
           {/* 신청 절차 */}
           <div className="flex flex-col gap-3">
             <p className="text-[14px] font-medium text-[#333333] tracking-[-0.28px] leading-[1.4]">신청 절차</p>

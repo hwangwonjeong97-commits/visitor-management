@@ -12,7 +12,7 @@ export default function MEArrivalNoticePage() {
           src="/arrival_alert.png"
           alt="도착 알림"
           className="animate-fade-in-up"
-          style={{ width: 315, height: 342, animationDelay: '0.3s' }}
+          style={{ width: 315, height: 342, animationDelay: '0.1s' }}
           draggable={false}
         />
       </div>

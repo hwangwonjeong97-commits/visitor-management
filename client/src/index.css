@@ -3,14 +3,35 @@
 
 /* Pad 시스템 색상 토큰 */
 @theme inline {
+  /* Blue */
   --color-blue-50: #eff4ff;
+  --color-blue-60: #e4eefa;
   --color-blue-100: #c3d7ff;
   --color-blue-200: #97baff;
   --color-blue-400: #447cfc;
   --color-blue-500: #105aff;
   --color-blue-600: #124ceb;
   --color-blue-700: #0943c6;
+  /* Gray (커스텀 — Tailwind 기본값 덮어쓰기) */
+  --color-gray-0:    #ffffff;
+  --color-gray-30:   #fcfcfc;
+  --color-gray-40:   #fafafa;
+  --color-gray-50:   #f4f4f4;
+  --color-gray-60:   #ededed;
+  --color-gray-100:  #e1e1e1;
+  --color-gray-200:  #d3d3d3;
+  --color-gray-300:  #c6c6c6;
+  --color-gray-400:  #b4b4b4;
+  --color-gray-500:  #989898;
+  --color-gray-600:  #777777;
+  --color-gray-700:  #4a4a4a;
+  --color-gray-800:  #333333;
+  --color-gray-900:  #222222;
+  --color-gray-1000: #000000;
+  /* Neutral */
+  --color-neutral-30: #f7f8fa;
   --color-neutral-50: #f5f6fa;
+  --color-neutral-600: #949daf;
 }
 
 /* Pad 시스템 애니메이션 */
@@ -218,7 +239,7 @@
   h1, h2, h3, h4, h5, h6 {
     font-weight: 700;
   }
-  p, span, li {
+  p, li {
     font-weight: 400;
   }
   button:not(:disabled),

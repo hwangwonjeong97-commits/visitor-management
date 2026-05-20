@@ -11,7 +11,7 @@ export function PreRegisteredStep({ onSimulateScan }: PreRegisteredStepProps) {
       <button
         type="button"
         onClick={onSimulateScan}
-        className="absolute bottom-6 right-[80px] z-30 text-[15px] font-medium leading-[22.5px] tracking-[-0.5px] text-white/90 underline-offset-4 transition-colors duration-300 hover:text-white hover:underline"
+        className="absolute bottom-6 right-[80px] z-30 text-[15px] font-medium leading-[22.5px] tracking-[-0.5px] text-gray-0/90 underline-offset-4 transition-colors duration-300 hover:text-gray-0 hover:underline"
       >
         QR 인식 완료 시뮬레이션
       </button>

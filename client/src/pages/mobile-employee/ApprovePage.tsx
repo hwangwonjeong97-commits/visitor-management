@@ -12,7 +12,7 @@ export default function MEApprovePage() {
           src="/approve_alert.png"
           alt="승인 알림"
           className="animate-fade-in-up"
-          style={{ width: 315, height: 320, animationDelay: '0.3s' }}
+          style={{ width: 315, height: 320, animationDelay: '0.1s' }}
           draggable={false}
         />
       </div>

@@ -51,9 +51,11 @@ export function MobileDeviceFrame({ children, label, screenId, routePath, transp
             </div>
           )}
           <div className={`flex-1 overflow-y-auto overflow-x-hidden ${!hideChrome && !transparentStatusBar ? "pt-[44px]" : ""}`}>
-            <div className="page-stagger" style={{ height: hideChrome ? '812px' : transparentStatusBar ? '778px' : '734px' }}>
-              {children}
-            </div>
+            {hideChrome ? children : (
+              <div className="page-stagger" style={{ height: transparentStatusBar ? '778px' : '734px' }}>
+                {children}
+              </div>
+            )}
           </div>
           {!hideChrome && <HomeIndicator />}
         </div>
