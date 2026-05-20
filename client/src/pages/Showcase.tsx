@@ -139,7 +139,7 @@ function ShowcaseSection({ title, description, screens, openUrl, isTablet = fals
 }) {
   return (
     <section>
-      <div className="mb-8 flex items-end justify-between">
+      <div className="mb-8 pl-8 flex items-end justify-between">
         <div>
           <h2 className="text-[20px] font-bold text-[#222222]">{title}</h2>
           <p className="text-[14px] text-[#777777] mt-1">{description}</p>
