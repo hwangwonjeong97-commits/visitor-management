@@ -1,15 +1,89 @@
-import PVMainPage from "@/pages/pad-visitor/PadMainPage";
-import PVScanPage from "@/pages/pad-visitor/PadScanPage";
-import PVConfirmedPage from "@/pages/pad-visitor/PadConfirmedPage";
-import PVRegisterQRPage from "@/pages/pad-visitor/PadRegisterQRPage";
+import { useCallback, useState } from "react";
+import { AppHeader } from "@/components/pad/layout/AppHeader";
+import { SubPageShell } from "@/components/pad/layout/SubPageShell";
+import { HomeStep } from "@/components/pad/steps/HomeStep";
+import { PreRegisteredStep } from "@/components/pad/steps/PreRegisteredStep";
+import { UnregisteredStep } from "@/components/pad/steps/UnregisteredStep";
+import { StepTransition } from "@/components/pad/ui/StepTransition";
+import { SuccessModal } from "@/components/pad/ui/SuccessModal";
+import type { HomeEntryHighlight } from "@/components/pad/steps/HomeStep";
+import type { AppScreen } from "@/components/pad/types";
 
-type PadStep = "HOME" | "CASE_QR" | "CASE_SUCCESS" | "CASE_INFO";
+const SUCCESS_MESSAGE = "안녕하세요 김더존님,\n안내데스크에서 방문증을 수령해주세요";
 
-export function VisitorPadSystem({ step }: { step: PadStep }) {
-  switch (step) {
-    case "HOME":         return <PVMainPage />;
-    case "CASE_QR":      return <PVScanPage />;
-    case "CASE_SUCCESS": return <PVConfirmedPage />;
-    case "CASE_INFO":    return <PVRegisterQRPage />;
-  }
+export type VisitorPadSystemProps = {
+  forcedStep?: AppScreen;
+  forcedShowSuccess?: boolean;
+  highlightHomeEntry?: HomeEntryHighlight;
+  initialStep?: AppScreen;
+};
+
+export function VisitorPadSystem({
+  forcedStep,
+  forcedShowSuccess,
+  highlightHomeEntry,
+  initialStep = "HOME",
+}: VisitorPadSystemProps) {
+  const isLocked = forcedStep != null;
+  const [internalScreen, setInternalScreen] = useState<AppScreen>(initialStep);
+  const [showSuccess, setShowSuccess] = useState(false);
+
+  const screen = forcedStep ?? internalScreen;
+
+  const setScreen = useCallback((next: AppScreen) => {
+    if (isLocked) return;
+    setInternalScreen(next);
+  }, [isLocked]);
+
+  const goHome = useCallback(() => {
+    if (isLocked) return;
+    setInternalScreen("HOME");
+    setShowSuccess(false);
+  }, [isLocked]);
+
+  const handleSimulateScan = useCallback(() => {
+    if (isLocked) return;
+    setShowSuccess(true);
+  }, [isLocked]);
+
+  const successModalOpen = isLocked ? Boolean(forcedShowSuccess) : showSuccess;
+
+  return (
+    <div className="relative flex h-full min-h-[768px] w-full min-w-[1024px] flex-col bg-neutral-50 font-sans">
+      <AppHeader screen={screen} onGoHome={goHome} />
+
+      <main className="flex min-h-0 flex-1 flex-col">
+        {screen === "HOME" && (
+          <StepTransition stepKey="HOME">
+            <HomeStep
+              onSelectPreRegistered={() => setScreen("CASE_QR")}
+              onSelectUnregistered={() => setScreen("CASE_INFO")}
+              highlightEntry={highlightHomeEntry}
+            />
+          </StepTransition>
+        )}
+        {screen === "CASE_QR" && (
+          <StepTransition stepKey="CASE_QR">
+            <SubPageShell>
+              <PreRegisteredStep onSimulateScan={handleSimulateScan} />
+            </SubPageShell>
+          </StepTransition>
+        )}
+        {screen === "CASE_INFO" && (
+          <StepTransition stepKey="CASE_INFO">
+            <SubPageShell>
+              <UnregisteredStep />
+            </SubPageShell>
+          </StepTransition>
+        )}
+      </main>
+
+      <SuccessModal
+        open={successModalOpen}
+        message={SUCCESS_MESSAGE}
+        onClose={isLocked ? () => {} : goHome}
+        contained={isLocked}
+      />
+    </div>
+  );
 }
