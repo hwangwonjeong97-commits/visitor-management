@@ -3,6 +3,7 @@ import { MobileDeviceFrame } from "@/components/visitor/MobileDeviceFrame";
 import { TabletDeviceFrame } from "@/components/visitor/TabletDeviceFrame";
 import { VisitorPadSystem } from "@/components/visitor/VisitorPadSystem";
 import { BrowserDeviceFrame } from "@/components/visitor/BrowserDeviceFrame";
+import { PrototypeViewButton } from "@/components/visitor/PrototypeViewButton";
 
 import MVMainPage from "./mobile-visitor/MainPage";
 import MVApplyPage from "./mobile-visitor/ApplyPage";
@@ -49,6 +50,7 @@ const MOBILE_EMPLOYEE_SCREENS = [
 ];
 
 const PAD_BASE_URL = "/pad";
+const WEB_ADMIN_BASE_URL = "/storyboard";
 const PAD_VISITOR_SCREENS = [
   { id: "01", name: "메인화면",             component: <VisitorPadSystem forcedStep="HOME" /> },
   { id: "02", name: "QR 인식 화면",         component: <VisitorPadSystem forcedStep="CASE_QR" /> },
@@ -132,6 +134,7 @@ export default function Showcase() {
                 <h2 className="text-[20px] font-bold text-[#222222]">웹-관리자</h2>
                 <p className="text-[14px] text-[#777777] mt-1">관리자가 방문 현황을 실시간으로 확인하고 승인 및 출입을 관리하는 화면</p>
               </div>
+              <PrototypeViewButton href={WEB_ADMIN_BASE_URL} />
             </div>
             <div className="overflow-x-auto pb-6" style={{ scrollbarWidth: "thin", scrollbarColor: "#D3D3D3 transparent" }}>
               <div className="flex justify-center gap-10 pt-4 pb-20 flex-nowrap">
@@ -188,16 +191,7 @@ function ShowcaseSection({ title, description, screens, openUrl, isTablet = fals
           <h2 className="text-[20px] font-bold text-[#222222]">{title}</h2>
           <p className="text-[14px] text-[#777777] mt-1">{description}</p>
         </div>
-        {openUrl && (
-          <a
-            href={openUrl}
-            target="_blank"
-            rel="noreferrer"
-            className="flex items-center gap-1.5 h-10 px-4 rounded-[8px] bg-[#105AFF] text-white text-[14px] font-medium hover:bg-[#0943C6] transition-colors"
-          >
-            프로토타입 보기 ↗
-          </a>
-        )}
+        {openUrl && <PrototypeViewButton href={openUrl} />}
       </div>
 
       <div className="relative">

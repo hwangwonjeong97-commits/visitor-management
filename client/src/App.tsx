@@ -11,6 +11,7 @@ import { ThemeProvider } from "./contexts/ThemeContext";
 import { VisitorFormProvider } from "./contexts/VisitorFormContext";
 import Report from "./pages/Report";
 import Showcase from "./pages/Showcase";
+import WebAdminStoryboardPage from "./pages/WebAdminStoryboardPage";
 
 function EmployeePageLayout({ children }: { children: ReactNode }) {
   return (
@@ -52,6 +53,9 @@ function Router() {
 
       {/* 기존 리서치 리포트 */}
       <Route path="/report" component={Report} />
+
+      {/* 웹-관리자 프로토타입 */}
+      <Route path="/storyboard" component={WebAdminStoryboardPage} />
 
       {/* 모바일 — 방문객 */}
       <Route path="/visitor">{() => <MobilePageLayout transparentStatusBar><MVMainPage isInvited={true} /></MobilePageLayout>}</Route>
