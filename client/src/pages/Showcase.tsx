@@ -48,7 +48,7 @@ const MOBILE_EMPLOYEE_SCREENS = [
   { id: "03", name: "방문객 도착 알림",     component: <MEArrivalNoticePage /> },
 ];
 
-const PAD_BASE_URL = "https://visitor-access-system-eight.vercel.app";
+const PAD_BASE_URL = "/pad";
 const PAD_VISITOR_SCREENS = [
   { id: "01", name: "메인화면",             component: <VisitorPadSystem forcedStep="HOME" /> },
   { id: "02", name: "QR 인식 화면",         component: <VisitorPadSystem forcedStep="CASE_QR" /> },

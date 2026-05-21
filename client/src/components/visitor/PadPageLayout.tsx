@@ -1,11 +1,18 @@
 import { ReactNode } from "react";
 
+const PROTOTYPE_WIDTH = 1024;
+const PROTOTYPE_HEIGHT = 768;
+
 export function PadPageLayout({ children }: { children: ReactNode }) {
   return (
-    <div className="min-h-screen bg-[#F0F2F7] flex items-start justify-center py-10">
+    <div className="flex h-screen w-screen items-center justify-center bg-gray-100">
       <div
-        className="w-[768px] h-[1024px] bg-white overflow-y-auto overflow-x-hidden"
-        style={{ boxShadow: "0 8px 32px rgba(0,0,0,0.12)" }}
+        className="shrink-0 overflow-auto bg-neutral-50"
+        style={{
+          width: PROTOTYPE_WIDTH,
+          height: PROTOTYPE_HEIGHT,
+          boxShadow: "0 8px 32px rgba(0, 0, 0, 0.12)",
+        }}
       >
         {children}
       </div>

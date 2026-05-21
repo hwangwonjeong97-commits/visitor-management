@@ -6,6 +6,7 @@ import { Route, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { MobilePageLayout } from "./components/visitor/MobilePageLayout";
 import { PadPageLayout } from "./components/visitor/PadPageLayout";
+import { VisitorPadSystem } from "./components/visitor/VisitorPadSystem";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import { VisitorFormProvider } from "./contexts/VisitorFormContext";
 import Report from "./pages/Report";
@@ -39,7 +40,6 @@ import MEApprovePage from "./pages/mobile-employee/ApprovePage";
 import MEArrivalNoticePage from "./pages/mobile-employee/ArrivalNoticePage";
 
 // 패드 — 방문객
-import PVMainPage from "./pages/pad-visitor/PadMainPage";
 import PVScanPage from "./pages/pad-visitor/PadScanPage";
 import PVConfirmedPage from "./pages/pad-visitor/PadConfirmedPage";
 import PVRegisterQRPage from "./pages/pad-visitor/PadRegisterQRPage";
@@ -69,7 +69,7 @@ function Router() {
       <Route path="/employee/arrival-notice">{() => <EmployeePageLayout><MEArrivalNoticePage /></EmployeePageLayout>}</Route>
 
       {/* 패드 — 방문객 */}
-      <Route path="/pad">{() => <PadPageLayout><PVMainPage /></PadPageLayout>}</Route>
+      <Route path="/pad">{() => <PadPageLayout><VisitorPadSystem modalContained /></PadPageLayout>}</Route>
       <Route path="/pad/scan">{() => <PadPageLayout><PVScanPage /></PadPageLayout>}</Route>
       <Route path="/pad/confirmed">{() => <PadPageLayout><PVConfirmedPage /></PadPageLayout>}</Route>
       <Route path="/pad/register-qr">{() => <PadPageLayout><PVRegisterQRPage /></PadPageLayout>}</Route>

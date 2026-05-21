@@ -16,6 +16,8 @@ export type VisitorPadSystemProps = {
   forcedShowSuccess?: boolean;
   highlightHomeEntry?: HomeEntryHighlight;
   initialStep?: AppScreen;
+  /** 고정 프로토타입 뷰포트(1024×768) 안에서 모달 표시 */
+  modalContained?: boolean;
 };
 
 export function VisitorPadSystem({
@@ -23,6 +25,7 @@ export function VisitorPadSystem({
   forcedShowSuccess,
   highlightHomeEntry,
   initialStep = "HOME",
+  modalContained = false,
 }: VisitorPadSystemProps) {
   const isLocked = forcedStep != null;
   const [internalScreen, setInternalScreen] = useState<AppScreen>(initialStep);
@@ -49,7 +52,7 @@ export function VisitorPadSystem({
   const successModalOpen = isLocked ? Boolean(forcedShowSuccess) : showSuccess;
 
   return (
-    <div className="relative flex h-full min-h-[768px] w-full min-w-[1024px] flex-col bg-neutral-50 font-sans">
+    <div className="relative flex h-[768px] w-[1024px] shrink-0 flex-col bg-neutral-50 font-sans">
       <AppHeader screen={screen} onGoHome={goHome} />
 
       <main className="flex min-h-0 flex-1 flex-col">
@@ -82,7 +85,7 @@ export function VisitorPadSystem({
         open={successModalOpen}
         message={SUCCESS_MESSAGE}
         onClose={isLocked ? () => {} : goHome}
-        contained={isLocked}
+        contained={isLocked || modalContained}
       />
     </div>
   );
